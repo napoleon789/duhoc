@@ -1,0 +1,158 @@
+<?php
+
+/*
+ * implement hook_menu
+ */
+
+function duhoc_menu_menu() {
+  $items['quanly'] = array(
+    'title' => 'Dashboard',
+    'page callback' => 'duhoc_menu_admin',
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['quanly/dashboard'] = array(
+    'title' => 'Dashboard',
+    'page callback' => 'duhoc_menu_admin',
+    'access arguments' => array('access content'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => 0,
+  );
+  $items['quanly/student'] = array(
+    'title' => 'Student',
+    'page callback' => 'duhoc_menu_admin',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 1,
+  );
+  $items['quanly/reports'] = array(
+    'title' => 'Reports',
+    'page callback' => 'duhoc_menu_admin',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 2,
+  );
+  $items['quanly/user'] = array(
+    'title' => 'User Management',
+    'page callback' => 'duhoc_menu_user',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 3,
+  );
+  $items['quanly/setting'] = array(
+    'title' => 'Setting',
+    'page callback' => 'duhoc_student_admin',
+    'page arguments' => array("16"),
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 4,
+  );
+
+  $items['quanly/acount'] = array(
+    'title' => 'My acount',
+    'page callback' => 'duhoc_menu_admin',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 5,
+  );
+
+  $items['quanly/logout'] = array(
+    'title' => 'Logout',
+    'page callback' => 'duhoc_menu_admin',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 6,
+  );
+
+// menu for setting
+  $items['quanly/setting/country'] = array(
+    'title' => 'Add country',
+    'page callback' => 'duhoc_menu_admin',
+    'access arguments' => array('access content'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => 0,
+  );
+  $items['quanly/setting/contract'] = array(
+    'title' => 'Add contract template',
+    'page callback' => 'duhoc_menu_node_add',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 1,
+  );
+  $items['quanly/setting/course'] = array(
+    'title' => 'Add course',
+    'page callback' => 'duhoc_student_admin',
+    'page arguments' => array("13"),
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 2,
+  );
+
+  //Manage user
+
+  $items['quanly/user/add'] = array(
+    'title' => 'Add user',
+    'page callback' => 'duhoc_menu_user',
+    'access arguments' => array('access content'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => 1,
+  );
+
+  $items['quanly/user/role'] = array(
+    'title' => 'Add roles',
+    'page callback' => 'duhoc_menu_user_role',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 2,
+  );
+
+  $items['quanly/user/none'] = array(
+    'title' => 'Add roles',
+    'page callback' => 'duhoc_menu_admin',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 3,
+  );
+  return $items;
+}
+
+function duhoc_menu_admin() {
+  return '123';
+}
+
+//page user
+
+function duhoc_menu_user() {
+  $header = array("id","name","roles","action");
+  $sql_query = db_select('users', 'u');
+  $sql_query ->join('users_roles', 'ur', 'u.uid = ur.uid');
+  $sql_query ->join('role', 'r', 'ur.rid = r.rid');
+  $sql_query->fields('u', array('uid', 'name'));
+  $sql_query->fields('r', array('name'));
+  $sql_query = $sql_query->extend('TableSort')->extend('PagerDefault')->limit(5);
+  $result = $sql_query->orderByHeader($header)->execute();
+
+  foreach($result as $res){
+    $edit = '<a href="#"> Edit</a>';
+    $delete = '<a href="#"> Delete</a>';
+    $act = $edit . ' | '.$delete;
+    $rows[] = array($res->uid,$res->name,$res->r_name ,$act);
+  }
+
+  $output = theme('table', array('header' => $header, 'rows' => $rows, 'attributes' => array('id' => 'my-module-table')));
+  $output .= theme('pager');
+  $output .= '<div class="add_user"> <a href="../admin/people/create">Add user</a> </di>';
+  return $output;
+}
+
+function duhoc_menu_user_role() {
+  module_load_include('inc', 'user', 'user.admin');
+  $form = drupal_get_form('user_admin_roles');
+  return drupal_render($form);
+}
+
+function duhoc_menu_node_add () {
+  module_load_include('inc', 'node', 'node.pages');
+  $form = node_add('contract');
+  return drupal_render($form);
+}

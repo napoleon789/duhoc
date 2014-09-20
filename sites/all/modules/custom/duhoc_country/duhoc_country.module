@@ -1,0 +1,17 @@
+<?php
+
+/*
+ * implement hook_menu
+ */
+
+function duhoc_student_menu() {
+  $items['hocvien/%'] = array(
+    'title' => 'Step 1',
+    'page callback' => 'duhoc_student_admin',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
