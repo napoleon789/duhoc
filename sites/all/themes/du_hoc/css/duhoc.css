@@ -1,0 +1,13 @@
+/**
+ * Created by TaoLe
+ * Email : hopthucualetao@gmail.com
+ */
+.page-quanly-setting .node-country-form .field-name-field-country thead{display: none}
+.page-quanly-setting .node-country-form .field-name-field-country tbody td{position: relative}
+.page-quanly-setting .node-country-form .field-name-field-country tbody td input.form-submit{position: absolute;right: 0;bottom: -5px}
+.page-quanly-setting .node-country-form .field-name-field-country .required-fields { display: table;width: 700px}
+.page-quanly-setting .node-country-form .field-name-field-country .required-fields h3{display: none;}
+.page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper{ display: table-cell;}
+.page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper input{width: 95%}
+.page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper label{display: none}
+.page-quanly-setting .node-country-form .field-name-field-country .field-multiple-table .draggable:first-child .required-fields .form-wrapper label{display: block;text-indent: 5px;}
