@@ -20,14 +20,14 @@ function duhoc_menu_menu() {
   );
   $items['quanly/student'] = array(
     'title' => 'Student',
-    'page callback' => 'duhoc_menu_admin',
+    'page callback' => 'duhoc_menu_list_student',
     'access arguments' => array('access content'),
     'type' => MENU_LOCAL_TASK,
     'weight' => 1,
   );
   $items['quanly/reports'] = array(
     'title' => 'Reports',
-    'page callback' => 'duhoc_menu_admin',
+    'page callback' => 'duhoc_menu_reports',
     'access arguments' => array('access content'),
     'type' => MENU_LOCAL_TASK,
     'weight' => 2,
@@ -113,8 +113,44 @@ function duhoc_menu_menu() {
     'type' => MENU_LOCAL_TASK,
     'weight' => 3,
   );
+
+// manage studnet
+  $items['quanly/student/%/basic'] = array(
+    'title' => 'Basic Info',
+    'page callback' => 'duhoc_student_admin',
+    'page arguments' => array(2),
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 1,
+  );
+  $items['quanly/student/%/pathway'] = array(
+    'title' => 'Pathway',
+    'page callback' => 'duhoc_student_admin',
+    'page arguments' => array(2),
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 2,
+  );
+  $items['quanly/student/%/contract'] = array(
+    'title' => 'Contract',
+    'page callback' => 'duhoc_student_admin',
+    'page arguments' => array(2),
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 3,
+  );
+  $items['quanly/student/%/visa'] = array(
+    'title' => 'Visa',
+    'page callback' => 'duhoc_student_admin',
+    'page arguments' => array(2),
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 4,
+  );
+
   return $items;
 }
+
 
 function duhoc_menu_admin() {
   return '123';
@@ -155,4 +191,10 @@ function duhoc_menu_node_add () {
   module_load_include('inc', 'node', 'node.pages');
   $form = node_add('contract');
   return drupal_render($form);
+}
+
+function duhoc_menu_list_student() {
+
+   $output = views_embed_view('page_student','default');
+   return $output;
 }

@@ -9,54 +9,17 @@ function duhoc_student_init() {
     unset($_POST['ajax_html_ids']);
 }
 
-/**
- * implement hook menu
- */
-function duhoc_student_menu() {
-  $items['hocvien/%'] = array(
-    'title' => 'Step 1',
-    'page callback' => 'duhoc_student_admin',
-    'page arguments' => array(1),
-    'access arguments' => array('access content'),
-    'type' => MENU_NORMAL_ITEM,
-  );
-  $items['hocvien/%/info'] = array(
-    'title' => 'Step 1',
-    'page callback' => 'duhoc_student_admin',
-    'page arguments' => array(1),
-    'access arguments' => array('access content'),
-    'type' => MENU_DEFAULT_LOCAL_TASK,
-  );
-  $items['hocvien/%/pathway'] = array(
-    'title' => 'Step 2',
-    'page callback' => 'duhoc_student_admin',
-    'page arguments' => array(1),
-    'access arguments' => array('access content'),
-    'type' => MENU_LOCAL_TASK,
-  );
-  $items['hocvien/%/add2'] = array(
-    'title' => 'Step 3',
-    'page callback' => 'duhoc_student_admin',
-    'page arguments' => array(1),
-    'access arguments' => array('access content'),
-    'type' => MENU_LOCAL_TASK,
-  );
-  $items['node/%/hocvien'] = array(
-    'title' => 'Chỉnh sửa',
-    'page callback' => 'drupal_goto',
-    'page arguments' => array('hocvien/%'),
-    'access arguments' => array('access content'),
-    'type' => MENU_LOCAL_TASK,
-  );
-  return $items;
-}
 
-function duhoc_student_admin($id) {
-  module_load_include('inc', 'node', 'node.pages');
-  $node = node_load($id);
-  $form = node_page_edit($node);
- // $form = '<div class="clear-form goldprice-sxht">' . $form . '</div>';
-  return $form;
+function duhoc_student_admin($id=null) {
+   if($id != null) {
+    module_load_include('inc', 'node', 'node.pages');
+    $node = node_load($id);
+    $form = node_page_edit($node);
+   // $form = '<div class="clear-form goldprice-sxht">' . $form . '</div>';
+    return $form;
+  }
+  else
+    return '';
 }
 /**
  * @param $existing
@@ -69,9 +32,7 @@ function duhoc_student_admin($id) {
 function duhoc_student_theme($existing, $type, $theme, $path) {
   return array(
     'country_node_form' => array(
-      'render element' => 'form',
-      'path' => drupal_get_path('module', 'duhoc_student').'/templates',
-      'template' => 'country'
+      'render element' => 'element',
     ),
     'course_node_form' => array(
       'render element' => 'form',
@@ -85,17 +46,38 @@ function duhoc_student_theme($existing, $type, $theme, $path) {
     ),
   );
 }
+function theme_country_node_form($form) {
+
+
+}
 
 /**
  * im plement hook_form_alter
  */
 function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
+
+ if($form_id =='hocvien_node_form') {
+   if(arg(3) == 'basic') {
+     $form['field_study_pathway']['#access'] = false;
+   }
+   if(arg(3) == 'pathway') {
+
+   }
+ }
+
+  if($form_id == 'contract_node_form') {
+
+  }
   if($form_id == 'course_node_form') {
     if(!isset($form_state['build_info']['files'])){
       $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
     }
   }
   if($form_id == 'country_node_form') {
+
+
+
+    $form['field_country']['#access'] = false;
     if(!isset($form_state['build_info']['files'])){
       $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
     }
@@ -110,19 +92,8 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
           'effect' => 'fade'
         ),
       );
-
   }
-  $form['options']['name']['views.php']['#title'] = 'Trường tính toán';
-  $form['options']['name']['views.php']['#description'] = '';
-  $form['options']['name']['views.php']['#prefix'] = '<div class="user_show">';
-  $form['options']['name']['views.php']['#suffix'] = '</div>';
-  $form['options']['name']['#prefix'] = '<div class="user_hide">';
-  $form['options']['name']['#suffix'] = '</div>';
-   if($form_id == 'views_ui_config_item_form3') {
-     $form['options']['#prefix'] = '<div class="php_show">';
-     $form['options']['#suffix'] = '</div>';
-     $form['#submit'][]  = 'duhoc_student_add';
-   }
+
 }
 function simone_forms_ajax_callback(&$form, &$form_state) {
 
