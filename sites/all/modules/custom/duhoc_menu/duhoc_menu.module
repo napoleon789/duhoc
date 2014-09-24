@@ -151,6 +151,14 @@ function duhoc_menu_menu() {
   return $items;
 }
 
+function menu_to_arg($arg) {
+  if ($arg == '%') {
+    return 'none';
+  }
+  else {
+    return $arg;
+  }
+}
 
 function duhoc_menu_admin() {
   return '123';
