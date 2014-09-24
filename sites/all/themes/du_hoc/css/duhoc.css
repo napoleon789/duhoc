@@ -11,3 +11,88 @@
 .page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper input{width: 95%}
 .page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper label{display: none}
 .page-quanly-setting .node-country-form .field-name-field-country .field-multiple-table .draggable:first-child .required-fields .form-wrapper label{display: block;text-indent: 5px;}
+
+.node-hocvien-form .form-wrapper .field-type-datestamp legend,
+.node-hocvien-form .form-wrapper .field-type-datestamp fieldset,
+.node-hocvien-form .form-wrapper .field-type-datestamp fieldset .fieldset-wrapper{ background: none; border: none;padding: 0; margin: 0}
+.node-hocvien-form .form-wrapper .field-type-datestamp legend{ font-weight: bold;font-size: 0.929em;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;text-shadow: none;}
+.node-hocvien-form .form-wrapper .field-type-datestamp .date-padding label{ display: none}
+/*PERSONAL INFORMATION*/
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image{ display: inline-block; width: 30%; min-width: 200px; vertical-align: top;}
+.node-hocvien-form .field-name-field-student-basic .personal_information{display: inline-block; width: 70%; min-width: 300px;}
+.node-hocvien-form .field-name-field-student-basic .personal_information .form-item{ display: table}
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-text .form-type-textfield label,
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-number-integer label,
+.node-hocvien-form .field-name-field-student-basic .personal_information .form-item input{display: table-cell; min-width: 100px}
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-name-field-student-full-name .form-item{ margin: 0}
+
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp{ margin-bottom: 17px}
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper{ display: table}
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper legend{position: initial; width: auto; float: left; text-indent: 0; line-height: 1.8;display: table-cell; margin-right: 5px;margin-top: 5px;width: 95px;}
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper{ display: table-cell}
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper .date-padding{ padding: 0}
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper .date-padding .description{display: none}
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper .date-padding input,
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-name-field-student-phone input{width: 380px}
+/*VISA*/
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-status,
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit,
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-note{ float: left; width: 33.333%; display: block}
+.node-hocvien-form .field-multiple-table tbody tr td .form-submit{ display: block; clear: both; content: "";}
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-status .form-type-select select { width: 100%}
+
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper legend{ line-height: 1.5; text-indent: 0}
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper .fieldset-wrapper .date-padding{padding: 6px 0 0 0;}
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper .fieldset-wrapper .date-padding .form-item input {width: 282px; margin: 0 -1px;font-size: 13px;padding-top: 5px; padding-bottom: 6px;}
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper .fieldset-wrapper .date-padding .description{display: none}
+
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-note input.form-text {width: 281px;padding-top: 5px;font-size: 13px; padding-bottom: 6px;margin-left: -1px}
+/* STUDY PATHWAY*/
+.field-name-field-student-pathway .pathway_group{display: table}
+.field-name-field-student-pathway .pathway_group .form-wrapper{ display: table-cell; padding-right: 9px}
+.field-name-field-student-pathway .pathway_group .form-wrapper:last-child{padding-right: 0}
+.field-name-field-student-pathway .pathway_group .form-wrapper label{display: inline-block}
+.field-name-field-student-pathway .pathway_group .form-wrapper select,
+.field-name-field-student-pathway .pathway_group .form-wrapper input{ font-size: 12px; margin: 0;padding: 2px 4px;}
+.field-name-field-student-pathway .pathway_group .form-wrapper input{padding: 3px 4px;}
+.field-name-field-student-pathway .pathway_group .form-wrapper .description{display: none}
+.field-name-field-student-pathway .pathway_group_1 .form-wrapper select{width: 120px; margin-left: 10px}
+.field-name-field-student-pathway .pathway_group_1 .field-name-field-stpw-course-name select{ width: 180px}
+.field-name-field-student-pathway .pathway_group_2,
+.field-name-field-student-pathway .pathway_group_3 ,
+.field-name-field-student-pathway .pathway_group_4{margin-bottom: 25px}
+.field-name-field-student-pathway .pathway_group_3 .form-item input,
+.field-name-field-student-pathway .pathway_group_4 .form-item input{ width: 100px}
+
+.field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper{ display: table}
+.field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper legend{position: initial; width: auto; float: left; text-indent: 0; line-height: 1.8;display: table-cell; margin-right: 5px;}
+.field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper .fieldset-wrapper{ display: table-cell}
+.field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper .fieldset-wrapper .date-padding{ padding: 0}
+
+.field-name-field-student-pathway .pathway_group_3 .form-item label{max-width:75px}
+.field-name-field-student-pathway .pathway_group_4 .form-item label{max-width:140px}
+.field-name-field-student-pathway .pathway_group_4 h3{position: absolute;top: 0; left: 0; margin-top: 0 ;font-size: 18px}
+.field-name-field-student-pathway .pathway_group_4{position: relative;padding-top: 45px;}
+
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element{ background: #fff; border: none; display: table}
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-element { display: table-cell; float: none}
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-element .form-item { width: 250px;}
+
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .form-item label,
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .form-item input{ display: inline-block}
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .form-item label {max-width: 135px}
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .form-item input{width: 100px}
+
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-field-com-received-usa .form-item,
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-field-com-received-date .form-item{width: 215px}
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-field-com-received-usa .form-item label{max-width: 100px}
+
+
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-field-com-received-date .form-item label{max-width: 100px}
+#fgm_field_collection_item_field_student_pathway_form_group_received-add-more-wrapper{ position: relative}
+#fgm_field_collection_item_field_student_pathway_form_group_received-add-more-wrapper .field-group-multiple-add-more-submit{position: absolute; bottom: 5px; right: 0}
+
+.field-name-field-student-pathway .field-name-field-com-pending .form-item{ display: table}
+.field-name-field-student-pathway .field-name-field-com-pending .form-item label,
+.field-name-field-student-pathway .field-name-field-com-pending .form-item input{ display: table-cell; max-width: 145px}
+.field-name-field-student-pathway .field-name-field-com-pending .form-item input{ max-width: 100px}
