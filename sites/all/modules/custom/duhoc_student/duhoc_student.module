@@ -10,16 +10,15 @@ function duhoc_student_init() {
 }
 
 
-function duhoc_student_admin($id=null) {
-   if($id != null) {
+function duhoc_student_admin($id='') {
+
     module_load_include('inc', 'node', 'node.pages');
     $node = node_load($id);
     $form = node_page_edit($node);
    // $form = '<div class="clear-form goldprice-sxht">' . $form . '</div>';
     return $form;
-  }
-  else
-    return '';
+
+
 }
 /**
  * @param $existing
@@ -57,11 +56,28 @@ function theme_country_node_form($form) {
 function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
 
  if($form_id =='hocvien_node_form') {
+   if(!isset($form_state['build_info']['files'])){
+     $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
+   }
    if(arg(3) == 'basic') {
-     $form['field_study_pathway']['#access'] = false;
+     $form['field_student_pathway']['#access'] = false;
+     $form['field_student_visa']['#access'] = false;
+     $form['field_student_contract']['#access'] = false;
    }
    if(arg(3) == 'pathway') {
-
+     $form['field_student_basic']['#access'] = false;
+     $form['field_student_visa']['#access'] = false;
+     $form['field_student_contract']['#access'] = false;
+   }
+   if(arg(3) == 'contract') {
+     $form['field_student_basic']['#access'] = false;
+     $form['field_student_visa']['#access'] = false;
+     $form['field_student_pathway']['#access'] = false;
+   }
+   if(arg(3) == 'visa') {
+     $form['field_student_basic']['#access'] = false;
+     $form['field_student_contract']['#access'] = false;
+     $form['field_student_pathway']['#access'] = false;
    }
  }
 
