@@ -26,6 +26,11 @@
 .node-hocvien-form .field-name-field-student-basic .personal_information .form-item input{display: table-cell; min-width: 100px}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-name-field-student-full-name .form-item{ margin: 0}
 
+.node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset,
+.node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset legend,
+.node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset legend span{ background: #fff; border: none}
+html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
+
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp{ margin-bottom: 17px}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper{ display: table}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper legend{position: initial; width: auto; float: left; text-indent: 0; line-height: 1.8;display: table-cell; margin-right: 5px;margin-top: 5px;width: 95px;}
@@ -34,6 +39,29 @@
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper .date-padding .description{display: none}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper .date-padding input,
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-name-field-student-phone input{width: 380px}
+
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper{ display: table}
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .form-wrapper{ display: table-cell;}
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .form-wrapper input,
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level select{ width: 120px}
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-current-school input{width: 400px}
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level .description{display: none}
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level select{padding-top: 2px;padding-bottom:3px }
+
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper,
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper,
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item,
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item{ display: table}
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper,
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item select,
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item label{ display: table-cell; width: 50%;padding-right: 45px}
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item select{ width: 160px}
+
+
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper,
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item select,
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item label{ display: table-cell; padding-right: 45px}
+
 /*VISA*/
 .node-hocvien-form .field-name-field-student-visa .field-name-field-visa-status,
 .node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit,
@@ -96,3 +124,84 @@
 .field-name-field-student-pathway .field-name-field-com-pending .form-item label,
 .field-name-field-student-pathway .field-name-field-com-pending .form-item input{ display: table-cell; max-width: 145px}
 .field-name-field-student-pathway .field-name-field-com-pending .form-item input{ max-width: 100px}
+/*CONTRACT*/
+.field-name-field-student-contract tbody tr {background: #fff}
+.field-name-field-student-contract tbody .field-multiple-drag{display: none}
+.field-name-field-student-contract .form-wrapper,
+.field-name-field-student-contract .field-multiple-table .party_b_info .b_groupt_2{margin: 10px 0}
+.field-name-field-student-contract .field-multiple-table .contract-header,
+.field-name-field-student-contract .field-multiple-table .contract-header .field-type-text .form-item,
+.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper .fieldset-wrapper{ display: table}
+.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper,
+.field-name-field-student-contract .field-multiple-table .contract-header .field-type-text .form-item input,
+.field-name-field-student-contract .field-multiple-table .contract-header .field-type-text .form-item label,
+.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper legend,
+.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper .fieldset-wrapper{display: table-cell;padding-right:15px}
+.field-name-field-student-contract .field-multiple-table .contract-header .field-type-text .form-item input{width: 150px; margin: 0}
+.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper legend{position: initial; width: auto; float: left; text-indent: 0;display: table-cell; margin-right: 5px;}
+
+.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper .date-padding{ padding: 0}
+.field-name-field-student-contract .field-multiple-table .contract-header .field-type-datestamp{ vertical-align: top}
+.field-name-field-student-contract .field-multiple-table .contract-header .field-type-datestamp fieldset{top:0}
+.field-name-field-student-contract .field-multiple-table .contract-header .field-type-datestamp .description{display: none}
+.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper .form-item input{margin: 0}
+
+.field-name-field-student-contract .field-multiple-table .party_b_info{margin-left: 75px;}
+.field-name-field-student-contract .field-multiple-table .party_b_info h3{margin-left: -75px; margin-top: 0}
+.field-name-field-student-contract .field-multiple-table .party_b_info .form-item input,
+.field-name-field-student-contract .field-multiple-table .party_b_info .form-item label,
+.field-name-field-student-contract .field-multiple-table .party_b_info .b_groupt .form-wrapper{display: table-cell;}
+.field-name-field-student-contract .field-multiple-table .party_b_info .b_groupt,
+.field-name-field-student-contract .field-multiple-table .party_b_info .form-item{display: table}
+.field-name-field-student-contract .field-multiple-table .party_b_info .form-item input{ margin-right: 15px}
+.field-name-field-student-contract .field-multiple-table .party_b_info .form-item label{width: 90px}
+.field-name-field-student-contract .field-multiple-table .party_b_info .b_groupt_2 .form-item input{width: 250px; margin-right: 15px}
+
+
+.field-name-field-student-contract .field-multiple-table .group-student-info{margin-left: 75px;}
+.field-name-field-student-contract .field-multiple-table .group-student-info h3{margin-left: -75px; margin-top: 0}
+.field-name-field-student-contract .field-multiple-table .group-student-info .form-item{display: table}
+.field-name-field-student-contract .field-multiple-table .group-student-info .form-item input,
+.field-name-field-student-contract .field-multiple-table .group-student-info .form-item label{display: table-cell;}
+.field-name-field-student-contract .field-multiple-table .group-student-info .form-item input{width: 300px; margin-right: 15px}
+.field-name-field-student-contract .field-multiple-table .group-student-info .form-item label{width: 90px}
+.field-name-field-student-contract .field-multiple-table .group-student-info .group-student-info-g2 .form-item label{width: 200px}
+
+.field-name-field-student-contract .field-multiple-table .group-student-info .form-wrapper legend,
+.field-name-field-student-contract .field-multiple-table .group-student-info .form-wrapper .fieldset-wrapper{display: table-cell;margin-right:0}
+.field-name-field-student-contract .group-student-info .form-wrapper legend{position: initial; width: auto; float: left; text-indent: 0;display: table-cell; margin-right: 5px;}
+.field-name-field-student-contract .group-student-info .field-type-datestamp .description,
+.field-name-field-student-contract .group-student-info .field-type-datestamp .form-item label{display: none}
+.field-name-field-student-contract .group-student-info .form-wrapper legend{width: 90px}
+.field-name-field-student-contract .group-student-info .form-wrapper .date-padding{ padding: 0}
+.field-name-field-student-contract .group-student-info .field-type-datestamp{ vertical-align: top;}
+.field-name-field-student-contract .group-student-info .field-type-datestamp fieldset{top:0}
+
+.field-name-field-student-contract .group-student-info .field-name-field-relationship-with-party-b select{width: 310px; padding-top: 1px; padding-bottom: 2px}
+.field-name-field-student-contract .group-student-info .group-student-info-g2 .field-name-field-intake legend{width: 200px}
+
+
+.field-name-field-student-contract .field-multiple-table .group-contract-info{margin-left: 75px;}
+.field-name-field-student-contract .field-multiple-table .group-contract-info h3{margin-left: -75px; margin-top: 0}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .form-item{display: table}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .form-item input,
+.field-name-field-student-contract .field-multiple-table .group-contract-info .form-item label{display: table-cell;}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .form-item input{width: 300px; margin-right: 15px}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-student-info-g2 .form-item label{width: 200px}
+
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-1,
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2{display: table ;position: relative; margin: 10px 0}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 {margin-top: 10px; margin-bottom: 40px}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-1 .field-type-list-text,
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 .field-type-text{display: table-cell}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-1 .form-item label{width:150px; text-align: center}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 .form-item label{width: 100px; text-align: center}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-1 select{width: 200px;padding-top: 1px; padding-bottom: 2px}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 input{width: 100px}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 .field-name-field-cancelation-date{position: absolute;bottom: -55px; right: 0;}
+.field-name-field-student-contract input,
+.field-name-field-student-contract label{ font-size: 13px}
+
+
+
+
