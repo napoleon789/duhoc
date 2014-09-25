@@ -19,6 +19,11 @@
 .node-hocvien-form .form-wrapper .field-type-datestamp .date-padding label{ display: none}
 /*PERSONAL INFORMATION*/
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image{ display: inline-block; width: 30%; min-width: 200px; vertical-align: top;}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image label{display: none}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget-data .file {display: none}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget{text-align: center}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-widget-data,
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview{float: none; display: block; margin: 0 auto}
 .node-hocvien-form .field-name-field-student-basic .personal_information{display: inline-block; width: 70%; min-width: 300px;}
 .node-hocvien-form .field-name-field-student-basic .personal_information .form-item{ display: table}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-text .form-type-textfield label,
