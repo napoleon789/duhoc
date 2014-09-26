@@ -15,7 +15,7 @@ label { display: block; font-weight: normal;}
 #container { margin: 0 auto;padding: 0 10px; width: 980px;}
 /*SETTING*/
 .page-quanly .vertical-tabs.clearfix{display: none}
-
+.page-quanly .form-actions input{margin-right: 15px}
 .page-quanly-setting .node-country-form .field-name-field-country thead,
 .page-quanly-setting .node-course-form .field-name-field-course thead{display: none}
 .page-quanly-setting .node-country-form .field-name-field-country tbody td,
@@ -37,8 +37,8 @@ label { display: block; font-weight: normal;}
 .page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper input{border-right: none;text-align: center}
 .page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper label,
 .page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper label{text-align: center}
-.page-quanly-setting .node-country-form .field-name-field-country .required-fields .field-name-field-edit.form-wrapper input,
-.page-quanly-setting .node-course-form .field-name-field-course .required-fields .field-name-field-com-amout.form-wrapper input {border-right: 1px solid #ccc}
+.page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper:last-child input,
+.page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper:last-child input {border-right: 1px solid #ccc}
 
 
 .node-hocvien-form .field-name-field-student-contract {position: relative}
