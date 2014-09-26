@@ -20,37 +20,11 @@ function duhoc_student_admin($id='') {
 
 
 }
-/**
- * @param $existing
- * @param $type
- * @param $theme
- * @param $path
- * @return array
- * Implement hook_theme
- */
-function duhoc_student_theme($existing, $type, $theme, $path) {
-  return array(
-    'country_node_form' => array(
-      'render element' => 'element',
-    ),
-    'course_node_form' => array(
-      'render element' => 'form',
-      'path' => drupal_get_path('module', 'duhoc_student').'/templates',
-      'template' => 'course'
-    ),
-
-  );
-}
-function theme_country_node_form($form) {
-
-
-}
 
 /**
  * im plement hook_form_alter
  */
 function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
-
  if($form_id =='hocvien_node_form') {
    if(!isset($form_state['build_info']['files'])){
      $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
@@ -78,6 +52,7 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      $form['field_student_contract']['#access'] = false;
    }
    if(arg(3) == 'contract') {
+     $form['field_student_contract']['#suffix'] = '<a href="#">print</a>';
      $form['field_student_basic']['#access'] = false;
      $form['field_student_visa']['#access'] = false;
      $form['field_student_pathway']['#access'] = false;
@@ -88,20 +63,20 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      $form['field_student_pathway']['#access'] = false;
    }
  }
-
   if($form_id == 'contract_node_form') {
     if(!isset($form_state['build_info']['files'])){
       $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
     }
   }
   if($form_id == 'course_node_form') {
+    $form['title']['#access'] = false;
     if(!isset($form_state['build_info']['files'])){
       $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
     }
   }
   if($form_id == 'country_node_form') {
 
-    $form['field_country']['#access'] = false;
+    $form['title']['#access'] = false;
     if(!isset($form_state['build_info']['files'])){
       $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
     }

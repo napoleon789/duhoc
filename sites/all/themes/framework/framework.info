@@ -5,6 +5,10 @@ engine = phptemplate
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/duhoc.css
 
+
+scripts[] = js/duhoc.js
+
+
 regions[header]         = Header
 regions[navigation]     = Navigation
 regions[highlighted]    = Highlighted

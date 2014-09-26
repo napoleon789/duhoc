@@ -22,7 +22,7 @@ function duhoc_menu_menu() {
     'title' => 'Student',
     'page callback' => 'duhoc_menu_list_student',
     'access arguments' => array('access content'),
-    'type' => MENU_LOCAL_TASK,
+    'type' =>  MENU_CALLBACK,
     'weight' => 1,
   );
   $items['quanly/reports'] = array(
