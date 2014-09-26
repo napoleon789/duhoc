@@ -17,13 +17,27 @@
 .node-hocvien-form .form-wrapper .field-type-datestamp fieldset .fieldset-wrapper{ background: none; border: none;padding: 0; margin: 0}
 .node-hocvien-form .form-wrapper .field-type-datestamp legend{ font-weight: bold;font-size: 0.929em;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;text-shadow: none;}
 .node-hocvien-form .form-wrapper .field-type-datestamp .date-padding label{ display: none}
+
+.field-name-field-student-contract tbody tr,
+.field-name-field-student-pathway fieldset,
+.node-hocvien-form .field-name-field-student-basic fieldset{background: #e4e4e4}
+.field-name-field-student-pathway fieldset legend,
+.node-hocvien-form .field-name-field-student-basic fieldset legend{background: #757575;}
+.field-name-field-student-pathway fieldset legend span.fieldset-legend,
+.node-hocvien-form .field-name-field-student-basic fieldset legend  span.fieldset-legend{color: #fff; font-size: 11px}
+
+.field-name-field-student-pathway fieldset .fieldset-wrapper legend span.fieldset-legend,
+.node-hocvien-form .field-name-field-student-basic fieldset .fieldset-wrapper legend span.fieldset-legend{color: inherit; font-size: inherit}
+
 /*PERSONAL INFORMATION*/
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image{ display: inline-block; width: 30%; min-width: 200px; vertical-align: top;}
-.node-hocvien-form .field-name-field-student-basic .field-name-field-image label{display: none}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image label,
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget-data .file-size,
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget-data .file {display: none}
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget{text-align: center}
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-widget-data,
-.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview{float: none; display: block; margin: 0 auto}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview{float: none; display: block; margin:0 auto}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview{margin-top: 20px}
 .node-hocvien-form .field-name-field-student-basic .personal_information{display: inline-block; width: 70%; min-width: 300px;}
 .node-hocvien-form .field-name-field-student-basic .personal_information .form-item{ display: table}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-text .form-type-textfield label,
@@ -33,11 +47,11 @@
 
 .node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset,
 .node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset legend,
-.node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset legend span{ background: #fff; border: none}
+.node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset legend span{ background: #e4e4e4; border: none}
 html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
 
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp{ margin-bottom: 17px}
-.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper{ display: table}
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper{ display: table;background: #e4e4e4}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper legend{position: initial; width: auto; float: left; text-indent: 0; line-height: 1.8;display: table-cell; margin-right: 5px;margin-top: 5px;width: 95px;}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper{ display: table-cell}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper .date-padding{ padding: 0}
@@ -107,7 +121,7 @@ html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
 .field-name-field-student-pathway .pathway_group_4 h3{position: absolute;top: 0; left: 0; margin-top: 0 ;font-size: 18px}
 .field-name-field-student-pathway .pathway_group_4{position: relative;padding-top: 45px;}
 
-.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element{ background: #fff; border: none; display: table}
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element{ background: #e4e4e4; border: none; display: table}
 .field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-element { display: table-cell; float: none}
 .field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-element .form-item { width: 250px;}
 
@@ -130,7 +144,6 @@ html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
 .field-name-field-student-pathway .field-name-field-com-pending .form-item input{ display: table-cell; max-width: 145px}
 .field-name-field-student-pathway .field-name-field-com-pending .form-item input{ max-width: 100px}
 /*CONTRACT*/
-.field-name-field-student-contract tbody tr {background: #fff}
 .field-name-field-student-contract tbody .field-multiple-drag{display: none}
 .field-name-field-student-contract .form-wrapper,
 .field-name-field-student-contract .field-multiple-table .party_b_info .b_groupt_2{margin: 10px 0}
