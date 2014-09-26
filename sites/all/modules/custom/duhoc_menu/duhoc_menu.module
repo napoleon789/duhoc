@@ -147,17 +147,22 @@ function duhoc_menu_menu() {
     'type' => MENU_LOCAL_TASK,
     'weight' => 4,
   );
-
+  $items['export/node/%'] = array(
+    'title' => 'Visa',
+    'page callback' => 'duhoc_menu_export_word',
+    'page arguments' => array(2),
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 4,
+  );
   return $items;
 }
 
-function menu_to_arg($arg) {
-  if ($arg == '%') {
-    return 'none';
-  }
-  else {
-    return $arg;
-  }
+function duhoc_menu_export_word($id) {
+
+  $output = node_load($id);
+  $output = get_object_vars($output);
+  return $output;
 }
 
 function duhoc_menu_admin() {

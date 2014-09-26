@@ -154,3 +154,6 @@ function du_hoc_field__taxonomy_term_reference($variables) {
 
   return $output;
 }
+function du_hoc_preprocess_print($vars) {
+  $vars['content'] = $vars['node'];
+}

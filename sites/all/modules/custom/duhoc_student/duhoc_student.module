@@ -38,11 +38,7 @@ function duhoc_student_theme($existing, $type, $theme, $path) {
       'path' => drupal_get_path('module', 'duhoc_student').'/templates',
       'template' => 'course'
     ),
-    'contract_node_form' => array(
-      'render element' => 'form',
-      'path' => drupal_get_path('module', 'duhoc_student').'/templates',
-      'template' => 'contract'
-    ),
+
   );
 }
 function theme_country_node_form($form) {
@@ -59,6 +55,18 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
    if(!isset($form_state['build_info']['files'])){
      $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
    }
+   $form['actions']['submit'] = array(
+     '#type' => 'submit',
+     '#value' => t('Submit Your Tip'),
+     '#submit' => array('node_form_submit'),
+     '#ajax' => array(
+       'wrapper' => str_replace('_','-',$form['#form_id']),
+       'callback' => 'simone_forms_ajax_callback',
+       'method' => 'replace',
+       'effect' => 'fade'
+     ),
+   );
+
    if(arg(3) == 'basic') {
      $form['field_student_pathway']['#access'] = false;
      $form['field_student_visa']['#access'] = false;
@@ -82,7 +90,9 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
  }
 
   if($form_id == 'contract_node_form') {
-
+    if(!isset($form_state['build_info']['files'])){
+      $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
+    }
   }
   if($form_id == 'course_node_form') {
     if(!isset($form_state['build_info']['files'])){
@@ -90,8 +100,6 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
     }
   }
   if($form_id == 'country_node_form') {
-
-
 
     $form['field_country']['#access'] = false;
     if(!isset($form_state['build_info']['files'])){
@@ -128,4 +136,11 @@ function duhoc_student_node_add () {
   module_load_include('inc', 'node', 'node.pages');
   $form = node_add('country');
   return drupal_render($form);
+}
+
+
+function duhoc_student_export_word() {
+  drupal_add_http_header('Content-type', 'application/vnd.ms-word');
+  drupal_add_http_header('Content-Disposition', 'attachment;Filename=HelloWorld.doc');
+
 }
