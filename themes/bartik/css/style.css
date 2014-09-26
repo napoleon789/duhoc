@@ -1648,11 +1648,3 @@ div.admin-panel .description {
 #footer-wrapper .poll .bar .foreground {
   background-color: #ddd;
 }
-.user_hide .filterable-option  {display:none;}
-#edit-selected {display: none;}
-#edit-options--5 {display: block !important;}
-#edit-options .form-wrapper {display: none;}
-#edit-options #edit-options-php-output-variables {display: block !important;}
-.form-item-options-use-php-setup {display: none;}
-.form-item-options-exclude {display: none;}
-.form-item-options-use-php-click-sortable {display: none;}

@@ -154,14 +154,7 @@ function bartik_field__taxonomy_term_reference($variables) {
 
   return $output;
 }
-function bartik_preprocess_country_node_form(&$variables) {
-  if (!module_exists('nodeformcols')) {
-    $variables['sidebar'] = array();
-    $variables['title'] = $variables['form']['title'];
-    $variables['country'] = $variables['form']['field_country'];
-    $variables['buttons'] = $variables['form']['actions'];
-  }
-}
+
 function bartik_preprocess_course_node_form(&$variables) {
   if (!module_exists('nodeformcols')) {
     $variables['sidebar'] = array();

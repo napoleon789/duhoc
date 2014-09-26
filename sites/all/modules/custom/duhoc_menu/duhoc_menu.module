@@ -147,7 +147,7 @@ function duhoc_menu_menu() {
     'type' => MENU_LOCAL_TASK,
     'weight' => 4,
   );
-  $items['export/node/%'] = array(
+  $items['export/hocvien/%'] = array(
     'title' => 'Visa',
     'page callback' => 'duhoc_menu_export_word',
     'page arguments' => array(2),
