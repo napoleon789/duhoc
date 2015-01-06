@@ -1,0 +1,69 @@
+<?php
+
+/*
+ * implement hook_menu
+ */
+function duhoc_report_menu() {
+  $items = array();
+  $items['add/operator'] = array(
+    'title' => 'Add field',
+    'page callback' => 'duhoc_report_add_operator',
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+function duhoc_report_add_operator() {
+  $view = views_get_view('new_views');
+  $view->set_display('default');
+  $op = $view -> display['default'];
+  $name = $op ->display_options['fields']['php']['label'] ;
+  $op ->display_options['fields']['php']['label'] = $name .'ten cua ban';
+  $view->set_items_per_page(4);
+  $view->pre_execute();
+  $view->execute();
+  return $view->render();
+}
+
+
+function duhoc_report_views_pre_execute(&$view) {
+
+}
+
+function duhoc_report_form_alter(&$form, &$form_state, $form_id) {
+
+  global $user;
+ // if (isset($user ->roles[8])) {
+
+    if($form_id == 'views_ui_add_item_form') {
+      $form['options']['name']['views.php']['#description'] ='Operator';
+      $form['options']['name']['views.php']['#title'] ='Trường tính toán';
+      $form['options']['name']['views.php']['#prefix'] = '<div class="tinhtoan">';
+      $form['options']['name']['views.php']['#suffix'] = '</div>';
+      $form['options']['name']['#prefix'] = '<div class="add_field">';
+      $form['options']['name']['#suffix'] = '</div>';
+    }
+    if($form_id =='views_ui_config_item_form') {
+      $form['#title'] = 'van ha';
+      $form['options']['label']['#default_value'] = 'label';
+      $form['options']['#prefix'] = '<div class="add_php">';
+      $form['options']['#suffix'] = '</div>';
+    }
+  //}
+
+  if($form_id == 'views_ui_config_item_form'){
+    // put as first my custom submission function
+    array_unshift($form['#submit'], 'form_report_submit_custom' );
+  }
+}
+
+function duhoc_report_export_to_excel($content) {
+  header("Content-Type:   application/vnd.ms-excel; charset=utf-8");
+  header("Content-Disposition: attachment; filename=Report.xls");  //File name extension was wrong
+  header("Expires: 0");
+  header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+  header("Cache-Control: private",false);
+  echo $content;
+  exit;
+}

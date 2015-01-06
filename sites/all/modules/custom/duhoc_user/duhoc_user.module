@@ -1,0 +1,42 @@
+<?php
+function duhoc_user_init() {
+  if(isset($_POST['ajax_html_ids'])) {
+    unset($_POST['ajax_html_ids']);
+  }
+}
+/*
+ * implement hook_menu
+ */
+
+function duhoc_user_menu() {
+  $items['user/%/target'] = array(
+    'title' => 'Targets',
+    'page callback' => 'duhoc_user_target',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  return $items;
+}
+
+function duhoc_user_target($uid = '') {
+  module_load_include('inc', 'user', 'user.pages');
+  $account = user_load($uid);
+  $form =  drupal_get_form('user_profile_form', $account);
+  // $form = '<div class="clear-form goldprice-sxht">' . $form . '</div>';
+  return $form;
+}
+
+function duhoc_user_form_alter(&$form, &$form_state, $form_id) {
+
+  if(!isset($form_state['build_info']['files'])){
+    $form_state['build_info']['files'] = array("menu" => "modules/user/user.pages.inc");
+  }
+
+  if($form_id == 'user_profile_form' && arg(2) == 'target') {
+    $form['picture']['#access'] = false;
+    $form['account']['#access'] = false;
+    $form['signature_settings']['#access'] = false;
+  }
+}

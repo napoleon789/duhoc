@@ -60,7 +60,6 @@ function views_php_form_element($handler, $checkbox = FALSE, $input, $variables 
     // @todo #tree => FALSE doesn't work here.
     '#parents' => array('options'),
   );
-
   if (!empty($checkbox)) {
     list($checkbox_name, $checkbox_title, $checkbox_description) = $checkbox;
     $checkbox = array(

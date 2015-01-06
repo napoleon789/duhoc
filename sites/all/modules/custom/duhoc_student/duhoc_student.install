@@ -1,0 +1,47 @@
+<?php
+function duhoc_student_schema() {
+ $schema['contract_student'] = array(
+    'description' => t('The base table for status contract.'),
+    'fields' => array(
+      'tt' => array(
+        'description' => t('The primary identifier for a node.'),
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE),
+      'nid' => array(
+        'description' => t('The current {node_revisions}.vid version identifier.'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0),
+ 'cid' => array(
+        'description' => t('save contract ID'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0),
+ 'uid' => array(
+        'description' => t('history user save contract.'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0),
+      ),
+
+
+    'primary key' => array('tt'),
+    );
+
+  return $schema;
+}
+
+
+//function duhoc_student_install() {
+  // Create my tables.
+//  drupal_install_schema('duhoc_student');
+//}
+
+function duhoc_student_uninstall() {
+  // Drop my tables.
+  drupal_uninstall_schema('duhoc_student');
+}

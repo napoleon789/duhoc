@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * implement hook_init
+ */
+
+function duhoc_chart_init() {
+  drupal_add_js(drupal_get_path('module','duhoc_chart').'/misc/jsapi');
+}
+
+/**
+ * implement hook block_info
+ */
+
+function duhoc_chart_block_info() {
+  $blocks['chart_colum_home'] = array(
+    'info' => t('Chart colum home'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * implement hook_block_view
+ */
+
+function duhoc_chart_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'chart_colum_home':
+      $block['content'] = duhoc_chart_colum();
+      break;
+  }
+  return $block;
+}
+
+function duhoc_chart_colum() {
+  $timenow = time();
+  $ynow = date('Y',$timenow);
+  $mnow = date('m',$timenow);
+
+  $js = '
+      google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ["Tháng", "Năm Nay", "Năm trước"],
+    ["T.8",  1000,      400],
+    ["T.9",  1170,      460],
+    ["T.10",  660,       1120],
+    ["T.11",  1030,      540]
+  ]);
+
+  var options = {
+    title: "Chart study",
+    hAxis: {title: "Tháng", titleTextStyle: {color: "red"}}
+  };
+
+  var chart = new google.visualization.ColumnChart(document.getElementById("chart_div"));
+
+  chart.draw(data, options);
+
+}
+
+  ';
+
+  drupal_add_js($js, array('scope' => 'footer', 'type' => 'inline'));
+  $output = ' <div id="chart_div" style="width: 900px; height: 500px;"></div>';
+  return $output;
+}

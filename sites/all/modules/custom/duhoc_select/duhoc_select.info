@@ -1,0 +1,10 @@
+name = Duhoc Select	
+description = "filter type data to field"
+package = Student
+core = 7.x
+
+version = "7.x-3.0"
+core = "7.x"
+project = "student"
+datestamp = "1359651687"
+

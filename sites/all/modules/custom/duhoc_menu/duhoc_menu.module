@@ -22,7 +22,7 @@ function duhoc_menu_menu() {
     'title' => 'Student',
     'page callback' => 'duhoc_menu_list_student',
     'access arguments' => array('access content'),
-    'type' =>  MENU_CALLBACK,
+    'type' =>  MENU_LOCAL_TASK,
     'weight' => 1,
   );
   $items['quanly/reports'] = array(
@@ -73,14 +73,14 @@ function duhoc_menu_menu() {
     'weight' => 0,
   );
   $items['quanly/setting/contract'] = array(
-    'title' => 'Add contract template',
-    'page callback' => 'duhoc_menu_node_add',
+    'title' => 'List contract',
+    'page callback' => 'duhoc_menu_list_contract',
     'access arguments' => array('access content'),
     'type' => MENU_LOCAL_TASK,
     'weight' => 1,
   );
-  $items['quanly/setting/course'] = array(
-    'title' => 'Add course',
+  $items['quanly/setting/ads'] = array(
+    'title' => 'Channel marketing',
     'page callback' => 'duhoc_student_admin',
     'page arguments' => array("13"),
     'access arguments' => array('access content'),
@@ -123,16 +123,17 @@ function duhoc_menu_menu() {
     'type' => MENU_LOCAL_TASK,
     'weight' => 1,
   );
-  $items['quanly/student/%/pathway'] = array(
-    'title' => 'Pathway',
+
+  $items['quanly/student/%/contract'] = array(
+    'title' => 'Contract',
     'page callback' => 'duhoc_student_admin',
     'page arguments' => array(2),
     'access arguments' => array('access content'),
     'type' => MENU_LOCAL_TASK,
     'weight' => 2,
   );
-  $items['quanly/student/%/contract'] = array(
-    'title' => 'Contract',
+  $items['quanly/student/%/pathway'] = array(
+    'title' => 'Pathway',
     'page callback' => 'duhoc_student_admin',
     'page arguments' => array(2),
     'access arguments' => array('access content'),
@@ -155,18 +156,37 @@ function duhoc_menu_menu() {
     'type' => MENU_LOCAL_TASK,
     'weight' => 4,
   );
+
+  $items['mang'] = array(
+    'title' => 'Visa',
+    'page callback' => 'duhoc_student_contract',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 4,
+  );
   return $items;
 }
 
 function duhoc_menu_export_word($id) {
-
+  global $user;
   $output = node_load($id);
+  $cid = $output -> field_select_contract['und'][0]['value'];
+  $uid = $user -> uid;
+  $query = db_query("SELECT nid,cid FROM {contract_student} WHERE nid =:nid AND cid = :cid",array(':nid' =>$id,':cid' =>$cid)) -> rowCount();
+  if($query == 0) {
+    $record = array (
+      'nid' => $id,
+      'cid' => $cid,
+      'uid' => $uid,
+    );
+    drupal_write_record('contract_student',$record);
+  }
   $output = get_object_vars($output);
   return $output;
 }
 
 function duhoc_menu_admin() {
-  return '123';
+  return '';
 }
 
 //page user
@@ -182,7 +202,7 @@ function duhoc_menu_user() {
   $result = $sql_query->orderByHeader($header)->execute();
 
   foreach($result as $res){
-    $edit = '<a href="#"> Edit</a>';
+    $edit = '<a href="/user/'.$res->uid.'/edit"> Edit</a>';
     $delete = '<a href="#"> Delete</a>';
     $act = $edit . ' | '.$delete;
     $rows[] = array($res->uid,$res->name,$res->r_name ,$act);
@@ -207,7 +227,22 @@ function duhoc_menu_node_add () {
 }
 
 function duhoc_menu_list_student() {
+  global $base_url;
+  $output = views_embed_view('page_student','default');
+  $output .= '<a href="'.$base_url.'/node/add/hocvien">Add student</a>';
+  return $output;
+}
 
-   $output = views_embed_view('page_student','default');
-   return $output;
+function duhoc_menu_reports() {
+  global $base_url;
+  $output = '<a href="/admin/structure/views/nojs/add-item/new_views/default/field"> Add</a>';
+  $output .= views_embed_view('new_views','default');
+  return $output;
+}
+
+function duhoc_menu_list_contract() {
+  global $base_url;
+  $output = views_embed_view('list_contract','default');
+  $output .= '<a href="'.$base_url.'/node/add/contract">Add contract</a>';
+  return $output;
 }

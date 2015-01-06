@@ -220,6 +220,16 @@ html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
 .field-name-field-student-contract input,
 .field-name-field-student-contract label{ font-size: 13px}
 
-
+/* Add  field to view */
+.add_field .filterable-option .form-item {display: none}
+.tinhtoan .filterable-option .form-item {display: block;}
+.add_php .form-item {display: none;}
+.add_php fieldset {display: none;}
+.add_php fieldset#edit-options-php-output-variables {display: block;}
+.add_php #edit-options--5 .form-item {display: block;}
+.add_php .description {display: none;}
+.add_php .form-item-options-element-label-colon {display: none !important;}
+#edit-dynamic-field-wrapper .tabledrag-toggle-weight-wrapper {display: none;}
+#views-dynamic-fields-filters-table-sort .description {display: none;}
 
 

@@ -1,0 +1,68 @@
+<?php
+/*
+ * implement hook_menu
+ */
+
+ function duhoc_select_menu() {
+   $items = array();
+   $items['select'] = array(
+     'title' => 'Filter data',
+     'page callback' => 'duhoc_select_list_contract',
+     'access arguments' => array('access content'),
+     'type' => MENU_NORMAL_ITEM,
+   );
+   $items['quanly/student/%/contract/%'] = array(
+     'title' => 'Filter data',
+     'page callback' => 'duhoc_select_update_contract',
+     'access arguments' => array('access content'),
+     'type' => MENU_NORMAL_ITEM,
+   );
+   return $items;
+ }
+//list contract
+function duhoc_select_list_contract() {
+  $sql_query = db_select('node', 'n')
+    ->fields('n', array('title','nid'))
+    ->condition('type','contract','=')
+    ->execute();
+  foreach($sql_query as $rows) {
+    $res[$rows->nid] = $rows->title;
+  }
+  return $res;
+}
+
+function duhoc_select_update_contract() {
+  $node = node_load(arg(2));
+  $node->field_select_contract['und'][0]['value'] = arg(4);
+  node_save($node);
+}
+
+/*
+ * implement hook_form_alter
+ */
+function duhoc_select_form_alter(&$form, &$form_state, $form_id) {
+  $form['field_select_contract']['#suffix'] ='<div class="load"></div>';
+}
+
+/*
+ * implement hook_node_presave
+ */
+function duhoc_select_node_presave($node) {
+  if($node -> type == 'hocvien') {
+    $items = field_get_items('node', $node, 'field_student_basic');
+    foreach ($items as $item) {
+      $fc = field_collection_field_get_entity($item);
+      $name = $fc->field_student_full_name['und'][0]['value'];
+      $node -> title = $name;
+    }
+    $node -> title = $name;
+  }
+}
+/*
+ * implement hook_node_insert
+ */
+function duhoc_select_node_insert($node) {
+  if($node -> type =='hocvien') {
+    drupal_goto('/quanly/student/'.$node->nid.'/basic');
+  }
+}

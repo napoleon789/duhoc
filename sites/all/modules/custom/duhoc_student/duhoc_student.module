@@ -5,20 +5,17 @@
  */
 
 function duhoc_student_init() {
-  if(isset($_POST['ajax_html_ids']))
+  if(isset($_POST['ajax_html_ids'])) {
     unset($_POST['ajax_html_ids']);
+  }
 }
 
-
 function duhoc_student_admin($id='') {
-
     module_load_include('inc', 'node', 'node.pages');
     $node = node_load($id);
     $form = node_page_edit($node);
    // $form = '<div class="clear-form goldprice-sxht">' . $form . '</div>';
     return $form;
-
-
 }
 
 /**
@@ -26,41 +23,77 @@ function duhoc_student_admin($id='') {
  */
 function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
  if($form_id =='hocvien_node_form') {
-   if(!isset($form_state['build_info']['files'])){
-     $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
-   }
-   $form['actions']['submit'] = array(
-     '#type' => 'submit',
-     '#value' => t('Submit Your Tip'),
-     '#submit' => array('node_form_submit'),
-     '#ajax' => array(
-       'wrapper' => str_replace('_','-',$form['#form_id']),
-       'callback' => 'simone_forms_ajax_callback',
-       'method' => 'replace',
-       'effect' => 'fade'
-     ),
-   );
+   $form['field_select_contract']['#access'] = false;
 
-   if(arg(3) == 'basic') {
+   $form['title']['#access'] = false;
+
+   $current_url = arg(3);
+   $form['current_url'] = array('#type' => 'hidden', '#value' => $current_url);
+   $m = $form_state['input']['current_url'];
+
+   if(arg(1) == 'add' && arg(2) == 'hocvien') {
+     $form['field_student_basic']['#access'] = true;
+   }
+   if(arg(3) == 'basic' ||(isset($m) && $m =='basic')) {
      $form['field_student_pathway']['#access'] = false;
      $form['field_student_visa']['#access'] = false;
      $form['field_student_contract']['#access'] = false;
+     if(!isset($form_state['build_info']['files'])){
+       $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
+     }
+    /* $form['actions']['submit'] = array(
+       '#type' => 'submit',
+       '#value' => t('Save'),
+       '#submit' => array('node_form_submit'),
+       '#ajax' => array(
+         'wrapper' => str_replace('_','-',$form['#form_id']),
+         'callback' => 'simone_forms_ajax_callback',
+         'method' => 'replace',
+         'effect' => 'fade'
+       ),
+     );*/
    }
-   if(arg(3) == 'pathway') {
-     $form['field_student_basic']['#access'] = false;
+   if(arg(3) == 'pathway' || (isset($m) && $m == 'pathway')) {
      $form['field_student_visa']['#access'] = false;
      $form['field_student_contract']['#access'] = false;
-   }
-   if(arg(3) == 'contract') {
-     $form['field_student_contract']['#suffix'] = '<a href="#">print</a>';
      $form['field_student_basic']['#access'] = false;
+     if(!isset($form_state['build_info']['files'])){
+       $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
+     }
+
+   }
+   if(arg(3) == 'contract' || (isset($m) && $m =='contract')) {
+     $form['field_student_pathway']['#access'] = false;
      $form['field_student_visa']['#access'] = false;
-     $form['field_student_pathway']['#access'] = false;
-   }
-   if(arg(3) == 'visa') {
      $form['field_student_basic']['#access'] = false;
-     $form['field_student_contract']['#access'] = false;
+     $nid = arg(2);
+     $query = db_query("SELECT cid FROM {contract_student} WHERE nid =:nid",array('nid' => $nid));
+     $number = $query -> rowCount();
+     if($number >0 ) {
+       $his = '';
+      $record =   $query -> fetchAll();
+      foreach($record as $row) {
+        $node = node_load($row ->cid);
+        $his .= '<div > <a href="/export/hocvien/'.$nid.'/'.$row -> cid.'">'.$node -> title.'</a></div>';
+      }
+       $form['field_student_contract']['#prefix'] = $his;
+     }
+
+     if(!isset($form_state['build_info']['files'])){
+       $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
+     }
+     $form['field_student_contract']['#suffix'] = '<a href="/export/hocvien/'.arg(2).'">print</a>';
+     $form['field_select_contract']['#access'] = true;
+   }
+   if((isset($m) && $m == 'visa') || arg(3) == 'visa') {
      $form['field_student_pathway']['#access'] = false;
+
+     $form['field_student_contract']['#access'] = false;
+     $form['field_student_basic']['#access'] = false;
+     if(!isset($form_state['build_info']['files'])){
+       $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
+     }
+
    }
  }
   if($form_id == 'contract_node_form') {
@@ -82,7 +115,7 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
     }
       $form['actions']['submit'] = array(
         '#type' => 'submit',
-        '#value' => t('Submit Your Tip'),
+        '#value' => t('Save'),
         '#submit' => array('node_form_submit'),
         '#ajax' => array(
           'wrapper' => str_replace('_','-',$form['#form_id']),
@@ -92,19 +125,13 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
         ),
       );
   }
-
 }
 function simone_forms_ajax_callback(&$form, &$form_state) {
-
-  if(form_get_errors()){
-    return $form;
-  }
-  else{
-    return $form;
-  }
+  $form_state['rebuild'] = TRUE;
+  return $form;
 }
 function duhoc_student_add() {
-  drupal_set_message('xin chao');
+  drupal_set_message('Submit success');
 }
 
 function duhoc_student_node_add () {
@@ -113,9 +140,37 @@ function duhoc_student_node_add () {
   return drupal_render($form);
 }
 
-
 function duhoc_student_export_word() {
   drupal_add_http_header('Content-type', 'application/vnd.ms-word');
-  drupal_add_http_header('Content-Disposition', 'attachment;Filename=HelloWorld.doc');
+  drupal_add_http_header('Content-Disposition', 'attachment;Filename=contract.doc');
+}
+
+function duhoc_student_contract() {
+  $sql_query = db_select('node', 'n')
+            ->fields('n', array('nid', 'title'))
+            ->condition('type','contract','=')
+             ->execute()
+             ->fetchAssoc();
+  return $sql_query;
+}
+
+/**
+ * implement hook_node_insert
+ */
+
+function duhoc_student_node_update($node) {
+   $a = arg(4);
+   if($node -> type == 'hocvien') {
+     if(arg(1) == 'student' && !isset($a)) {
+       $path = current_path();
+       drupal_goto($path);
+       drupal_set_message();
+     }
+   }
+}
+
+//Save status contract
+
+function duhoc_student_save_contract($nid,$cid) {
 
 }

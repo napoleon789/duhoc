@@ -248,6 +248,17 @@ html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
 .field-name-field-student-contract label{ font-size: 13px}
 */
 
+.messages.error {display:none; }
 
-
-
+/* Add  field to view */
+.filterable-option .form-item {display: none}
+.tinhtoan .filterable-option .form-item {display: block;}
+#edit-dynamic-field-wrapper .tabledrag-toggle-weight-wrapper {display: none;}
+#views-dynamic-fields-filters-table-sort .description {display: none;}
+.page-quanly-student .tabs.secondary {display: none !important;}
+.page-quanly-student.page-quanly-student- .tabs.secondary {display: block !important;}
+#edit-field-student-basic-und-0-field-detail-chanel label {display: none;}
+#edit-field-student-basic-und-0-field-detail-chanel-und {display: none;}
+#field-student-pathway-add-more-wrapper .description {display: none;}
+.multiple-field-com-received-date fieldset {border: none;}
+.date-padding label {display: none;}
