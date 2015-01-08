@@ -2,263 +2,1009 @@
  * Created by TaoLe
  * Email : hopthucualetao@gmail.com
  */
-input { margin: 2px 0; padding: 4px;}
+/* line 5, sass/_css-old.scss */
+input {
+  margin: 2px 0;
+  padding: 4px;
+}
+
+/* line 7, sass/_css-old.scss */
 input,
-textarea {font-size: 0.929em;}
-textarea {line-height: 1.5;}
+textarea {
+  font-size: 0.929em;
+}
+
+/* line 8, sass/_css-old.scss */
+textarea {
+  line-height: 1.5;
+}
+
+/* line 10, sass/_css-old.scss */
 textarea.form-textarea,
-select.form-select {  padding: 4px;}
+select.form-select {
+  padding: 4px;
+}
+
+/* line 13, sass/_css-old.scss */
 input.form-text,
 textarea.form-textarea,
-select.form-select { border: 1px solid #ccc;}
-label { display: block; font-weight: normal;}
-#container { margin: 0 auto;padding: 0 10px; width: 980px;}
+select.form-select {
+  border: 1px solid #ccc;
+}
+
+/* line 14, sass/_css-old.scss */
+label {
+  display: block;
+  font-weight: normal;
+}
+
+/* line 15, sass/_css-old.scss */
+#container {
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 1004px;
+}
+
+/* line 16, sass/_css-old.scss */
+* {
+  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*--- FONT-FACE ---*/
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url("../fonts/RobotoCondensedRegular_0.eot");
+  src: url("../fonts/RobotoCondensedRegular_0.eot") format("embedded-opentype"), url("../fonts/RobotoCondensedRegular_0.woff2") format("woff2"), url("../fonts/RobotoCondensedRegular_0.woff") format("woff"), url("../fonts/RobotoCondensedRegular_0.ttf") format("truetype"), url("../fonts/RobotoCondensedRegular_0.svg#RobotoCondensedRegular_0") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url("../fonts/RobotoCondensedItalic_0.eot");
+  src: url("../fonts/RobotoCondensedItalic_0.eot") format("embedded-opentype"), url("../fonts/RobotoCondensedItalic_0.woff2") format("woff2"), url("../fonts/RobotoCondensedItalic_0.woff") format("woff"), url("../fonts/RobotoCondensedItalic_0.ttf") format("truetype"), url("../fonts/RobotoCondensedItalic_0.svg#RobotoCondensedItalic_0") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url("../fonts/RobotoCondensedBoldItalic_0.eot");
+  src: url("../fonts/RobotoCondensedBoldItalic_0.eot") format("embedded-opentype"), url("../fonts/RobotoCondensedBoldItalic_0.woff2") format("woff2"), url("../fonts/RobotoCondensedBoldItalic_0.woff") format("woff"), url("../fonts/RobotoCondensedBoldItalic_0.ttf") format("truetype"), url("../fonts/RobotoCondensedBoldItalic_0.svg#RobotoCondensedBoldItalic_0") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url("../fonts/RobotoCondensedBold_0.eot");
+  src: url("../fonts/RobotoCondensedBold_0.eot") format("embedded-opentype"), url("../fonts/RobotoCondensedBold_0.woff2") format("woff2"), url("../fonts/RobotoCondensedBold_0.woff") format("woff"), url("../fonts/RobotoCondensedBold_0.ttf") format("truetype"), url("../fonts/RobotoCondensedBold_0.svg#RobotoCondensedBold_0") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*--- E: FONT-FACE ---*/
 /*SETTING*/
-.page-quanly .vertical-tabs.clearfix{display: none}
-.page-quanly .form-actions input{margin-right: 15px}
+/* line 70, sass/_css-old.scss */
+.page-quanly .vertical-tabs.clearfix {
+  display: none;
+}
+
+/* line 71, sass/_css-old.scss */
+.page-quanly .form-actions input {
+  margin-right: 15px;
+}
+
+/* line 73, sass/_css-old.scss */
 .page-quanly-setting .node-country-form .field-name-field-country thead,
-.page-quanly-setting .node-course-form .field-name-field-course thead{display: none}
+.page-quanly-setting .node-course-form .field-name-field-course thead {
+  display: none;
+}
+
+/* line 75, sass/_css-old.scss */
 .page-quanly-setting .node-country-form .field-name-field-country tbody td,
-.page-quanly-setting .node-course-form .field-name-field-course tbody td{position: relative}
+.page-quanly-setting .node-course-form .field-name-field-course tbody td {
+  position: relative;
+}
+
+/* line 77, sass/_css-old.scss */
 .page-quanly-setting .node-country-form .field-name-field-country tbody td input.form-submit,
-.page-quanly-setting .node-course-form .field-name-field-course tbody td input.form-submit{position: absolute;right: 2px;bottom: 0}
-.page-quanly-setting .node-country-form .field-name-field-country .required-fields ,
-.page-quanly-setting .node-course-form .field-name-field-course .required-fields{ display: table;width: 700px}
+.page-quanly-setting .node-course-form .field-name-field-course tbody td input.form-submit {
+  position: absolute;
+  right: 2px;
+  bottom: 0;
+}
+
+/* line 79, sass/_css-old.scss */
+.page-quanly-setting .node-country-form .field-name-field-country .required-fields,
+.page-quanly-setting .node-course-form .field-name-field-course .required-fields {
+  display: table;
+  width: 700px;
+}
+
+/* line 81, sass/_css-old.scss */
 .page-quanly-setting .node-country-form .field-name-field-country .required-fields h3,
-.page-quanly-setting .node-course-form .field-name-field-course .required-fields h3{display: none;}
+.page-quanly-setting .node-course-form .field-name-field-course .required-fields h3 {
+  display: none;
+}
+
+/* line 83, sass/_css-old.scss */
 .page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper,
-.page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper{ display: table-cell;}
-.page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper input{border-right: none;text-align: center;width: 100%;padding: 4px 0}
+.page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper {
+  display: table-cell;
+}
+
+/* line 84, sass/_css-old.scss */
+.page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper input {
+  border-right: none;
+  text-align: center;
+  width: 100%;
+  padding: 4px 0;
+}
+
+/* line 86, sass/_css-old.scss */
 .page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper label,
-.page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper label{display: none}
+.page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper label {
+  display: none;
+}
+
+/* line 88, sass/_css-old.scss */
 .page-quanly-setting .node-country-form .field-name-field-country .field-multiple-table .draggable:first-child .required-fields .form-wrapper label,
-.page-quanly-setting .node-course-form .field-name-field-course .field-multiple-table .draggable:first-child .required-fields .form-wrapper label{display: block;text-indent: 5px;}
+.page-quanly-setting .node-course-form .field-name-field-course .field-multiple-table .draggable:first-child .required-fields .form-wrapper label {
+  display: block;
+  text-indent: 5px;
+}
 
-.page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper input{border-right: none;text-align: center}
+/* line 90, sass/_css-old.scss */
+.page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper input {
+  border-right: none;
+  text-align: center;
+}
+
+/* line 92, sass/_css-old.scss */
 .page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper label,
-.page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper label{text-align: center}
+.page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper label {
+  text-align: center;
+}
+
+/* line 94, sass/_css-old.scss */
 .page-quanly-setting .node-country-form .field-name-field-country .required-fields .form-wrapper:last-child input,
-.page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper:last-child input {border-right: 1px solid #ccc}
+.page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper:last-child input {
+  border-right: 1px solid #ccc;
+}
 
+/* line 97, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-contract {
+  position: relative;
+}
 
-.node-hocvien-form .field-name-field-student-contract {position: relative}
+/* line 100, sass/_css-old.scss */
 .node-hocvien-form .form-wrapper .field-type-datestamp legend,
 .node-hocvien-form .form-wrapper .field-type-datestamp fieldset,
-.node-hocvien-form .form-wrapper .field-type-datestamp fieldset .fieldset-wrapper{ background: none; border: none;padding: 0; margin: 0}
-.node-hocvien-form .form-wrapper .field-type-datestamp .date-padding label{ display: none}
+.node-hocvien-form .form-wrapper .field-type-datestamp fieldset .fieldset-wrapper {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 101, sass/_css-old.scss */
+.node-hocvien-form .form-wrapper .field-type-datestamp .date-padding label {
+  display: none;
+}
+
 /*PERSONAL INFORMATION*/
-.node-hocvien-form .field-name-field-student-basic .field-name-field-image{ display: inline-block; width: 30%; min-width: 200px; vertical-align: top;}
+/* line 103, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image {
+  display: inline-block;
+  width: 30%;
+  min-width: 200px;
+  vertical-align: top;
+}
+
+/* line 106, sass/_css-old.scss */
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image label,
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget-data .file-size,
-.node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget-data .file {display: none}
-.node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget{text-align: center}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget-data .file {
+  display: none;
+}
+
+/* line 107, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget {
+  text-align: center;
+}
+
+/* line 109, sass/_css-old.scss */
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-widget-data,
-.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview{float: none; display: block; margin:0 auto}
-.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview{margin-top: 20px}
-.node-hocvien-form .field-name-field-student-basic .personal_information{display: inline-block;margin-left: 30px}
-.node-hocvien-form .field-name-field-student-basic .personal_information .form-item{ display: table;margin-bottom: 0}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview {
+  float: none;
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 110, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview {
+  margin-top: 20px;
+}
+
+/* line 111, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .personal_information {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+/* line 112, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .personal_information .form-item {
+  display: table;
+  margin-bottom: 0;
+}
+
+/* line 115, sass/_css-old.scss */
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-text .form-type-textfield label,
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-number-integer label,
-.node-hocvien-form .field-name-field-student-basic .personal_information .form-item input{display: table-cell; min-width: 103px}
-.node-hocvien-form .field-name-field-student-basic .personal_information .field-name-field-student-full-name .form-item{ margin: 0}
+.node-hocvien-form .field-name-field-student-basic .personal_information .form-item input {
+  display: table-cell;
+  min-width: 103px;
+}
 
+/* line 116, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-name-field-student-full-name .form-item {
+  margin: 0;
+}
+
+/* line 120, sass/_css-old.scss */
 .node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset,
 .node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset legend,
-.node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset legend span{ background: #fff; border: none;padding-top: 0;margin: 0; padding-bottom: 0;}
-html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
+.node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset legend span {
+  background: #fff;
+  border: none;
+  padding-top: 0;
+  margin: 0;
+  padding-bottom: 0;
+}
 
-.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp{ margin-top: 17px}
-.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper{ display: table}
-.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper legend{position: initial; width: auto; float: left; text-indent: 0; line-height: 1.8;display: table-cell; margin-right: 5px;margin-top: 5px;}
-.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper{ display: table-cell}
-.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper .date-padding{ padding: 0}
-.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper .date-padding .description{display: none}
+/* line 121, sass/_css-old.scss */
+html.js fieldset.collapsible .fieldset-legend {
+  padding-left: 0;
+  background: none;
+}
+
+/* line 123, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp {
+  margin-top: 17px;
+}
+
+/* line 124, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper {
+  display: table;
+}
+
+/* line 125, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper legend {
+  position: initial;
+  width: auto;
+  float: left;
+  text-indent: 0;
+  line-height: 1.8;
+  display: table-cell;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+/* line 126, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper {
+  display: table-cell;
+}
+
+/* line 127, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper .date-padding {
+  padding: 0;
+}
+
+/* line 128, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper .date-padding .description {
+  display: none;
+}
+
+/* line 130, sass/_css-old.scss */
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper .date-padding input,
-.node-hocvien-form .field-name-field-student-basic .personal_information .field-name-field-student-phone input{width: 453px}
+.node-hocvien-form .field-name-field-student-basic .personal_information .field-name-field-student-phone input {
+  width: 453px;
+}
 
-.node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset{margin-top: 30px}
-.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper{ display: table}
-.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper label{border: 1px solid #ccc;border-bottom: 0;text-align: center;border-right: none;}
-.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .form-wrapper{ display: table-cell;}
+/* line 132, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset {
+  margin-top: 30px;
+}
+
+/* line 133, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper {
+  display: table;
+}
+
+/* line 134, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper label {
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  text-align: center;
+  border-right: none;
+}
+
+/* line 135, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .form-wrapper {
+  display: table-cell;
+}
+
+/* line 137, sass/_css-old.scss */
 .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .form-wrapper input,
-.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level select{ width: 120px;border-right: none; margin:0; text-align: center}
-.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-current-school input{width: 400px}
-.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level .description{display: none}
-.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level select{padding-bottom:3px;border-right:1px solid #ccc }
-.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level label{border-right:1px solid #ccc }
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level select {
+  width: 120px;
+  border-right: none;
+  margin: 0;
+  text-align: center;
+}
 
+/* line 138, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-current-school input {
+  width: 400px;
+}
+
+/* line 139, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level .description {
+  display: none;
+}
+
+/* line 140, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level select {
+  padding-bottom: 3px;
+  border-right: 1px solid #cccccc;
+}
+
+/* line 141, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level label {
+  border-right: 1px solid #cccccc;
+}
+
+/* line 146, sass/_css-old.scss */
 .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper,
 .node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper,
 .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item,
-.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item{ display: table}
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item {
+  display: table;
+}
+
+/* line 149, sass/_css-old.scss */
 .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper,
 .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item select,
-.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item label{ display: table-cell; width: 50%;padding-right: 45px}
-.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item select{ width: 160px}
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item label {
+  display: table-cell;
+  width: 50%;
+  padding-right: 45px;
+}
 
+/* line 150, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item select {
+  width: 160px;
+}
 
+/* line 155, sass/_css-old.scss */
 .node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper,
 .node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item select,
-.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item label{ display: table-cell; padding-right: 45px}
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item label {
+  display: table-cell;
+  padding-right: 45px;
+}
 
 /*VISA*/
+/* line 160, sass/_css-old.scss */
 .node-hocvien-form .field-name-field-student-visa .field-name-field-visa-status,
 .node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit,
-.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-note{ float: left; width: 33.333%; display: block}
-#field-student-visa-add-more-wrapper{position: relative}
-.node-hocvien-form .field-multiple-table tbody tr td .form-submit{position: absolute;bottom: -2px;left: 135px;}
-.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-status .form-type-select select { width: 100%}
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-note {
+  float: left;
+  width: 33.333%;
+  display: block;
+}
 
-.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper legend{ line-height: 1.5; text-indent: 0}
-.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper .fieldset-wrapper .date-padding{padding: 2px 0 0 0;}
-.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper .fieldset-wrapper .date-padding .form-item input {width: 292px; margin: 0 -1px;font-size: 13px;padding-top: 5px; padding-bottom: 5px;}
-.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper .fieldset-wrapper .date-padding .description{display: none}
+/* line 161, sass/_css-old.scss */
+#field-student-visa-add-more-wrapper {
+  position: relative;
+}
 
-.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-note input.form-text {width: 281px;padding-top: 5px;font-size: 13px; padding-bottom: 5px;margin-left: -1px}
+/* line 162, sass/_css-old.scss */
+.node-hocvien-form .field-multiple-table tbody tr td .form-submit {
+  position: absolute;
+  bottom: -2px;
+  left: 135px;
+}
+
+/* line 163, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-status .form-type-select select {
+  width: 100%;
+}
+
+/* line 165, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper legend {
+  line-height: 1.5;
+  text-indent: 0;
+}
+
+/* line 166, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper .fieldset-wrapper .date-padding {
+  padding: 2px 0 0 0;
+}
+
+/* line 167, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper .fieldset-wrapper .date-padding .form-item input {
+  width: 292px;
+  margin: 0 -1px;
+  font-size: 13px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* line 168, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper .fieldset-wrapper .date-padding .description {
+  display: none;
+}
+
+/* line 170, sass/_css-old.scss */
+.node-hocvien-form .field-name-field-student-visa .field-name-field-visa-note input.form-text {
+  width: 281px;
+  padding-top: 5px;
+  font-size: 13px;
+  padding-bottom: 5px;
+  margin-left: -1px;
+}
+
 /* STUDY PATHWAY*/
-.field-name-field-student-pathway .pathway_group{display: table}
-.field-name-field-student-pathway .pathway_group .form-wrapper{ display: table-cell; padding-right: 9px}
-.field-name-field-student-pathway .pathway_group .form-wrapper:last-child{padding-right: 0}
-.field-name-field-student-pathway .pathway_group .form-wrapper label{display: inline-block}
-.field-name-field-student-pathway .pathway_group .form-wrapper select{padding-bottom:3px }
+/* line 172, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group {
+  display: table;
+}
+
+/* line 173, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group .form-wrapper {
+  display: table-cell;
+  padding-right: 9px;
+}
+
+/* line 174, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group .form-wrapper:last-child {
+  padding-right: 0;
+}
+
+/* line 175, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group .form-wrapper label {
+  display: inline-block;
+}
+
+/* line 176, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group .form-wrapper select {
+  padding-bottom: 3px;
+}
+
 /*.field-name-field-student-pathway .pathway_group .form-wrapper select,
 .field-name-field-student-pathway .pathway_group .form-wrapper input{ font-size: 12px; margin: 0;padding: 2px 4px;}*/
 /*.field-name-field-student-pathway .pathway_group .form-wrapper input{padding: 3px 4px;}*/
-.field-name-field-student-pathway .pathway_group .form-wrapper .description{display: none}
-/*.field-name-field-student-pathway .pathway_group_1 .form-wrapper select{width: 120px; margin-left: 10px}*/
-.field-name-field-student-pathway .pathway_group_1 .field-name-field-stpw-course-name select{ width: 200px}
-.field-name-field-student-pathway .pathway_group_1 .field-name-field-st-country select{ width: 90px}
-.field-name-field-student-pathway .pathway_group_1 .field-name-field-student-school select,
-.field-name-field-student-pathway .pathway_group_1 .field-name-field-student-organisation select{ width: 130px}
-.field-name-field-student-pathway .pathway_group_3 ,
-.field-name-field-student-pathway .pathway_group_4{margin-bottom: 25px}
-.field-name-field-student-pathway .pathway_group_3 .form-item input,
-.field-name-field-student-pathway .pathway_group_4 .form-item input{ width: 100px;}
+/* line 180, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group .form-wrapper .description {
+  display: none;
+}
 
-.field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper{ display: table}
-.field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper legend{position: initial; width: auto; float: left; text-indent: 0; line-height: 1.8;display: table-cell; margin-right: 5px;}
-.field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper .fieldset-wrapper{ display: table-cell}
-.field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper .fieldset-wrapper .date-padding{ padding: 0}
+/*.field-name-field-student-pathway .pathway_group_1 .form-wrapper select{width: 120px; margin-left: 10px}*/
+/* line 182, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group_1 .field-name-field-stpw-course-name select {
+  width: 200px;
+}
+
+/* line 183, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group_1 .field-name-field-st-country select {
+  width: 90px;
+}
+
+/* line 185, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group_1 .field-name-field-student-school select,
+.field-name-field-student-pathway .pathway_group_1 .field-name-field-student-organisation select {
+  width: 130px;
+}
+
+/* line 187, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group_3,
+.field-name-field-student-pathway .pathway_group_4 {
+  margin-bottom: 25px;
+}
+
+/* line 189, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group_3 .form-item input,
+.field-name-field-student-pathway .pathway_group_4 .form-item input {
+  width: 100px;
+}
+
+/* line 191, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper {
+  display: table;
+}
+
+/* line 192, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper legend {
+  position: initial;
+  width: auto;
+  float: left;
+  text-indent: 0;
+  line-height: 1.8;
+  display: table-cell;
+  margin-right: 5px;
+}
+
+/* line 193, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper .fieldset-wrapper {
+  display: table-cell;
+}
+
+/* line 194, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper .fieldset-wrapper .date-padding {
+  padding: 0;
+}
 
 /*.field-name-field-student-pathway .pathway_group_4 .form-item label{max-width:140px}*/
-.field-name-field-student-pathway .pathway_group_4 h3{position: absolute;top: 0; left: 0; margin-top: 0 ;}
-.field-name-field-student-pathway .pathway_group_4{position: relative;padding-top: 40px;}
+/* line 197, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group_4 h3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+}
 
-.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element{ background: #fff; border: none; display: table}
-.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-element { display: table-cell; float: none}
-.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-element .form-item { width: 270px;}
+/* line 198, sass/_css-old.scss */
+.field-name-field-student-pathway .pathway_group_4 {
+  position: relative;
+  padding-top: 40px;
+}
 
+/* line 200, sass/_css-old.scss */
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element {
+  background: #fff;
+  border: none;
+  display: table;
+}
+
+/* line 201, sass/_css-old.scss */
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-element {
+  display: table-cell;
+  float: none;
+}
+
+/* line 202, sass/_css-old.scss */
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-element .form-item {
+  width: 270px;
+}
+
+/* line 205, sass/_css-old.scss */
 .field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .form-item label,
-.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .form-item input{ display: inline-block}
-.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .form-item label {max-width: 150px}
-.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .form-item input{width: 100px}
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .form-item input {
+  display: inline-block;
+}
 
+/* line 206, sass/_css-old.scss */
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .form-item label {
+  max-width: 150px;
+}
+
+/* line 207, sass/_css-old.scss */
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .form-item input {
+  width: 100px;
+}
+
+/* line 210, sass/_css-old.scss */
 .field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-field-com-received-usa .form-item,
-.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-field-com-received-date .form-item{width: 240px}
-.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-field-com-received-usa .form-item label,
-.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-field-com-received-date .form-item label{max-width: 110px}
-#fgm_field_collection_item_field_student_pathway_form_group_received-add-more-wrapper{ position: relative}
-#fgm_field_collection_item_field_student_pathway_form_group_received-add-more-wrapper .field-group-multiple-add-more-submit{position: absolute; bottom: 16px; right: 0}
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-field-com-received-date .form-item {
+  width: 240px;
+}
 
-.field-name-field-student-pathway .field-name-field-com-pending .form-item{ display: table}
+/* line 212, sass/_css-old.scss */
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-field-com-received-usa .form-item label,
+.field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-field-com-received-date .form-item label {
+  max-width: 110px;
+}
+
+/* line 213, sass/_css-old.scss */
+#fgm_field_collection_item_field_student_pathway_form_group_received-add-more-wrapper {
+  position: relative;
+}
+
+/* line 214, sass/_css-old.scss */
+#fgm_field_collection_item_field_student_pathway_form_group_received-add-more-wrapper .field-group-multiple-add-more-submit {
+  position: absolute;
+  bottom: 16px;
+  right: 0;
+}
+
+/* line 216, sass/_css-old.scss */
+.field-name-field-student-pathway .field-name-field-com-pending .form-item {
+  display: table;
+}
+
+/* line 218, sass/_css-old.scss */
 .field-name-field-student-pathway .field-name-field-com-pending .form-item label,
-.field-name-field-student-pathway .field-name-field-com-pending .form-item input{ display: table-cell; max-width: 163px}
-.field-name-field-student-pathway .field-name-field-com-pending .form-item input{ max-width: 100px}
+.field-name-field-student-pathway .field-name-field-com-pending .form-item input {
+  display: table-cell;
+  max-width: 163px;
+}
+
+/* line 219, sass/_css-old.scss */
+.field-name-field-student-pathway .field-name-field-com-pending .form-item input {
+  max-width: 100px;
+}
+
 /*CONTRACT*/
-.field-name-field-student-contract tbody tr {background: #fff}
-.field-name-field-student-contract tbody .field-multiple-drag{display: none}
+/* line 221, sass/_css-old.scss */
+.field-name-field-student-contract tbody tr {
+  background: #fff;
+}
+
+/* line 222, sass/_css-old.scss */
+.field-name-field-student-contract tbody .field-multiple-drag {
+  display: none;
+}
+
+/* line 224, sass/_css-old.scss */
 .field-name-field-student-contract .form-wrapper,
-.field-name-field-student-contract .field-multiple-table .party_b_info .b_groupt_2{margin: 10px 0}
-.field-name-field-student-contract .field-multiple-table .contract-header{ margin-top: 25px ; margin-bottom: 25px}
+.field-name-field-student-contract .field-multiple-table .party_b_info .b_groupt_2 {
+  margin: 10px 0;
+}
+
+/* line 225, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .contract-header {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* line 229, sass/_css-old.scss */
 .field-name-field-student-contract .field-multiple-table .contract-header,
 .field-name-field-student-contract .field-multiple-table .contract-header .field-type-text .form-item,
 .field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper .fieldset-wrapper,
-.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper fieldset.form-wrapper{ display: table}
+.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper fieldset.form-wrapper {
+  display: table;
+}
+
+/* line 234, sass/_css-old.scss */
 .field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper,
 .field-name-field-student-contract .field-multiple-table .contract-header .field-type-text .form-item input,
 .field-name-field-student-contract .field-multiple-table .contract-header .field-type-text .form-item label,
 .field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper legend,
-.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper .fieldset-wrapper{display: table-cell;padding-right:15px}
+.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper .fieldset-wrapper {
+  display: table-cell;
+  padding-right: 15px;
+}
 
-.field-name-field-student-contract .field-multiple-table .contract-header .field-type-text .form-item input{width: 120px; margin: 0}
-.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper legend{position: initial; width: auto; float: left; text-indent: 0;display: table-cell; }
+/* line 236, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .contract-header .field-type-text .form-item input {
+  width: 120px;
+  margin: 0;
+}
 
-.field-name-field-student-contract .field-multiple-table .contract-header .field-type-datestamp fieldset .fieldset-wrapper{padding-right:0}
-.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper .date-padding{ padding: 0}
-.field-name-field-student-contract .field-multiple-table .contract-header .field-type-datestamp{ vertical-align: top}
-.field-name-field-student-contract .field-multiple-table .contract-header .field-type-datestamp .description{display: none}
-.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper .form-item input{margin: 0}
+/* line 237, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper legend {
+  position: initial;
+  width: auto;
+  float: left;
+  text-indent: 0;
+  display: table-cell;
+}
 
-.field-name-field-student-contract .field-multiple-table .party_b_info{margin-left: 75px;}
-.field-name-field-student-contract .field-multiple-table .party_b_info h3{margin-left: -75px; margin-top: 0}
+/* line 239, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .contract-header .field-type-datestamp fieldset .fieldset-wrapper {
+  padding-right: 0;
+}
+
+/* line 240, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper .date-padding {
+  padding: 0;
+}
+
+/* line 241, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .contract-header .field-type-datestamp {
+  vertical-align: top;
+}
+
+/* line 242, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .contract-header .field-type-datestamp .description {
+  display: none;
+}
+
+/* line 243, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .contract-header .form-wrapper .form-item input {
+  margin: 0;
+}
+
+/* line 245, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .party_b_info {
+  margin-left: 75px;
+}
+
+/* line 246, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .party_b_info h3 {
+  margin-left: -75px;
+  margin-top: 0;
+}
+
+/* line 249, sass/_css-old.scss */
 .field-name-field-student-contract .field-multiple-table .party_b_info .form-item input,
 .field-name-field-student-contract .field-multiple-table .party_b_info .form-item label,
-.field-name-field-student-contract .field-multiple-table .party_b_info .b_groupt .form-wrapper{display: table-cell;}
+.field-name-field-student-contract .field-multiple-table .party_b_info .b_groupt .form-wrapper {
+  display: table-cell;
+}
+
+/* line 251, sass/_css-old.scss */
 .field-name-field-student-contract .field-multiple-table .party_b_info .b_groupt,
-.field-name-field-student-contract .field-multiple-table .party_b_info .form-item{display: table}
-.field-name-field-student-contract .field-multiple-table .party_b_info .form-item input{ margin-right: 15px}
-.field-name-field-student-contract .field-multiple-table .party_b_info .form-item label{width:115px}
-.field-name-field-student-contract .field-multiple-table .party_b_info .b_groupt_2 .form-item input{width: 250px; margin-right: 15px}
+.field-name-field-student-contract .field-multiple-table .party_b_info .form-item {
+  display: table;
+}
+
+/* line 252, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .party_b_info .form-item input {
+  margin-right: 15px;
+}
+
+/* line 253, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .party_b_info .form-item label {
+  width: 115px;
+}
+
+/* line 254, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .party_b_info .b_groupt_2 .form-item input {
+  width: 250px;
+  margin-right: 15px;
+}
+
+/* line 256, sass/_css-old.scss */
 .field-name-field-student-contract .field-multiple-table .party_b_info .field-name-field-issued-date .form-item label,
-.field-name-field-student-contract .field-multiple-table .party_b_info .field-name-field-email .form-item label{text-align: center}
+.field-name-field-student-contract .field-multiple-table .party_b_info .field-name-field-email .form-item label {
+  text-align: center;
+}
 
-.field-name-field-student-contract .field-multiple-table .group-student-info{margin-left: 75px;}
-.field-name-field-student-contract .field-multiple-table .group-student-info h3{margin-left: -75px; margin-top: 20px;}
-.field-name-field-student-contract .field-multiple-table .group-student-info .form-item{display: table}
+/* line 258, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-student-info {
+  margin-left: 75px;
+}
+
+/* line 259, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-student-info h3 {
+  margin-left: -75px;
+  margin-top: 20px;
+}
+
+/* line 260, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-student-info .form-item {
+  display: table;
+}
+
+/* line 262, sass/_css-old.scss */
 .field-name-field-student-contract .field-multiple-table .group-student-info .form-item input,
-.field-name-field-student-contract .field-multiple-table .group-student-info .form-item label{display: table-cell;}
-.field-name-field-student-contract .field-multiple-table .group-student-info .form-item input{width: 300px; margin-right: 15px}
-.field-name-field-student-contract .field-multiple-table .group-student-info .form-item label{width: 90px}
-.field-name-field-student-contract .field-multiple-table .group-student-info .group-student-info-g2 .form-item label{width: 200px}
+.field-name-field-student-contract .field-multiple-table .group-student-info .form-item label {
+  display: table-cell;
+}
 
+/* line 263, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-student-info .form-item input {
+  width: 300px;
+  margin-right: 15px;
+}
+
+/* line 264, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-student-info .form-item label {
+  width: 90px;
+}
+
+/* line 265, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-student-info .group-student-info-g2 .form-item label {
+  width: 200px;
+}
+
+/* line 268, sass/_css-old.scss */
 .field-name-field-student-contract .field-multiple-table .group-student-info .form-wrapper legend,
-.field-name-field-student-contract .field-multiple-table .group-student-info .form-wrapper .fieldset-wrapper{display: table-cell;margin-right:0}
-.field-name-field-student-contract .group-student-info .form-wrapper legend{position: initial; width: auto; float: left; text-indent: 0;display: table-cell; margin-right: 5px;}
+.field-name-field-student-contract .field-multiple-table .group-student-info .form-wrapper .fieldset-wrapper {
+  display: table-cell;
+  margin-right: 0;
+}
+
+/* line 269, sass/_css-old.scss */
+.field-name-field-student-contract .group-student-info .form-wrapper legend {
+  position: initial;
+  width: auto;
+  float: left;
+  text-indent: 0;
+  display: table-cell;
+  margin-right: 5px;
+}
+
+/* line 271, sass/_css-old.scss */
 .field-name-field-student-contract .group-student-info .field-type-datestamp .description,
-.field-name-field-student-contract .group-student-info .field-type-datestamp .form-item label{display: none}
-.field-name-field-student-contract .group-student-info .form-wrapper legend{width: 90px}
-.field-name-field-student-contract .group-student-info .form-wrapper .date-padding{ padding: 0}
-.field-name-field-student-contract .group-student-info .field-type-datestamp{ vertical-align: top;}
-.field-name-field-student-contract .group-student-info .field-type-datestamp fieldset{top:0}
+.field-name-field-student-contract .group-student-info .field-type-datestamp .form-item label {
+  display: none;
+}
 
-.field-name-field-student-contract .group-student-info .field-name-field-relationship-with-party-b select{width: 310px;}
-.field-name-field-student-contract .group-student-info .group-student-info-g2 .field-name-field-intake legend{width: 200px}
+/* line 272, sass/_css-old.scss */
+.field-name-field-student-contract .group-student-info .form-wrapper legend {
+  width: 90px;
+}
 
+/* line 273, sass/_css-old.scss */
+.field-name-field-student-contract .group-student-info .form-wrapper .date-padding {
+  padding: 0;
+}
 
-.field-name-field-student-contract .field-multiple-table .group-contract-info{margin-left: 75px;padding-bottom: 20px}
-.field-name-field-student-contract .field-multiple-table .group-contract-info h3{margin-left: -75px; margin-top: 20px;}
-.field-name-field-student-contract .field-multiple-table .group-contract-info .form-item{display: table}
+/* line 274, sass/_css-old.scss */
+.field-name-field-student-contract .group-student-info .field-type-datestamp {
+  vertical-align: top;
+}
+
+/* line 275, sass/_css-old.scss */
+.field-name-field-student-contract .group-student-info .field-type-datestamp fieldset {
+  top: 0;
+}
+
+/* line 277, sass/_css-old.scss */
+.field-name-field-student-contract .group-student-info .field-name-field-relationship-with-party-b select {
+  width: 310px;
+}
+
+/* line 278, sass/_css-old.scss */
+.field-name-field-student-contract .group-student-info .group-student-info-g2 .field-name-field-intake legend {
+  width: 200px;
+}
+
+/* line 281, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-contract-info {
+  margin-left: 75px;
+  padding-bottom: 20px;
+}
+
+/* line 282, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-contract-info h3 {
+  margin-left: -75px;
+  margin-top: 20px;
+}
+
+/* line 283, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-contract-info .form-item {
+  display: table;
+}
+
+/* line 285, sass/_css-old.scss */
 .field-name-field-student-contract .field-multiple-table .group-contract-info .form-item input,
-.field-name-field-student-contract .field-multiple-table .group-contract-info .form-item label{display: table-cell;}
-.field-name-field-student-contract .field-multiple-table .group-contract-info .form-item input{width: 300px; margin-right: 15px}
-.field-name-field-student-contract .field-multiple-table .group-contract-info .group-student-info-g2 .form-item label{width: 200px}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .form-item label {
+  display: table-cell;
+}
 
+/* line 286, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-contract-info .form-item input {
+  width: 300px;
+  margin-right: 15px;
+}
+
+/* line 287, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-student-info-g2 .form-item label {
+  width: 200px;
+}
+
+/* line 290, sass/_css-old.scss */
 .field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-1,
-.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2{display: table ;position: relative; margin: 10px 0}
-.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 {margin-top: 10px; margin-bottom: 40px}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 {
+  display: table;
+  position: relative;
+  margin: 10px 0;
+}
+
+/* line 291, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+/* line 293, sass/_css-old.scss */
 .field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-1 .field-type-list-text,
-.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 .field-type-text{display: table-cell}
-.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-1 .form-item label{width:150px; text-align: center}
-.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 .form-item label{width: 100px; text-align: center}
-.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-1 select{width: 200px;}
-.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 input{width: 100px;margin-left: 10px; margin-right: 10px;}
-.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 .field-name-field-cancelation-date{position: absolute;bottom: -55px; right: 0;}
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 .field-type-text {
+  display: table-cell;
+}
+
+/* line 294, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-1 .form-item label {
+  width: 150px;
+  text-align: center;
+}
+
+/* line 295, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 .form-item label {
+  width: 100px;
+  text-align: center;
+}
+
+/* line 296, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-1 select {
+  width: 200px;
+}
+
+/* line 297, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 input {
+  width: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 298, sass/_css-old.scss */
+.field-name-field-student-contract .field-multiple-table .group-contract-info .group-contract-info-2 .field-name-field-cancelation-date {
+  position: absolute;
+  bottom: -55px;
+  right: 0;
+}
+
 /*
 .field-name-field-student-contract input,
 .field-name-field-student-contract label{ font-size: 13px}
 */
-
-.messages.error {display:none; }
+/* line 304, sass/_css-old.scss */
+.messages.error {
+  display: none;
+}
 
 /* Add  field to view */
-.filterable-option .form-item {display: none}
-.tinhtoan .filterable-option .form-item {display: block;}
-#edit-dynamic-field-wrapper .tabledrag-toggle-weight-wrapper {display: none;}
-#views-dynamic-fields-filters-table-sort .description {display: none;}
-.page-quanly-student .tabs.secondary {display: none !important;}
-.page-quanly-student.page-quanly-student- .tabs.secondary {display: block !important;}
-#edit-field-student-basic-und-0-field-detail-chanel label {display: none;}
-#edit-field-student-basic-und-0-field-detail-chanel-und {display: none;}
-#field-student-pathway-add-more-wrapper .description {display: none;}
-.multiple-field-com-received-date fieldset {border: none;}
-.date-padding label {display: none;}
+/* line 307, sass/_css-old.scss */
+.filterable-option .form-item {
+  display: none;
+}
+
+/* line 308, sass/_css-old.scss */
+.tinhtoan .filterable-option .form-item {
+  display: block;
+}
+
+/* line 309, sass/_css-old.scss */
+#edit-dynamic-field-wrapper .tabledrag-toggle-weight-wrapper {
+  display: none;
+}
+
+/* line 310, sass/_css-old.scss */
+#views-dynamic-fields-filters-table-sort .description {
+  display: none;
+}
+
+/* line 311, sass/_css-old.scss */
+.page-quanly-student .tabs.secondary {
+  display: none !important;
+}
+
+/* line 312, sass/_css-old.scss */
+.page-quanly-student.page-quanly-student- .tabs.secondary {
+  display: block !important;
+}
+
+/* line 313, sass/_css-old.scss */
+#edit-field-student-basic-und-0-field-detail-chanel label {
+  display: none;
+}
+
+/* line 314, sass/_css-old.scss */
+#edit-field-student-basic-und-0-field-detail-chanel-und {
+  display: none;
+}
+
+/* line 315, sass/_css-old.scss */
+#field-student-pathway-add-more-wrapper .description {
+  display: none;
+}
+
+/* line 316, sass/_css-old.scss */
+.multiple-field-com-received-date fieldset {
+  border: none;
+}
+
+/* line 317, sass/_css-old.scss */
+.date-padding label {
+  display: none;
+}
+
+/* line 2, sass/_header.scss */
+a {
+  color: red;
+}
