@@ -1,13 +1,13 @@
 .page-quanly-student{
   .view-content{
     .views-table{
-      border:1px solid #838484;
+      border:1px solid $md-gray;
       thead{
         tr{
           th,td{
-            background-color: #eef8f9;
+            background-color: $light-green;
             font-size: 17px;
-            border-left:1px solid #838484;
+            border-left:1px solid $md-gray;
             padding: 0 10px 1px;
             &:first-child{
               border-left: none;
@@ -20,14 +20,32 @@
           border:none;
           background:none;
           td{
-            border-top:1px solid #838484;
-            border-left:1px solid #838484;
+            border-top:1px solid $md-gray;
+            border-left:1px solid $md-gray;
             padding: 4px 10px 2px;
             &:first-child{
               border-left: none;
             }
           }
         }
+      }
+    }
+  }
+
+  .menu_student{
+    margin: 0 -20px;
+    padding: 9px 20px 11px;
+    background-color: $md-gray;
+    border-bottom: 3px solid $md-yellow;
+    li{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      margin-right: 26px;
+      a{
+        color: $white;
+        font-size: 18px;
       }
     }
   }

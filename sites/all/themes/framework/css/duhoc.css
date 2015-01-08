@@ -869,7 +869,7 @@ body {
 }
 
 #header {
-  background-color: #fff;
+  background-color: white;
   padding: 18px 0;
   -webkit-box-shadow: 0 1px 1px rgba(122, 113, 133, 0.75);
   -moz-box-shadow: 0 1px 1px rgba(122, 113, 133, 0.75);
@@ -901,7 +901,7 @@ body {
 }
 #header #navigation #secondary-menu .last a {
   background-color: #8e191b;
-  color: #fff;
+  color: white;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
   -ms-transition: all ease 0.3s;
@@ -962,4 +962,21 @@ body {
 }
 .page-quanly-student .view-content .views-table tbody tr td:first-child, .page-quanly-student .view-content .views-table tbody tr.odd td:first-child, .page-quanly-student .view-content .views-table tbody tr.even td:first-child {
   border-left: none;
+}
+.page-quanly-student .menu_student {
+  margin: 0 -20px;
+  padding: 9px 20px 11px;
+  background-color: #838484;
+  border-bottom: 3px solid #fcbc18;
+}
+.page-quanly-student .menu_student li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin-right: 26px;
+}
+.page-quanly-student .menu_student li a {
+  color: white;
+  font-size: 18px;
 }
