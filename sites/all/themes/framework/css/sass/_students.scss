@@ -1,0 +1,34 @@
+.page-quanly-student{
+  .view-content{
+    .views-table{
+      border:1px solid #838484;
+      thead{
+        tr{
+          th,td{
+            background-color: #eef8f9;
+            font-size: 17px;
+            border-left:1px solid #838484;
+            padding: 0 10px 1px;
+            &:first-child{
+              border-left: none;
+            }
+          }
+        }
+      }
+      tbody{
+        tr, tr.odd, tr.even{
+          border:none;
+          background:none;
+          td{
+            border-top:1px solid #838484;
+            border-left:1px solid #838484;
+            padding: 4px 10px 2px;
+            &:first-child{
+              border-left: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

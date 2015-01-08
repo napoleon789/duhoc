@@ -1,0 +1,27 @@
+@mixin border-radius($value){
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  -ms-border-radius: $value;
+  -o-border-radius: $value;
+}
+
+@mixin transition($value){
+  -webkit-transition:$value;
+  -moz-transition:$value;
+  -ms-transition:$value;
+  -o-transition:$value;
+  transition:$value;
+}
+
+@mixin box-shadow($value){
+  -webkit-box-shadow: $value;
+  -moz-box-shadow: $value;
+  -ms-box-shadow: $value;
+  -o-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background-color: $color; /* The Fallback */
+    background-color: rgba($color, $opacity);
+}
