@@ -210,7 +210,7 @@ label {
 
 .node-hocvien-form .field-name-field-student-basic .personal_information {
   display: inline-block;
-  margin-left: 30px;
+  margin-left: 54px;
 }
 
 .node-hocvien-form .field-name-field-student-basic .personal_information .form-item {
@@ -1116,4 +1116,30 @@ input[type="button"], input[type="submit"] {
 }
 .page-quanly-student-basic fieldset#edit-field-student-basic-und-0 > legend {
   display: none;
+}
+.page-quanly-student-basic fieldset .no_image {
+  float: left;
+  width: 170px;
+  margin-left: 15px;
+}
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+}
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item {
+  border: 1px solid #d5d3d3;
+  margin: 0;
+  width: 542px;
+}
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item label {
+  width: 192px;
+  background-color: #838484;
+  color: white;
+  font-size: 15px;
+  padding: 0 0 0 40px;
+  border-right: 1px solid #d5d3d3;
+}
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item input {
+  border: none;
 }

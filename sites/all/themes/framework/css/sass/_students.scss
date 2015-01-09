@@ -143,5 +143,37 @@
     &#edit-field-student-basic-und-0>legend{
       display: none;
     }
+    .no_image{
+      float: left;
+      width: 170px;
+      margin-left: 15px;
+    }
+  }
+  .node-hocvien-form{
+    .field-name-field-student-basic{
+      .personal_information{
+        h3{
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 15px;
+        }
+        .form-item{
+          border:1px solid #d5d3d3;
+          margin: 0;
+          width: 542px;
+          label{
+            width: 192px;
+            background-color: #838484;
+            color: $white;
+            font-size: 15px;
+            padding: 0 0 0 40px;
+            border-right:1px solid #d5d3d3;
+          }
+          input{
+            border: none;
+          }
+        }
+      }
+    }
   }
 }
