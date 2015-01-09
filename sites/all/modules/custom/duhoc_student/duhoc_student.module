@@ -24,9 +24,7 @@ function duhoc_student_admin($id='') {
 function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
  if($form_id =='hocvien_node_form') {
    $form['field_select_contract']['#access'] = false;
-
    $form['title']['#access'] = false;
-
    $current_url = arg(3);
    $form['current_url'] = array('#type' => 'hidden', '#value' => $current_url);
    $m = $form_state['input']['current_url'];
