@@ -7,7 +7,6 @@
         <?php endif; ?>
     </div>
   </div>
-
   <header id="header" role="banner" class="clearfix">
     <div id="container" class="clearfix">
         <?php if ($logo): ?>
