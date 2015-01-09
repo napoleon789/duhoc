@@ -1,4 +1,4 @@
-<div id="container" class="clearfix">
+
 
   <div id="skip-link">
     <div id="container" class="clearfix">
@@ -37,7 +37,6 @@
               <?php print render($page['navigation']); ?>
             <?php endif; ?>
             <?php if (empty($page['navigation'])): ?>
-
               <?php print theme('links__system_secondary_menu', array(
                 'links' => $secondary_menu,
                 'attributes' => array(
@@ -50,7 +49,6 @@
                   'class' => array('element-invisible'),
                 ),
               )); ?>
-
               <?php print theme('links__system_main_menu', array(
                 'links' => $main_menu,
                 'attributes' => array(
@@ -67,7 +65,6 @@
             <?php endif; ?>
           </nav> <!-- /#navigation -->
         <?php endif; ?>
-        <?php if ($breadcrumb): print $breadcrumb; endif;?>
     </div>
   </header> <!-- /#header -->
 
@@ -77,9 +74,19 @@
         <a id="main-content"></a>
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
         <?php print render($title_prefix); ?>
-        <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+
         <?php print render($title_suffix); ?>
-        <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper clearfix"><?php print render($tabs); ?></div><?php endif; ?>
+        <?php $a = arg(2);?>
+      <?php drupal_set_title('Student '.arg(3)) ?>
+       <?php if (isset($a)):?>
+        <ul class="menu_student">
+          <li class="item <?php if(arg(3) =='basic') echo 'active';?>"><a href="/quanly/student/<?php echo $a;?>/basic">Personal Background</a> </li>
+          <li class="item <?php if(arg(3) =='contract') echo 'active';?>"><a href="/quanly/student/<?php echo $a;?>/contract">Contract</a> </li>
+          <li class="item  <?php if(arg(3) =='pathway') echo 'active';?>"><a href="/quanly/student/<?php echo $a;?>/pathway">Pathway and Comission</a> </li>
+          <li class="item  <?php if(arg(3) =='visa') echo 'active';?>"><a href="/quanly/student/<?php echo $a;?>/visa">Visa</a> </li>
+        </ul>
+       <?php endif; ?>
+
         <?php print render($page['help']); ?>
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
         <?php print render($page['content']); ?>
@@ -107,4 +114,4 @@
     </div>
   </footer> <!-- /#footer -->
 
-</div> <!-- /#container -->
+
