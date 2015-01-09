@@ -19,7 +19,7 @@ body{
   text-align: justify;
 }
 
-.btn-orange{
+.btn-orange, input[type="button"], input[type="submit"]{
   background-color: $md-yellow;
   height: 26px;
   font-weight: bold;
@@ -32,7 +32,13 @@ body{
   display: inline-block;
   text-align: center;
   text-transform: uppercase;
+  border: none;
+  cursor: pointer;
   &:hover{
-    background-color: $dark-yellow;
+    background-color: $color-text;
+    color: $white;
   }
+}
+input[type="button"], input[type="submit"]{
+  line-height: normal;
 }
