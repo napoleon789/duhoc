@@ -153,6 +153,7 @@ label {
   border-right: 1px solid #ccc;
 }
 
+/*PERSONAL INFORMATION*/
 .node-hocvien-form .field-name-field-student-contract {
   position: relative;
 }
@@ -170,12 +171,11 @@ label {
   display: none;
 }
 
-/*PERSONAL INFORMATION*/
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image {
   display: inline-block;
-  width: 30%;
-  min-width: 200px;
+  width: 170px;
   vertical-align: top;
+  margin-left: 15px;
 }
 
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image label,
@@ -196,7 +196,16 @@ label {
 }
 
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview {
-  margin-top: 20px;
+  background-color: #979696;
+  height: 170px;
+  line-height: 170px;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview img {
+  max-height: 170px;
+  vertical-align: middle;
 }
 
 .node-hocvien-form .field-name-field-student-basic .personal_information {
@@ -870,7 +879,7 @@ body {
   text-align: justify;
 }
 
-.btn-orange {
+.btn-orange, input[type="button"], input[type="submit"] {
   background-color: #fcbc18;
   height: 26px;
   font-weight: bold;
@@ -891,9 +900,16 @@ body {
   display: inline-block;
   text-align: center;
   text-transform: uppercase;
+  border: none;
+  cursor: pointer;
 }
-.btn-orange:hover {
-  background-color: #edaf0f;
+.btn-orange:hover, input[type="button"]:hover, input[type="submit"]:hover {
+  background-color: #2f2f2f;
+  color: white;
+}
+
+input[type="button"], input[type="submit"] {
+  line-height: normal;
 }
 
 #header {
@@ -1092,4 +1108,12 @@ body {
   border-right: 6px solid transparent;
   border-bottom: 12px solid #fcbc18;
   margin-left: -3px;
+}
+
+.page-quanly-student-basic fieldset {
+  border: none;
+  padding: 0;
+}
+.page-quanly-student-basic fieldset#edit-field-student-basic-und-0 > legend {
+  display: none;
 }

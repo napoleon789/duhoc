@@ -96,26 +96,30 @@ label { display: block; font-weight: normal;}
 .page-quanly-setting .node-course-form .field-name-field-course .required-fields .form-wrapper:last-child input {border-right: 1px solid #ccc}
 
 
+
+
+/*PERSONAL INFORMATION*/
 .node-hocvien-form .field-name-field-student-contract {position: relative}
 .node-hocvien-form .form-wrapper .field-type-datestamp legend,
 .node-hocvien-form .form-wrapper .field-type-datestamp fieldset,
 .node-hocvien-form .form-wrapper .field-type-datestamp fieldset .fieldset-wrapper{ background: none; border: none;padding: 0; margin: 0}
 .node-hocvien-form .form-wrapper .field-type-datestamp .date-padding label{ display: none}
-/*PERSONAL INFORMATION*/
-.node-hocvien-form .field-name-field-student-basic .field-name-field-image{ display: inline-block; width: 30%; min-width: 200px; vertical-align: top;}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image{ display: inline-block; width: 170px; vertical-align: top;margin-left: 15px;}
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image label,
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget-data .file-size,
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget-data .file {display: none}
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget{text-align: center}
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-widget-data,
-.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview{float: none; display: block; margin:0 auto}
-.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview{margin-top: 20px}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview{float: none; display: block; margin:0 auto;}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview{background-color: #979696;height: 170px;line-height: 170px;padding: 0;margin-bottom: 15px;}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview img{max-height: 170px;vertical-align: middle}
 .node-hocvien-form .field-name-field-student-basic .personal_information{display: inline-block;margin-left: 30px}
 .node-hocvien-form .field-name-field-student-basic .personal_information .form-item{ display: table;margin-bottom: 0}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-text .form-type-textfield label,
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-number-integer label,
 .node-hocvien-form .field-name-field-student-basic .personal_information .form-item input{display: table-cell; min-width: 103px}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-name-field-student-full-name .form-item{ margin: 0}
+
 
 .node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset,
 .node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset legend,
