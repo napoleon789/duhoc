@@ -854,6 +854,8 @@ body {
 
 #main #container {
   background-color: #fff;
+  padding-top: 7px;
+  padding-bottom: 30px;
 }
 
 .text-center {
@@ -866,6 +868,32 @@ body {
 
 .text-justify {
   text-align: justify;
+}
+
+.btn-orange {
+  background-color: #fcbc18;
+  height: 26px;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 26px;
+  -webkit-border-radius: 26px;
+  -moz-border-radius: 26px;
+  -ms-border-radius: 26px;
+  -o-border-radius: 26px;
+  border-radius: 26px;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  min-width: 104px;
+  padding: 0 5px;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+}
+.btn-orange:hover {
+  background-color: #edaf0f;
 }
 
 #header {
@@ -939,6 +967,9 @@ body {
   margin-top: 0;
 }
 
+.page-quanly-student .view-content {
+  margin: 0 15px;
+}
 .page-quanly-student .view-content .views-table {
   border: 1px solid #838484;
 }
@@ -979,4 +1010,64 @@ body {
 .page-quanly-student .menu_student li a {
   color: white;
   font-size: 18px;
+}
+.page-quanly-student .views-exposed-form {
+  position: relative;
+}
+.page-quanly-student .views-exposed-form .views-exposed-widgets {
+  margin-bottom: 9px;
+}
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-title {
+  float: none;
+  padding: 0;
+}
+.page-quanly-student .views-exposed-form .views-exposed-widgets label {
+  float: left;
+  font-size: 17px;
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget {
+  float: right;
+}
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title {
+  background-color: #f4f3f3;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  width: 227px;
+  padding-right: 46px;
+  height: 29px;
+}
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title input {
+  border: none;
+  background: transparent;
+  padding: 0 0 0 15px;
+  height: 100%;
+  font-size: 12px;
+  color: #525352;
+}
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button {
+  position: absolute;
+  top: -2px;
+  right: 0;
+  padding: 0;
+}
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button input {
+  margin: 0;
+  background-color: #eaa921;
+  border: none;
+  cursor: pointer;
+  height: 29px;
+  width: 42px;
+  background-image: url("../images/icon/btn-search.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 0;
+}
+.page-quanly-student .btn-orange {
+  float: right;
+  margin-right: 15px;
 }
