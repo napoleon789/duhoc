@@ -855,6 +855,7 @@ body {
 #main #container {
   background-color: #fff;
   padding-top: 7px;
+  padding-bottom: 30px;
 }
 
 .text-center {
@@ -879,11 +880,17 @@ body {
   -moz-border-radius: 26px;
   -ms-border-radius: 26px;
   -o-border-radius: 26px;
+  border-radius: 26px;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
   -ms-transition: all ease 0.3s;
   -o-transition: all ease 0.3s;
   transition: all ease 0.3s;
+  min-width: 104px;
+  padding: 0 5px;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
 }
 .btn-orange:hover {
   background-color: #edaf0f;
@@ -1059,4 +1066,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   font-size: 0;
+}
+.page-quanly-student .btn-orange {
+  float: right;
+  margin-right: 15px;
 }

@@ -3,6 +3,7 @@
   -moz-border-radius: $value;
   -ms-border-radius: $value;
   -o-border-radius: $value;
+  border-radius: $value;
 }
 
 @mixin transition($value){

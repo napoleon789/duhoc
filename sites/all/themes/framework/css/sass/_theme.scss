@@ -4,6 +4,7 @@ body{
 #main #container{
   background-color: #fff;
   padding-top:7px;
+  padding-bottom: 30px;
 }
 
 .text-center{
@@ -26,6 +27,11 @@ body{
   line-height: 26px;
   @include border-radius(26px);
   @include transition(all ease 0.3s);
+  min-width: 104px;
+  padding: 0 5px;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
   &:hover{
     background-color: #edaf0f;
   }
