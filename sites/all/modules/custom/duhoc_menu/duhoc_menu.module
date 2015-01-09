@@ -229,7 +229,7 @@ function duhoc_menu_node_add () {
 function duhoc_menu_list_student() {
   global $base_url;
   $output = views_embed_view('page_student','default');
-  $output .= '<a href="'.$base_url.'/node/add/hocvien">Add student</a>';
+  $output .= '<a class = "btn-orange" href="'.$base_url.'/node/add/hocvien">Add student</a>';
   return $output;
 }
 
