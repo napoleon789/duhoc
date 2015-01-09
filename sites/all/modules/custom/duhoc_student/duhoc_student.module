@@ -50,6 +50,10 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
          'effect' => 'fade'
        ),
      );*/
+     if($form['field_student_basic']['und'][0]['field_image']['und'][0]['#default_value']['fid'] == 0) {
+        $form['field_student_basic']['und'][0]['field_image']['#prefix'] ='<div class="no_image">';
+        $form['field_student_basic']['und'][0]['field_image']['#suffix'] ='</div>';
+     }
    }
    if(arg(3) == 'pathway' || (isset($m) && $m == 'pathway')) {
      $form['field_student_visa']['#access'] = false;
