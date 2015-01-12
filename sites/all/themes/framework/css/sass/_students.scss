@@ -97,44 +97,7 @@
   }
 
 
-  // menu page quan ly
-  .menu_student{
-    margin: -7px -20px 18px;
-    padding: 0 20px 0;
-    background-color: $md-gray;
-    border-bottom: 3px solid $md-yellow;
-    li{
-      list-style: none;
-      margin: 0;
-      padding: 9px 0 11px;
-      display: inline-block;
-      margin-right: 26px;
-      position: relative;
-      @include transition();
-      a{
-        color: $white;
-        font-size: 18px;
-      }
-      &.active, &:hover{
-        a{
-          color: $md-yellow;
-        }
-        &::after{
-          content: "";
-          display: block;
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0;
-          height: 0;
-          border-left:6px solid transparent;
-          border-right:6px solid transparent;
-          border-bottom:12px solid $md-yellow;
-          margin-left: -3px;
-        }
-      }
-    }
-  }
+
 }
 
 //personal page
@@ -270,6 +233,47 @@
             color: $color-text;
           }
         }
+      }
+    }
+  }
+}
+
+
+
+// menu page quan ly
+.menu_student, .menu_seting{
+  margin: -7px -20px 18px;
+  padding: 0 20px 0;
+  background-color: $md-gray;
+  border-bottom: 3px solid $md-yellow;
+  li{
+    list-style: none;
+    margin: 0;
+    padding: 9px 0 11px;
+    display: inline-block;
+    margin-right: 26px;
+    position: relative;
+    @include transition();
+    a{
+      color: $white;
+      font-size: 18px;
+    }
+    &.active, &:hover{
+      a{
+        color: $md-yellow;
+      }
+      &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-left:6px solid transparent;
+        border-right:6px solid transparent;
+        border-bottom:12px solid $md-yellow;
+        margin-left: -3px;
       }
     }
   }
