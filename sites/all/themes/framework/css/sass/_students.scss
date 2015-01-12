@@ -84,6 +84,8 @@
           background-position: center;
           background-repeat: no-repeat;
           font-size: 0;
+          min-width:42px;
+          @include border-radius(0);
         }
       }
     }
@@ -97,7 +99,7 @@
 
   // menu page quan ly
   .menu_student{
-    margin: -7px -20px 0;
+    margin: -7px -20px 18px;
     padding: 0 20px 0;
     background-color: $md-gray;
     border-bottom: 3px solid $md-yellow;
@@ -179,11 +181,14 @@
           text-transform: uppercase;
           font-weight: bold;
           font-size: 15px;
+          margin-bottom: 7px;
+          margin-top: 0;
         }
         .form-item{
           border:1px solid #d5d3d3;
           margin: 0;
           width: 542px;
+          border-bottom: none;
           @include clearfix();
           display: block;
           .form-item{
@@ -209,6 +214,12 @@
             display: block;
             margin: 0;
             height: 29px;
+            clear:none;
+          }
+        }
+        #edit-field-student-basic-und-0-field-student-phone{
+          .form-item{
+            border-bottom: 1px solid #d5d3d3;
           }
         }
 
@@ -219,6 +230,44 @@
             legend{
               display: none;
             }
+          }
+        }
+      }
+      fieldset{
+        legend{
+          color: $color-text;
+          font-size: 15px;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin-bottom: 5px;
+        }
+      }
+
+
+      // education
+      .education_background{
+        .form-item, .form-actions{
+          margin: 0;
+        }
+        .fieldset-wrapper label{
+          background-color: #838484;
+          color:$white;
+          font-weight: bold;
+          font-size: 15px;
+          height: 25px;
+          line-height: 25px;
+        }
+        .field-name-field-point{
+          label,input{
+            border-right:1px solid #ccc;
+          }
+        }
+        .fieldset-wrapper{
+          input, & select{
+            height: 25px;
+            font-size: 13px;
+            font-family: "Roboto Condensed";
+            color: $color-text;
           }
         }
       }
