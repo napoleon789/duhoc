@@ -73,6 +73,8 @@
 
   <section id="main" role="main" class="clearfix">
     <div id="container" class="clearfix">
+
+
         <?php print $messages; ?>
         <a id="main-content"></a>
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
