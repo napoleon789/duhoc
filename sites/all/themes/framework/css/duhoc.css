@@ -361,6 +361,7 @@ html.js fieldset.collapsible .fieldset-legend {
 
 .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item select {
   width: 140px;
+  padding-right: 3px;
 }
 
 .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper.field-name-field-st-country .form-item label {
@@ -977,6 +978,12 @@ body {
 
 input[type="button"], input[type="submit"] {
   line-height: normal;
+}
+
+input, select {
+  font-size: 14px;
+  color: #2f2f2f;
+  font-family: "Roboto Condensed";
 }
 
 #header {

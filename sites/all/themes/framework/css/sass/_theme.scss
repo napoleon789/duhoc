@@ -42,3 +42,8 @@ body{
 input[type="button"], input[type="submit"]{
   line-height: normal;
 }
+input, select{
+  font-size: 14px;
+  color: $color-text;
+  font-family: "Roboto Condensed";
+}
