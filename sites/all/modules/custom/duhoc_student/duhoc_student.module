@@ -22,8 +22,7 @@ function duhoc_student_admin($id='') {
  * im plement hook_form_alter
  */
 function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
- if($form_id =='hocvien_node_form') {
-
+ if($form_id =='hocvien_node_form' && arg(1) != 'add') {
    $form['field_select_contract']['#access'] = false;
    $form['title']['#access'] = false;
    $current_url = arg(3);
@@ -40,18 +39,6 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      if(!isset($form_state['build_info']['files'])){
        $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
      }
-    /* $form['actions']['submit'] = array(
-       '#type' => 'submit',
-       '#value' => t('Save'),
-       '#submit' => array('node_form_submit'),
-       '#ajax' => array(
-         'wrapper' => str_replace('_','-',$form['#form_id']),
-         'callback' => 'simone_forms_ajax_callback',
-         'method' => 'replace',
-         'effect' => 'fade'
-       ),
-     );*/
-
    }
    if(arg(3) == 'pathway' || (isset($m) && $m == 'pathway')) {
      $form['field_student_visa']['#access'] = false;

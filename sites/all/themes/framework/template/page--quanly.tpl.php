@@ -70,6 +70,15 @@
 
   <section id="main" role="main" class="clearfix">
     <div id="container" class="clearfix">
+      <?php
+      $tree = menu_tree_page_data('primary-links'); //substitute your menu name for primary-links
+      foreach($tree as $key => $mi) {
+        if ($mi['link']['in_active_trail'] && $tree[$key]['below']) {
+          $menu = menu_tree_output($tree[$key]['below']);
+        }
+      }
+      print $menu;
+      ?>
         <?php print $messages; ?>
         <a id="main-content"></a>
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
@@ -77,16 +86,23 @@
 
         <?php print render($title_suffix); ?>
         <?php $a = arg(2);?>
+        <?php $b = arg(1);?>
       <?php drupal_set_title('Student '.arg(3)) ?>
-       <?php if (isset($a)):?>
-        <ul class="menu_student">
-          <li class="item <?php if(arg(3) =='basic') echo 'active';?>"><a href="http://localhost/duhoc/quanly/student/<?php echo $a;?>/basic">Personal Background</a> </li>
-          <li class="item <?php if(arg(3) =='contract') echo 'active';?>"><a href="http://localhost/duhoc/quanly/student/<?php echo $a;?>/contract">Contract</a> </li>
-          <li class="item  <?php if(arg(3) =='pathway') echo 'active';?>"><a href="http://localhost/duhoc/quanly/student/<?php echo $a;?>/pathway">Pathway and Comission</a> </li>
-          <li class="item  <?php if(arg(3) =='visa') echo 'active';?>"><a href="http://localhost/duhoc/quanly/student/<?php echo $a;?>/visa">Visa</a> </li>
-        </ul>
+       <?php if (isset($a) && $b == 'student'):?>
+          <ul class="menu_student">
+            <li class="item <?php if(arg(3) =='basic') echo 'active';?>"><a href="http://localhost/duhoc/quanly/student/<?php echo $a;?>/basic">Personal Background</a> </li>
+            <li class="item <?php if(arg(3) =='contract') echo 'active';?>"><a href="http://localhost/duhoc/quanly/student/<?php echo $a;?>/contract">Contract</a> </li>
+            <li class="item  <?php if(arg(3) =='pathway') echo 'active';?>"><a href="http://localhost/duhoc/quanly/student/<?php echo $a;?>/pathway">Pathway and Comission</a> </li>
+            <li class="item  <?php if(arg(3) =='visa') echo 'active';?>"><a href="http://localhost/duhoc/quanly/student/<?php echo $a;?>/visa">Visa</a> </li>
+          </ul>
        <?php endif; ?>
 
+      <?php if($b =='setting'):?>
+          <ul class="menu_seting">
+            <li class="item <?php if($a == false) echo 'active';?>"><a href="http://localhost/duhoc/quanly/setting/">List Country</a> </li>
+            <li class="item <?php if($a =='contract') echo 'active';?>"><a href="http://localhost/duhoc/quanly/setting/contract">List Contract</a> </li>
+          </ul>
+      <?php endif;?>
         <?php print render($page['help']); ?>
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
         <?php print render($page['content']); ?>
