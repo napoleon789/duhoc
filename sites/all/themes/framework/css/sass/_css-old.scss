@@ -105,6 +105,7 @@ label { display: block; font-weight: normal;}
 .node-hocvien-form .form-wrapper .field-type-datestamp fieldset .fieldset-wrapper{ background: none; border: none;padding: 0; margin: 0}
 .node-hocvien-form .form-wrapper .field-type-datestamp .date-padding label{ display: none}
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image{ display: inline-block; width: 170px; vertical-align: top;margin-left: 15px;}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-image .form-type-managed-file{margin-bottom: 0;margin-top: 0;}
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image label,
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget-data .file-size,
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image .image-widget-data .file {display: none}
@@ -113,7 +114,7 @@ label { display: block; font-weight: normal;}
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview{float: none; display: block; margin:0 auto;}
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview{background-color: #979696;height: 170px;line-height: 170px;padding: 0;margin-bottom: 15px;}
 .node-hocvien-form .field-name-field-student-basic .field-name-field-image div.image-preview img{max-height: 170px;vertical-align: middle}
-.node-hocvien-form .field-name-field-student-basic .personal_information{display: inline-block;margin-left: 30px}
+.node-hocvien-form .field-name-field-student-basic .personal_information{display: inline-block;margin-left: 54px}
 .node-hocvien-form .field-name-field-student-basic .personal_information .form-item{ display: table;margin-bottom: 0}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-text .form-type-textfield label,
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-number-integer label,
@@ -126,7 +127,7 @@ label { display: block; font-weight: normal;}
 .node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset legend span{ background: #fff; border: none;padding-top: 0;margin: 0; padding-bottom: 0;}
 html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
 
-.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp{ margin-top: 17px}
+//.node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp{ margin-top: 17px}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper{ display: table}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper legend{position: initial; width: auto; float: left; text-indent: 0; line-height: 1.8;display: table-cell; margin-right: 5px;margin-top: 5px;}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper{ display: table-cell}
@@ -135,31 +136,43 @@ html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset.form-wrapper .fieldset-wrapper .date-padding input,
 .node-hocvien-form .field-name-field-student-basic .personal_information .field-name-field-student-phone input{width: 453px}
 
-.node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset{margin-top: 30px}
+.node-hocvien-form .field-name-field-student-basic .fieldset-wrapper fieldset{margin-top: 18px}
 .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper{ display: table}
 .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper label{border: 1px solid #ccc;border-bottom: 0;text-align: center;border-right: none;}
 .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .form-wrapper{ display: table-cell;}
-.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .form-wrapper input,
-.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level select{ width: 120px;border-right: none; margin:0; text-align: center}
-.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-current-school input{width: 400px}
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .form-wrapper input{ width: 165px;border-right: none; margin:0; text-align: center}
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level select{ width: 145px;border-right: none; margin:0; text-align: center}
+.node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-current-school input{width: 327px}
 .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level .description{display: none}
 .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level select{padding-bottom:3px;border-right:1px solid #ccc }
 .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper .field-name-field-english-level label{border-right:1px solid #ccc }
 
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper{padding: 0 15px;}
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item, .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-actions{margin-top:0;margin-bottom: 0;}
 .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper,
 .node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper,
 .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item,
 .node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item{ display: table}
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper{width: 367px;}
 .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper,
 .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item select,
-.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item label{ display: table-cell; width: 50%;padding-right: 45px}
-.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item select{ width: 160px}
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item label{ display: table-cell;padding-right: 45px;text-transform: uppercase;}
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item select{ width: 140px}
+.node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper.field-name-field-st-country .form-item label{min-width: 190px;}
 
-
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper{padding: 0 15px;}
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item, .node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-actions{margin-bottom: 0;margin-top: 0;}
 .node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper,
 .node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item select,
-.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item label{ display: table-cell; padding-right: 45px}
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper .form-item label{ display: table-cell; padding-right: 45px;text-transform: uppercase;}
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper.field-name-field-marketing-channels .form-item label{min-width: 190px;}
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper.field-name-field-marketing-channels .form-item select{width: 140px;}
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .field-name-field-ila-study{width: 367px;}
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .field-name-field-ila-study input{vertical-align: middle;margin-right: 15px;}
+.node-hocvien-form .field-name-field-student-basic .marketing_resource .field-name-field-detail-chanel select{width: 140px;}
 
+.node-hocvien-form .field-name-field-student-basic .field-name-field-level-of-potential label{color: #2f2f2f;font-size: 15px;font-weight: bold;text-transform: uppercase;}
+.node-hocvien-form .field-name-field-student-basic .field-name-field-level-of-potential select{margin-left: 15px;width: 140px;}
 /*VISA*/
 .node-hocvien-form .field-name-field-student-visa .field-name-field-visa-status,
 .node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit,
