@@ -996,6 +996,9 @@ input, select {
   box-shadow: 0 1px 1px rgba(122, 113, 133, 0.75);
   margin-bottom: 18px;
 }
+#header #container {
+  padding: 0;
+}
 #header #navigation {
   float: right;
 }
