@@ -243,6 +243,6 @@ function duhoc_menu_reports() {
 function duhoc_menu_list_contract() {
   global $base_url;
   $output = views_embed_view('list_contract','default');
-  $output .= '<a href="'.$base_url.'/node/add/contract">Add contract</a>';
+  $output .= '<a href="'.$base_url.'/node/add/contract" class="btn-orange">Add contract</a>';
   return $output;
 }
