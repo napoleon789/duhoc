@@ -12,13 +12,15 @@ jQuery(document).ready(function($) {
     });
 
    // jQuery('.page-quanly-setting input[type="text"]').attr('disabled',true);
-    $("#edit-field-select-contract-und").change(function() {
+    $("#contract_change .form-select").change(function() {
         $('.load').text('loading...').css('color','red');
         var contract = $(this).val();
+        var num = $(this).parents('#contract_change').attr('rel');
+        console.log(num);
         var pathname = window.location.pathname;
         var host = window.location.host;
             $.ajax({
-                url:'contract/'+contract,
+                url:'contract/'+contract+'/'+num,
                 dataType: 'JSON',
                 success:function(result){
                     $('.load').text('');

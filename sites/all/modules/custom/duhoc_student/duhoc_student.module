@@ -50,6 +50,11 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
 
    }
    if(arg(3) == 'contract' || (isset($m) && $m =='contract')) {
+     $node = node_load(43);
+     $node = entity_metadata_wrapper('node', $node);
+     $collection = $node->field_student_contract[0]->value();
+     $collec = $collection->field_select_list_contract['und'][0]['value'] ;
+     $collec ->save(true);
      $form['field_student_pathway']['#access'] = false;
      $form['field_student_visa']['#access'] = false;
      $form['field_student_basic']['#access'] = false;
@@ -69,7 +74,21 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      if(!isset($form_state['build_info']['files'])){
        $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
      }
-     $form['field_student_contract']['#suffix'] = '<a href="/export/hocvien/'.arg(2).'">print</a>';
+     $submit = drupal_render($form['actions']['submit']);
+     $form['actions']['delete']['#access'] = false;
+     $form['field_student_contract']['und']['add_more']['#suffix'] = $submit;
+   //add print contract
+     $num = duhoc_student_verify_number($nid);
+
+     for($i =0 ; $i < $num; $i ++) {
+
+       $remove = drupal_render($form['field_student_contract']['und'][$i]['remove_button']);
+       $form['field_student_contract']['und'][$i]['field_select_list_contract']['#attributes']= array('rel'=>$i,'id' => 'contract_change');
+
+      $form['field_student_contract']['und'][$i]['field_button'] = array();
+       $form['field_student_contract']['und'][$i]['field_select_list_contract']['#suffix'] = '<span class="load"></span><div class="action_remove"><a href="/export/hocvien/'.arg(2).'" >print</a>'.$submit.$remove.'</div>';
+     }
+    // $form['field_student_contract']['#suffix'] = '<a href="/export/hocvien/'.arg(2).'">print</a>';
      $form['field_select_contract']['#access'] = true;
    }
    if((isset($m) && $m == 'visa') || arg(3) == 'visa') {
@@ -160,4 +179,9 @@ function duhoc_student_node_update($node) {
 
 function duhoc_student_save_contract($nid,$cid) {
 
+}
+
+function duhoc_student_verify_number($nid) {
+  $number = db_query("SELECT delta FROM {field_data_field_student_contract} WHERE entity_id =:nid",array(':nid' => $nid))->rowCount();
+  return $number;
 }

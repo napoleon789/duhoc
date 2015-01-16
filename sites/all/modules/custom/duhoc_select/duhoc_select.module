@@ -32,8 +32,9 @@ function duhoc_select_list_contract() {
 }
 
 function duhoc_select_update_contract() {
+  $i = arg(5);
   $node = node_load(arg(2));
-  $node->field_select_contract['und'][0]['value'] = arg(4);
+  $node->field_select_contract['und'][$i]['value'] = arg(4);
   node_save($node);
 }
 
