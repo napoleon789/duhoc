@@ -361,6 +361,7 @@ html.js fieldset.collapsible .fieldset-legend {
 
 .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper .form-item select {
   width: 140px;
+  padding-right: 3px;
 }
 
 .node-hocvien-form .field-name-field-student-basic .student_intested .fieldset-wrapper .form-wrapper.field-name-field-st-country .form-item label {
@@ -975,6 +976,12 @@ input[type="button"], input[type="submit"] {
   line-height: normal;
 }
 
+input, select {
+  font-size: 14px;
+  color: #2f2f2f;
+  font-family: "Roboto Condensed";
+}
+
 #header {
   background-color: white;
   padding: 18px 0;
@@ -984,6 +991,9 @@ input[type="button"], input[type="submit"] {
   -o-box-shadow: 0 1px 1px rgba(122, 113, 133, 0.75);
   box-shadow: 0 1px 1px rgba(122, 113, 133, 0.75);
   margin-bottom: 18px;
+}
+#header #container {
+  padding: 0;
 }
 #header #navigation {
   float: right;
@@ -1046,53 +1056,53 @@ input[type="button"], input[type="submit"] {
   margin-top: 0;
 }
 
-.page-quanly-student .view-content {
+.page-quanly-student .view-content, .page-quanly-setting-contract .view-content {
   margin: 0 15px;
 }
-.page-quanly-student .view-content .views-table {
+.page-quanly-student .view-content .views-table, .page-quanly-setting-contract .view-content .views-table {
   border: 1px solid #838484;
 }
-.page-quanly-student .view-content .views-table thead tr th, .page-quanly-student .view-content .views-table thead tr td {
+.page-quanly-student .view-content .views-table thead tr th, .page-quanly-student .view-content .views-table thead tr td, .page-quanly-setting-contract .view-content .views-table thead tr th, .page-quanly-setting-contract .view-content .views-table thead tr td {
   background-color: #eef8f9;
   font-size: 17px;
   border-left: 1px solid #838484;
   padding: 0 10px 1px;
 }
-.page-quanly-student .view-content .views-table thead tr th:first-child, .page-quanly-student .view-content .views-table thead tr td:first-child {
+.page-quanly-student .view-content .views-table thead tr th:first-child, .page-quanly-student .view-content .views-table thead tr td:first-child, .page-quanly-setting-contract .view-content .views-table thead tr th:first-child, .page-quanly-setting-contract .view-content .views-table thead tr td:first-child {
   border-left: none;
 }
-.page-quanly-student .view-content .views-table tbody tr, .page-quanly-student .view-content .views-table tbody tr.odd, .page-quanly-student .view-content .views-table tbody tr.even {
+.page-quanly-student .view-content .views-table tbody tr, .page-quanly-student .view-content .views-table tbody tr.odd, .page-quanly-student .view-content .views-table tbody tr.even, .page-quanly-setting-contract .view-content .views-table tbody tr, .page-quanly-setting-contract .view-content .views-table tbody tr.odd, .page-quanly-setting-contract .view-content .views-table tbody tr.even {
   border: none;
   background: none;
 }
-.page-quanly-student .view-content .views-table tbody tr td, .page-quanly-student .view-content .views-table tbody tr.odd td, .page-quanly-student .view-content .views-table tbody tr.even td {
+.page-quanly-student .view-content .views-table tbody tr td, .page-quanly-student .view-content .views-table tbody tr.odd td, .page-quanly-student .view-content .views-table tbody tr.even td, .page-quanly-setting-contract .view-content .views-table tbody tr td, .page-quanly-setting-contract .view-content .views-table tbody tr.odd td, .page-quanly-setting-contract .view-content .views-table tbody tr.even td {
   border-top: 1px solid #838484;
   border-left: 1px solid #838484;
   padding: 4px 10px 2px;
 }
-.page-quanly-student .view-content .views-table tbody tr td:first-child, .page-quanly-student .view-content .views-table tbody tr.odd td:first-child, .page-quanly-student .view-content .views-table tbody tr.even td:first-child {
+.page-quanly-student .view-content .views-table tbody tr td:first-child, .page-quanly-student .view-content .views-table tbody tr.odd td:first-child, .page-quanly-student .view-content .views-table tbody tr.even td:first-child, .page-quanly-setting-contract .view-content .views-table tbody tr td:first-child, .page-quanly-setting-contract .view-content .views-table tbody tr.odd td:first-child, .page-quanly-setting-contract .view-content .views-table tbody tr.even td:first-child {
   border-left: none;
 }
-.page-quanly-student .views-exposed-form {
+.page-quanly-student .views-exposed-form, .page-quanly-setting-contract .views-exposed-form {
   position: relative;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets {
+.page-quanly-student .views-exposed-form .views-exposed-widgets, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets {
   margin-bottom: 9px;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-title {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-title, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-title {
   float: none;
   padding: 0;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets label {
+.page-quanly-student .views-exposed-form .views-exposed-widgets label, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets label {
   float: left;
   font-size: 17px;
   text-transform: uppercase;
   padding-top: 2px;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-widget {
   float: right;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title {
   background-color: #f4f3f3;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
@@ -1103,7 +1113,7 @@ input[type="button"], input[type="submit"] {
   padding-right: 46px;
   height: 29px;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title input {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title input, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title input {
   border: none;
   background: transparent;
   padding: 0 0 0 15px;
@@ -1111,13 +1121,13 @@ input[type="button"], input[type="submit"] {
   font-size: 12px;
   color: #525352;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button {
   position: absolute;
   top: -2px;
   right: 0;
   padding: 0;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button input {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button input, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button input {
   margin: 0;
   background-color: #eaa921;
   border: none;
@@ -1135,48 +1145,10 @@ input[type="button"], input[type="submit"] {
   -o-border-radius: 0;
   border-radius: 0;
 }
-.page-quanly-student .btn-orange {
+.page-quanly-student .btn-orange, .page-quanly-setting-contract .btn-orange {
   float: right;
   margin-right: 15px;
-}
-.page-quanly-student .menu_student {
-  margin: -7px -20px 18px;
-  padding: 0 20px 0;
-  background-color: #838484;
-  border-bottom: 3px solid #fcbc18;
-}
-.page-quanly-student .menu_student li {
-  list-style: none;
-  margin: 0;
-  padding: 9px 0 11px;
-  display: inline-block;
-  margin-right: 26px;
-  position: relative;
-  -webkit-transition: all ease 0.3s;
-  -moz-transition: all ease 0.3s;
-  -ms-transition: all ease 0.3s;
-  -o-transition: all ease 0.3s;
-  transition: all ease 0.3s;
-}
-.page-quanly-student .menu_student li a {
-  color: white;
-  font-size: 18px;
-}
-.page-quanly-student .menu_student li.active a, .page-quanly-student .menu_student li:hover a {
-  color: #fcbc18;
-}
-.page-quanly-student .menu_student li.active::after, .page-quanly-student .menu_student li:hover::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 12px solid #fcbc18;
-  margin-left: -3px;
+  margin-bottom: 35px;
 }
 
 .page-quanly-student-basic fieldset {
@@ -1293,4 +1265,121 @@ input[type="button"], input[type="submit"] {
   font-size: 13px;
   font-family: "Roboto Condensed";
   color: #2f2f2f;
+}
+
+.menu_student, .menu_seting {
+  margin: -7px -20px 18px;
+  padding: 0 20px 0;
+  background-color: #838484;
+  border-bottom: 3px solid #fcbc18;
+}
+.menu_student li, .menu_seting li {
+  list-style: none;
+  margin: 0;
+  padding: 9px 0 11px;
+  display: inline-block;
+  margin-right: 26px;
+  position: relative;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+.menu_student li a, .menu_seting li a {
+  color: white;
+  font-size: 18px;
+}
+.menu_student li.active a, .menu_student li:hover a, .menu_seting li.active a, .menu_seting li:hover a {
+  color: #fcbc18;
+}
+.menu_student li.active::after, .menu_student li:hover::after, .menu_seting li.active::after, .menu_seting li:hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 12px solid #fcbc18;
+  margin-left: -3px;
+}
+
+.page-quanly-setting-contract .view-content {
+  margin: 0;
+}
+.page-quanly-setting-contract .view-content .views-field-edit-node {
+  text-align: center;
+}
+.page-quanly-setting-contract .btn-orange {
+  margin-right: 0;
+}
+
+.page-quanly-user #my-module-table {
+  border: 1px solid #838484;
+  margin-bottom: 15px;
+  margin-top: 13px;
+}
+.page-quanly-user #my-module-table td, .page-quanly-user #my-module-table th {
+  text-align: center;
+}
+.page-quanly-user #my-module-table thead tr th, .page-quanly-user #my-module-table thead tr td {
+  background-color: #eef8f9;
+  font-size: 17px;
+  border-left: 1px solid #838484;
+  padding: 0 10px 1px;
+  border-bottom: none;
+}
+.page-quanly-user #my-module-table thead tr th:first-child, .page-quanly-user #my-module-table thead tr td:first-child {
+  border-left: none;
+  width: 170px;
+}
+.page-quanly-user #my-module-table thead tr th:last-child, .page-quanly-user #my-module-table thead tr td:last-child {
+  width: 150px;
+}
+.page-quanly-user #my-module-table tbody tr, .page-quanly-user #my-module-table tbody tr.odd, .page-quanly-user #my-module-table tbody tr.even {
+  border: none;
+  background: none;
+}
+.page-quanly-user #my-module-table tbody tr td, .page-quanly-user #my-module-table tbody tr.odd td, .page-quanly-user #my-module-table tbody tr.even td {
+  border-top: 1px solid #838484;
+  border-left: 1px solid #838484;
+  padding: 4px 10px 2px;
+}
+.page-quanly-user #my-module-table tbody tr td:first-child, .page-quanly-user #my-module-table tbody tr.odd td:first-child, .page-quanly-user #my-module-table tbody tr.even td:first-child {
+  border-left: none;
+}
+.page-quanly-user .add_user {
+  text-align: right;
+  margin-bottom: 35px;
+}
+.page-quanly-user .add_user a {
+  background-color: #fcbc18;
+  height: 26px;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 26px;
+  -webkit-border-radius: 26px;
+  -moz-border-radius: 26px;
+  -ms-border-radius: 26px;
+  -o-border-radius: 26px;
+  border-radius: 26px;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  min-width: 104px;
+  padding: 0 5px;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+.page-quanly-user .add_user a:hover {
+  background-color: #2f2f2f;
+  color: white;
 }

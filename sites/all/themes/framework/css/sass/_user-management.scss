@@ -1,0 +1,66 @@
+.page-quanly-user{
+  #my-module-table{
+    border:1px solid $md-gray;
+    margin-bottom: 15px;
+    margin-top: 13px;
+    td,th{
+      text-align: center;
+    }
+    thead{
+      tr{
+        th,td{
+          background-color: $light-green;
+          font-size: 17px;
+          border-left:1px solid $md-gray;
+          padding: 0 10px 1px;
+          border-bottom: none;
+          &:first-child{
+            border-left: none;
+            width: 170px;
+          }
+          &:last-child{
+            width: 150px;
+          }
+        }
+      }
+    }
+    tbody{
+      tr, tr.odd, tr.even{
+        border:none;
+        background:none;
+        td{
+          border-top:1px solid $md-gray;
+          border-left:1px solid $md-gray;
+          padding: 4px 10px 2px;
+          &:first-child{
+            border-left: none;
+          }
+        }
+      }
+    }
+  }
+  .add_user{
+    text-align: right;
+    margin-bottom: 35px;
+    a{
+      background-color: $md-yellow;
+      height: 26px;
+      font-weight: bold;
+      font-size: 11px;
+      line-height: 26px;
+      @include border-radius(26px);
+      @include transition(all ease 0.3s);
+      min-width: 104px;
+      padding: 0 5px;
+      display: inline-block;
+      text-align: center;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      &:hover{
+        background-color: $color-text;
+        color: $white;
+      }
+    }
+  }
+}
