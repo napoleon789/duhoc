@@ -79,8 +79,8 @@ function duhoc_menu_menu() {
     'type' => MENU_LOCAL_TASK,
     'weight' => 1,
   );
-  $items['quanly/setting/ads'] = array(
-    'title' => 'Channel marketing',
+  $items['quanly/setting/course'] = array(
+    'title' => 'List course',
     'page callback' => 'duhoc_student_admin',
     'page arguments' => array("13"),
     'access arguments' => array('access content'),
