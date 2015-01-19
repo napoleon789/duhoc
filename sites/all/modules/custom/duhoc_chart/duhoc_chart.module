@@ -16,7 +16,9 @@ function duhoc_chart_block_info() {
   $blocks['chart_colum_home'] = array(
     'info' => t('Chart colum home'),
   );
-
+  $blocks['chart_colum_home_office'] = array(
+    'info' => t('Chart colum home Office'),
+  );
   return $blocks;
 }
 
@@ -29,6 +31,9 @@ function duhoc_chart_block_view($delta = '') {
   switch ($delta) {
     case 'chart_colum_home':
       $block['content'] = duhoc_chart_colum();
+      break;
+    case 'chart_colum_home_office':
+      $block['content'] = duhoc_chart_colum_office();
       break;
   }
   return $block;
@@ -48,8 +53,8 @@ function drawChart() {
     ["Month", "Now year", "Tagets"],
    '.duhoc_chart_data().'
   ]);
-
   var options = {
+    chartArea:{left:0,top:60,width:"88%"},
     hAxis: {title: "", titleTextStyle: {color: "red"}}
   };
 
@@ -57,12 +62,13 @@ function drawChart() {
 
   chart.draw(data, options);
 
+
 }
   ';
   drupal_add_js($js, array('scope' => 'footer', 'type' => 'inline'));
   $header = array('Month','Sales');
   $output = '<h2>Monthly Sales</h2>';
-  $output .= '<div class="content_home"> <div id="chart_div" style="width:700px;height:400px;padding-left: -900px;float:left;text-align: left;"></div>';
+  $output .= '<div class="content_home"> <div id="chart_div" style="width:700px;height:400px;float:left"></div>';
 
   $output  .= '<div class="content_mont" style ="width:200px;float:right;"><h2>Table Mothly Sales</h2>'.theme('table', array('header' => $header,   'rows' => duhoc_chart_time_now() )).'</div>';
   $output .= '</div>';
@@ -88,10 +94,10 @@ target.delta = mont.delta WHERE FROM_UNIXTIME(mont.field_th_ng_value,'%c') = :mo
   }
 return $result;
 }
+
 function duhoc_chart_time_now() {
   //$ymonth = date('m',time());
   $ymonth = '12';
-
 for($i = 1; $i <= $ymonth ;$i++) {
   $sale = duhoc_chart_sum_contract($i);
   $row['month'] = duhhoc_chart_convert_month($i);
@@ -104,7 +110,6 @@ for($i = 1; $i <= $ymonth ;$i++) {
 
 function duhoc_chart_sum_contract($month) {
   $query = db_query("SELECT contract.field_student_contract_value FROM field_data_field_student_contract as contract INNER JOIN node as n ON contract.entity_id = n.nid WHERE FROM_UNIXTIME(n.created,'%c') = :month",array(':month' => $month))->rowCount();
-
   return $query;
 }
 function duhhoc_chart_convert_month($month) {
@@ -146,4 +151,31 @@ function duhhoc_chart_convert_month($month) {
       return 'December';
     break;
   }
+}
+
+function duhoc_chart_form_select() {
+  $form = array();
+  $form['selected'] = array(
+    '#type' => 'select',
+    '#title' => t('Selected'),
+    '#options' => array(
+      0 => t('No'),
+      1 => t('Yes'),
+    ),
+  );
+}
+
+function duhoc_chart_user_roles($role) {
+  $query = db_query("SELECT uid FROM {users_roles} WHERE rid = :role",array(':role' => $role));
+  $count = $query->rowCount();
+  $i = 0;
+  $data = '';
+  foreach($query as $result) {
+    $i++;
+    if($i == $count - 1)
+      $data .= $result -> uid;
+    else
+      $data = $result -> uid.', ';
+  }
+  return $data;
 }

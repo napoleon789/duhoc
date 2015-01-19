@@ -22,8 +22,7 @@ function duhoc_student_admin($id='') {
  * im plement hook_form_alter
  */
 function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
-  dpm($form);
- if($form_id =='hocvien_node_form' && arg(1) != 'add') {
+ if($form_id =='hocvien_node_form') {
    $form['field_select_contract']['#access'] = false;
    $form['title']['#access'] = false;
    $current_url = arg(3);
@@ -32,6 +31,7 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
 
    if(arg(1) == 'add' && arg(2) == 'hocvien') {
      $form['field_student_basic']['#access'] = true;
+     $form['field_student_contract']['#access'] = false;
    }
    if(arg(3) == 'basic' ||(isset($m) && $m =='basic')) {
      $form['field_student_pathway']['#access'] = false;
@@ -66,7 +66,6 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
       }
        $form['field_student_contract']['#prefix'] = $his;
      }
-
      if(!isset($form_state['build_info']['files'])){
        $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
      }
