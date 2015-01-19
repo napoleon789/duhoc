@@ -6,13 +6,12 @@
 
 function duhoc_menu_menu() {
   $items['quanly'] = array(
-    'title' => 'Dashboard',
+    'title' => '',
     'page callback' => 'duhoc_menu_admin',
     'access arguments' => array('access content'),
     'type' => MENU_NORMAL_ITEM,
   );
   $items['quanly/dashboard'] = array(
-    'title' => 'Dashboard',
     'page callback' => 'duhoc_menu_admin',
     'access arguments' => array('access content'),
     'type' => MENU_DEFAULT_LOCAL_TASK,
@@ -159,7 +158,7 @@ function duhoc_menu_menu() {
 
   $items['mang'] = array(
     'title' => 'Visa',
-    'page callback' => 'duhoc_chart_sum_contract',
+    'page callback' => 'duhoc_chart_tagets',
     'access arguments' => array('access content'),
   );
   return $items;

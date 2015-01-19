@@ -22,6 +22,7 @@ function duhoc_student_admin($id='') {
  * im plement hook_form_alter
  */
 function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
+  dpm($form);
  if($form_id =='hocvien_node_form' && arg(1) != 'add') {
    $form['field_select_contract']['#access'] = false;
    $form['title']['#access'] = false;
@@ -71,7 +72,8 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      }
      $submit = drupal_render($form['actions']['submit']);
      $form['actions']['delete']['#access'] = false;
-     $form['field_student_contract']['und']['add_more']['#suffix'] = $submit;
+     $form['field_student_contract']['und']['add_more']['#suffix'] = $submit.'</div>';
+     $form['field_student_contract']['und']['add_more']['#prefix'] = '<div class="btn-footer">';
    //add print contract
      $num = duhoc_student_verify_number($nid);
 
