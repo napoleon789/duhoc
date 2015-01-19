@@ -279,3 +279,288 @@
     }
   }
 }
+
+
+// contract
+.page-quanly-student-contract{
+  .tabledrag-toggle-weight-wrapper{
+    display: none;
+  }
+  .sticky-header{
+    display: none;
+  }
+  .sticky-table{
+    position: relative !important;
+    th.field-label{
+      border:none;
+      label{
+        font-size: 17px;
+        border-bottom: 2px solid $md-yellow;
+        text-transform: uppercase;
+        display: inline-block;
+        line-height: normal;
+        margin-bottom: 3px;
+      }
+    }
+    tbody{
+      tr.even, tr.odd{
+        background-color: transparent;
+      }
+      tr:first-child{
+        .required-fields.contract-header{
+          margin-top: 0;
+        }
+      }
+      h3{
+        margin-top:0;
+        font-size: 15px;
+        font-weight: normal;
+      }
+      label, legend{
+        text-transform: uppercase;
+        font-size: 15px;
+        float: left;
+        margin-top: 4px;
+      }
+      input[type="text"], input[type="email"]{
+        background-color: $light-gray;
+        @include box-shadow(0 1px 1px rgba(0,0,0,0.28) inset);
+        border:none;
+        height: 25px;
+        width: 200px !important;
+        margin-bottom: 12px;
+      }
+      select{
+        margin-bottom: 12px;
+      }
+      .field-multiple-drag{
+        width: 15px;
+      }
+      .required-fields.contract-header{
+        @include clearfix();
+        margin-top: 20px;
+        label{
+          float: left;
+          margin-top: 4px;
+        }
+        input{
+          float: right;
+        }
+        .field-name-field-study-program{
+          float: left;
+          width: 329px;
+          margin-right: 5px;
+        }
+        .field-name-field-contract-no{
+          width: 290px;
+          margin-right: 5px;
+          float: left;
+        }
+        .field-name-field-date-of-signing{
+          width: 312px;
+          float: left;
+          span{
+            text-transform: uppercase;
+            font-size: 15px;
+          }
+          label, .description{
+            display: none;
+          }
+          legend{
+            display: inline-block;
+            float: left;
+            margin-top: 4px;
+          }
+          .fieldset-wrapper{
+            float: right;
+            div{
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+      }
+
+      .required-fields.party_b_info{
+        .field-name-field-signer-name, .field-name-field-adress{
+          label{
+            float: left;
+            margin-top: 4px;
+            width: 130px;
+            padding-left: 22px;
+          }
+        }
+        .field-name-field-adress{
+          input{
+            width: 496px;
+          }
+        }
+        .required-fields.b_groupt{
+          &.b_groupt_1, &.b_groupt_2{
+            @include clearfix();
+          }
+          .form-wrapper{
+            float: left;
+          }
+          .field-name-field-id, .field-name-field-phone{
+            margin-right: 8px;
+            label{
+              float: left;
+              margin-top: 4px;
+              width: 130px;
+              padding-left: 22px;
+            }
+          }
+          .field-name-field-issued-date{
+            legend{
+              display: inline-block;
+              float: left;
+              margin-top: 4px;
+              width: 88px;
+              font-size: 15px;
+              text-transform: uppercase;
+            }
+            .fieldset-wrapper{
+              float: right;
+              div{
+                margin: 0;
+                padding: 0;
+              }
+            }
+            .description{
+              display: none;
+            }
+          }
+          .field-name-field-phone{
+            clear: left;
+          }
+          .field-name-field-email{
+            label{
+              float: left;
+              margin-top: 4px;
+              width: 88px;
+              font-size: 15px;
+            }
+          }
+
+        }
+        .field-name-field-authorized-by{
+          label{
+            float: left;
+            margin-top: 4px;
+            width: 130px;
+            padding-left: 22px;
+          }
+        }
+      }
+
+      .required-fields.group-student-info, .field-name-field-student-birth{
+        label, legend{
+          float: left;
+          margin-top: 4px;
+          width: 130px;
+          padding-left: 22px;
+        }
+        .description{
+          display: none;
+        }
+        .fieldset-wrapper{
+          float: left;
+          div{
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+      .field-name-field-relationship-with-party-b, .field-name-field-study-program-info, .field-type-datestamp.field-name-field-intake{
+        label, legend{
+          float: left;
+          margin-top: 4px;
+          width: 206px !important;
+          padding-left: 22px;
+        }
+        select{
+          width: 200px;
+        }
+      }
+
+      .required-fields.group-contract-info{
+        padding-left: 15px;
+        h3{
+          margin-left: -15px;
+        }
+        .required-fields.group-contract-info-1{
+          @include clearfix();
+          .form-wrapper{
+            float: left;
+          }
+          label{
+            width: 205px;
+          }
+          select{
+            width: 114px;
+          }
+          .field-name-field-supporter-name{
+            margin-left: 70px;
+            label{
+              width: auto;
+              margin-right: 10px;
+            }
+          }
+        }
+        .required-fields.group-contract-info-2{
+          .form-wrapper{
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: top;
+            label{
+              width: auto;
+              margin-right: 10px;
+            }
+            legend{
+              margin-top: 4px;
+              margin-right: 10px;
+            }
+            .fieldset-wrapper{
+              float: left;
+              div{
+                margin: 0;
+                padding: 0;
+                .description{
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #contract_change{
+        label{
+          margin-right: 10px;
+        }
+      }
+      .action_remove{
+        margin-bottom: 35px;
+        .btn-orange{
+          float: none;
+          margin-right: 12px;
+          margin-bottom: 0;
+        }
+        input[type="button"], input[type="submit"]{
+          position: static !important;
+          margin-right: 12px;
+
+        }
+      }
+
+    }
+  }
+  .btn-footer{
+    margin-top: 15px;
+    input{
+      min-width: 125px;
+      margin-right: 15px;
+    }
+  }
+}
