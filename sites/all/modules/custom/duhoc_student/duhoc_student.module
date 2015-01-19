@@ -50,11 +50,6 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
 
    }
    if(arg(3) == 'contract' || (isset($m) && $m =='contract')) {
-     $node = node_load(43);
-     $node = entity_metadata_wrapper('node', $node);
-     $collection = $node->field_student_contract[0]->value();
-     $collec = $collection->field_select_list_contract['und'][0]['value'] ;
-     $collec ->save(true);
      $form['field_student_pathway']['#access'] = false;
      $form['field_student_visa']['#access'] = false;
      $form['field_student_basic']['#access'] = false;

@@ -45,3 +45,4 @@ function duhoc_report_export_to_excel($content) {
   echo $content;
   exit;
 }
+

@@ -66,6 +66,20 @@ function drawChart() {
   ';
 
   drupal_add_js($js, array('scope' => 'footer', 'type' => 'inline'));
-  $output = ' <div id="chart_div" style="width: 900px; height: 500px;"></div>';
+  $output = '<div class="content_home"> <div id="chart_div" style="width: 900px; height: 500px;"></div>';
+  $output .= '</div>';
   return $output;
+}
+
+function duhoc_chart_time_now($t) {
+  global $user;
+  $query  = db_query("SELCT taget.field_target_value FROM field_data_field_target taget INNER JOIN field_data_field_th_ng moth ON taget.entity_id = moth.entity_id WHERE  entity_id = %d AND ",$user -> uid);
+for($i = 1; $i < 8 ;$i++) {
+
+}
+}
+
+function duhoc_chart_sum_contract() {
+  $query = db_query("SELECT COUNT(contract.field_student_contract_value) FROM field_data_field_student_contract contract INNER JOIN node n ON contract.entity_id = n.nd WHERE FROM_UNIXTIME(n.created,'%c') = 1");
+  return $query;
 }

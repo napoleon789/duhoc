@@ -159,10 +159,8 @@ function duhoc_menu_menu() {
 
   $items['mang'] = array(
     'title' => 'Visa',
-    'page callback' => 'duhoc_student_contract',
+    'page callback' => 'duhoc_chart_sum_contract',
     'access arguments' => array('access content'),
-    'type' => MENU_LOCAL_TASK,
-    'weight' => 4,
   );
   return $items;
 }
