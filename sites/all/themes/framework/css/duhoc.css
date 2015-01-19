@@ -1396,6 +1396,13 @@ input, select {
   position: static !important;
   margin-right: 12px;
 }
+.page-quanly-student-contract .btn-footer {
+  margin-top: 15px;
+}
+.page-quanly-student-contract .btn-footer input {
+  min-width: 125px;
+  margin-right: 15px;
+}
 
 .page-quanly-setting-contract .view-content {
   margin: 0;
