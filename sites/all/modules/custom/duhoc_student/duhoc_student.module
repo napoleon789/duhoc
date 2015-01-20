@@ -22,7 +22,7 @@ function duhoc_student_admin($id='') {
  * im plement hook_form_alter
  */
 function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
-  dpm($form);
+
  if($form_id =='hocvien_node_form' && arg(1) != 'add') {
    $form['field_select_contract']['#access'] = false;
    $form['title']['#access'] = false;

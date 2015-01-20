@@ -1168,6 +1168,7 @@ input, select {
   margin-top: 0;
   font-size: 15px;
   font-weight: normal;
+  margin-bottom: 9px;
 }
 .page-quanly-student-contract .sticky-table tbody label, .page-quanly-student-contract .sticky-table tbody legend {
   text-transform: uppercase;
@@ -1385,23 +1386,64 @@ input, select {
   margin-right: 10px;
 }
 .page-quanly-student-contract .sticky-table tbody .action_remove {
-  margin-bottom: 35px;
+  margin-left: -22px;
 }
 .page-quanly-student-contract .sticky-table tbody .action_remove .btn-orange {
   float: none;
   margin-right: 12px;
-  margin-bottom: 0;
+  margin-bottom: 35px;
 }
 .page-quanly-student-contract .sticky-table tbody .action_remove input[type="button"], .page-quanly-student-contract .sticky-table tbody .action_remove input[type="submit"] {
   position: static !important;
   margin-right: 12px;
+  margin-bottom: 35px;
+}
+.page-quanly-student-contract .sticky-table tbody .form-submit {
+  position: static !important;
+  margin-right: 12px;
+  margin-bottom: 35px;
+}
+.page-quanly-student-contract .sticky-table tbody .field-name-field-select-list-contract label {
+  margin-right: 10px;
 }
 .page-quanly-student-contract .btn-footer {
   margin-top: 15px;
+  padding-left: 15px;
 }
 .page-quanly-student-contract .btn-footer input {
   min-width: 125px;
   margin-right: 15px;
+}
+
+.page-quanly-setting .sticky-header {
+  display: none;
+}
+.page-quanly-setting .tabledrag-toggle-weight-wrapper {
+  display: none;
+}
+.page-quanly-setting .sticky-table {
+  position: static !important;
+  border: 1px solid #838484;
+}
+.page-quanly-setting .sticky-table .field-multiple-drag {
+  display: none;
+}
+.page-quanly-setting .sticky-table tr.even, .page-quanly-setting .sticky-table tr.odd {
+  background-color: transparent;
+  border-bottom-color: #838484;
+}
+.page-quanly-setting .sticky-table tr.even td input, .page-quanly-setting .sticky-table tr.odd td input {
+  border: none !important;
+}
+.page-quanly-setting .sticky-table tr.even td .form-submit, .page-quanly-setting .sticky-table tr.odd td .form-submit {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  background: none;
+  border: none;
+  color: #2f2f2f;
 }
 
 .page-quanly-setting-contract .view-content {

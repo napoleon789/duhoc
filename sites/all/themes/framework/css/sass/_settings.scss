@@ -1,5 +1,32 @@
 .page-quanly-setting{
-
+  .sticky-header{
+    display: none;
+  }
+  .tabledrag-toggle-weight-wrapper{
+    display: none;
+  }
+  .sticky-table{
+    position: static !important;
+    border:1px solid $md-gray;
+    .field-multiple-drag{
+      display: none;
+    }
+    tr.even, tr.odd{
+      background-color: transparent;
+      border-bottom-color: $md-gray;
+      td{
+        input{
+          border: none !important;
+        }
+        .form-submit{
+          @include border-radius(0);
+          background: none;
+          border: none;
+          color: $color-text;
+        }
+      }
+    }
+  }
 }
 
 
