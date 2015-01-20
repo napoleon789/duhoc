@@ -431,11 +431,6 @@ html.js fieldset.collapsible .fieldset-legend {
   position: relative;
 }
 
-.node-hocvien-form .field-multiple-table tbody tr td .form-submit {
-  position: absolute;
-  bottom: -2px;
-  left: 135px;
-}
 
 .node-hocvien-form .field-name-field-student-visa .field-name-field-visa-status .form-type-select select {
   width: 100%;
