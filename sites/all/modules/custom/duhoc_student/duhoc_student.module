@@ -26,12 +26,14 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
    $form['field_select_contract']['#access'] = false;
    $form['title']['#access'] = false;
    $current_url = arg(3);
-   $form['current_url'] = array('#type' => 'hidden', '#value' => $current_url);
-   $m = $form_state['input']['current_url'];
+   if(isset($current_url)){
+     $form['current_url'] = array('#type' => 'hidden', '#value' => $current_url);
+     $m = $form_state['input']['current_url'];
+   }
 
    if(arg(1) == 'add' && arg(2) == 'hocvien') {
      $form['field_student_basic']['#access'] = true;
-     $form['field_student_contract']['#access'] = false;
+     unset($form['field_student_contract']);
    }
    if(arg(3) == 'basic' ||(isset($m) && $m =='basic')) {
      $form['field_student_pathway']['#access'] = false;

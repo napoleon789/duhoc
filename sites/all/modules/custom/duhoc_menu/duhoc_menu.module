@@ -158,7 +158,7 @@ function duhoc_menu_menu() {
 
   $items['mang'] = array(
     'title' => 'Visa',
-    'page callback' => 'duhoc_chart_tagets',
+    'page callback' => 'duhoc_chart_list_uid',
     'access arguments' => array('access content'),
   );
   return $items;

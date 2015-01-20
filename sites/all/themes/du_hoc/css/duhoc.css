@@ -231,5 +231,4 @@ html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
 .add_php .form-item-options-element-label-colon {display: none !important;}
 #edit-dynamic-field-wrapper .tabledrag-toggle-weight-wrapper {display: none;}
 #views-dynamic-fields-filters-table-sort .description {display: none;}
-
-
+.field-name-field-collection-test td .form-item {float: left;width: 25%;}
