@@ -1436,9 +1436,13 @@ input, select {
 .page-quanly-student-pathway .sticky-table tr.even, .page-quanly-student-pathway .sticky-table tr.odd {
   background-color: transparent;
 }
+.page-quanly-student-pathway .sticky-table tbody tr:first-child td {
+  padding-top: 0;
+}
 .page-quanly-student-pathway .sticky-table tbody tr td {
   padding-left: 15px;
   padding-bottom: 15px;
+  padding-top: 20px;
 }
 .page-quanly-student-pathway .sticky-table tbody tr td .form-submit {
   position: static !important;
@@ -1516,8 +1520,7 @@ input, select {
   font-weight: bold;
 }
 .page-quanly-student-pathway .field-name-field-student-pathway .field-type-field-collection.field-name-field-collection-test .sticky-table tbody tr td {
-  padding-left: 0;
-  padding-bottom: 0;
+  padding: 0;
 }
 .page-quanly-student-pathway .field-name-field-student-pathway .field-type-field-collection.field-name-field-collection-test .sticky-table tbody tr td input[type="text"] {
   margin-right: 10px;
@@ -1534,6 +1537,74 @@ input, select {
 }
 .page-quanly-student-pathway .field-name-field-student-pathway .field-name-field-com-pending input {
   width: 160px;
+}
+.page-quanly-student-pathway .submit_pre {
+  margin-top: 15px;
+}
+.page-quanly-student-pathway .submit_pre input {
+  min-width: 125px;
+  float: left;
+  margin: 0 20px 0 0;
+}
+.page-quanly-student-pathway .submit_pre .submit {
+  float: left;
+}
+
+.page-quanly-student-visa .tabledrag-toggle-weight-wrapper, .page-quanly-student-visa .field-multiple-drag, .page-quanly-student-visa .sticky-header {
+  display: none;
+}
+.page-quanly-student-visa .sticky-table th {
+  border-bottom: none;
+}
+.page-quanly-student-visa .sticky-table th label {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+.page-quanly-student-visa .sticky-table tr.even, .page-quanly-student-visa .sticky-table tr.odd {
+  background-color: transparent;
+}
+.page-quanly-student-visa .sticky-table tbody tr:first-child td .form-wrapper legend, .page-quanly-student-visa .sticky-table tbody tr:first-child td .form-wrapper label {
+  display: block;
+}
+.page-quanly-student-visa .sticky-table tbody tr:first-child td .form-wrapper .fieldset-wrapper label {
+  display: none;
+}
+.page-quanly-student-visa .sticky-table tbody td .form-wrapper {
+  width: 30%;
+}
+.page-quanly-student-visa .sticky-table tbody td .form-wrapper .form-wrapper {
+  width: 100%;
+}
+.page-quanly-student-visa .sticky-table tbody td .form-wrapper div {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.page-quanly-student-visa .sticky-table tbody td .form-wrapper input, .page-quanly-student-visa .sticky-table tbody td .form-wrapper select {
+  width: 100% !important;
+}
+.page-quanly-student-visa .sticky-table tbody td .form-wrapper legend, .page-quanly-student-visa .sticky-table tbody td .form-wrapper label {
+  display: none;
+}
+.page-quanly-student-visa .sticky-table tbody td .form-submit {
+  float: left;
+  position: static !important;
+  width: 10%;
+  min-width: 1px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  background: none;
+  text-transform: inherit;
+  color: #2f2f2f;
+  height: auto;
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: normal;
 }
 
 .page-quanly-setting .sticky-header {

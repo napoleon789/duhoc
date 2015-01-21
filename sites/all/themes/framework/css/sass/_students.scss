@@ -625,9 +625,15 @@
     tr.even, tr.odd{
       background-color: transparent;
     }
+    tbody tr:first-child{
+      td{
+        padding-top: 0;
+      }
+    }
     tbody tr td{
       padding-left: 15px;
       padding-bottom: 15px;
+      padding-top: 20px;
       .form-submit{
         position: static !important;
       }
@@ -716,8 +722,7 @@
           }
         }
         tbody tr td{
-          padding-left: 0;
-          padding-bottom: 0;
+          padding: 0;
           input[type="text"]{
             margin-right: 10px;
             margin-bottom: 0;
@@ -735,6 +740,89 @@
       padding-top: 15px;
       input{
         width: 160px;
+      }
+    }
+  }
+  .submit_pre{
+    margin-top: 15px;
+    input{
+      min-width: 125px;
+      float: left;
+      margin: 0 20px 0 0;
+    }
+    .submit{
+      float: left;
+    }
+  }
+}
+
+// visa
+.page-quanly-student-visa{
+  .tabledrag-toggle-weight-wrapper, .field-multiple-drag, .sticky-header{
+    display: none;
+  }
+
+  .sticky-table{
+    th{
+      border-bottom: none;
+      label{
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 17px;
+      }
+    }
+    tr.even, tr.odd{
+      background-color: transparent;
+    }
+    tbody{
+      tr:first-child{
+        td{
+          .form-wrapper{
+            legend, label{
+              display: block;
+            }
+            .fieldset-wrapper{
+              label{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      td{
+        .form-wrapper{
+          width: 30%;
+          .form-wrapper{
+            width: 100%;
+          }
+          div{
+            display: block;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+          }
+          input, select{
+            width: 100% !important;
+          }
+          legend, label{
+            display: none;
+          }
+        }
+        .form-submit{
+          float: left;
+          position: static !important;
+          width: 10%;
+          min-width: 1px;
+          @include border-radius(0);
+          background: none;
+          text-transform: inherit;
+          color: $color-text;
+          height: auto;
+          font-size: 14px;
+          margin-top: 5px;
+          font-weight: normal;
+        }
+
       }
     }
   }
