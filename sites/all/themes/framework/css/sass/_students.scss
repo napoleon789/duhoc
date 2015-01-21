@@ -1,3 +1,14 @@
+.item-list{
+  .pager{
+    li{
+      div{
+        display: inline-block;
+        margin-left: 5px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
 .page-quanly-student, .page-quanly-setting-contract{
 
   // student list
@@ -179,6 +190,8 @@
             margin: 0;
             height: 29px;
             clear:none;
+            @include box-shadow(none);
+            background-color: transparent;
           }
         }
         #edit-field-student-basic-und-0-field-student-phone{
@@ -490,6 +503,21 @@
         h3{
           margin-left: -15px;
         }
+        .fieldset-wrapper{
+          float: left;
+          div{
+            margin: 0;
+            padding: 0;
+          }
+          .description{
+            display: none;
+          }
+        }
+        .field-name-field-create-date{
+         legend{
+           margin: 4px 10px 0 0 !important;
+         }
+        }
         .required-fields.group-contract-info-1{
           @include clearfix();
           .form-wrapper{
@@ -572,6 +600,142 @@
     input{
       min-width: 125px;
       margin-right: 15px;
+    }
+  }
+}
+
+
+// path way
+.page-quanly-student-pathway{
+  .tabledrag-toggle-weight-wrapper, .field-multiple-drag, .sticky-header{
+    display: none;
+  }
+
+  .sticky-table{
+    th{
+      border-bottom: none;
+      label{
+        display: inline-block;
+        border-bottom: 2px solid $md-yellow;
+        text-transform: uppercase;
+        font-size: 17px;
+        margin-bottom: 12px;
+      }
+    }
+    tr.even, tr.odd{
+      background-color: transparent;
+    }
+    tbody tr td{
+      padding-left: 15px;
+      padding-bottom: 15px;
+      .form-submit{
+        position: static !important;
+      }
+      label, legend, .fieldset-wrapper{
+//        font-size: 17px;
+        float: left;
+        div{
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          float: none;
+        }
+      }
+      label, legend{
+        margin-right: 7px;
+        margin-top: 2px;
+      }
+      h3{
+        position: static !important;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top:0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .field-name-field-student-pathway{
+    input[type="text"], select{
+      margin-bottom: 16px;
+      float: left;
+    }
+    input[type="text"], input[type="email"], select{
+      background-color: $light-gray;
+      @include box-shadow(0 1px 1px rgba(0,0,0,0.28) inset);
+      border:none !important;
+      height: 25px;
+    }
+    .pathway_group.pathway_group_1{
+      display: table;
+      width: 100%;
+      select{
+        width: 145px;
+      }
+      .field-name-field-stpw-course-name{
+        select{
+          width: 205px;
+        }
+      }
+    }
+    .pathway_group.pathway_group_2{
+      input{
+        width: 145px;
+      }
+      .field-name-field-intake{
+        legend{
+          margin-right: 44px;
+        }
+      }
+    }
+    .pathway_group.pathway_group_3{
+      input{
+        width: 160px;
+      }
+      label, legend{
+        margin-right: 25px;
+      }
+    }
+    .pathway_group_4{
+      input{
+        width: 160px;
+      }
+      legend{
+        margin:2px 7px 0 0;
+      }
+    }
+    .field-type-field-collection.field-name-field-collection-test{
+      .sticky-table{
+        margin-bottom: 15px;
+        th{
+          label{
+            border-bottom: none;
+            font-size: 14px;
+            margin: 0;
+            text-transform: inherit;
+            font-weight: bold;
+          }
+        }
+        tbody tr td{
+          padding-left: 0;
+          padding-bottom: 0;
+          input[type="text"]{
+            margin-right: 10px;
+            margin-bottom: 0;
+          }
+          legend{
+            margin: 2px 7px 0 0;
+          }
+          .form-submit{
+            margin-bottom: 25px;
+          }
+        }
+      }
+    }
+    .field-name-field-com-pending{
+      padding-top: 15px;
+      input{
+        width: 160px;
+      }
     }
   }
 }

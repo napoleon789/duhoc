@@ -188,7 +188,7 @@ html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
 
 .node-hocvien-form .field-name-field-student-visa .field-name-field-visa-note input.form-text {width: 281px;padding-top: 5px;font-size: 13px; padding-bottom: 5px;margin-left: -1px}
 /* STUDY PATHWAY*/
-.field-name-field-student-pathway .pathway_group{display: table}
+//.field-name-field-student-pathway .pathway_group{display: table}
 .field-name-field-student-pathway .pathway_group .form-wrapper{ display: table-cell; padding-right: 9px}
 .field-name-field-student-pathway .pathway_group .form-wrapper:last-child{padding-right: 0}
 .field-name-field-student-pathway .pathway_group .form-wrapper label{display: inline-block}
@@ -202,10 +202,7 @@ html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
 .field-name-field-student-pathway .pathway_group_1 .field-name-field-st-country select{ width: 90px}
 .field-name-field-student-pathway .pathway_group_1 .field-name-field-student-school select,
 .field-name-field-student-pathway .pathway_group_1 .field-name-field-student-organisation select{ width: 130px}
-.field-name-field-student-pathway .pathway_group_3 ,
-.field-name-field-student-pathway .pathway_group_4{margin-bottom: 25px}
-.field-name-field-student-pathway .pathway_group_3 .form-item input,
-.field-name-field-student-pathway .pathway_group_4 .form-item input{ width: 100px;}
+
 
 .field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper{ display: table}
 .field-name-field-student-pathway .pathway_group_2 fieldset.form-wrapper legend{position: initial; width: auto; float: left; text-indent: 0; line-height: 1.8;display: table-cell; margin-right: 5px;}
@@ -214,7 +211,7 @@ html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
 
 /*.field-name-field-student-pathway .pathway_group_4 .form-item label{max-width:140px}*/
 .field-name-field-student-pathway .pathway_group_4 h3{position: absolute;top: 0; left: 0; margin-top: 0 ;}
-.field-name-field-student-pathway .pathway_group_4{position: relative;padding-top: 40px;}
+.field-name-field-student-pathway .pathway_group_4{position: relative;}
 
 .field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element{ background: #fff; border: none; display: table}
 .field-name-field-student-pathway .field-group-multiple-container .multiple-inline-element .multiple-element { display: table-cell; float: none}
@@ -234,8 +231,8 @@ html.js fieldset.collapsible .fieldset-legend{padding-left: 0; background: none}
 
 .field-name-field-student-pathway .field-name-field-com-pending .form-item{ display: table}
 .field-name-field-student-pathway .field-name-field-com-pending .form-item label,
-.field-name-field-student-pathway .field-name-field-com-pending .form-item input{ display: table-cell; max-width: 163px}
-.field-name-field-student-pathway .field-name-field-com-pending .form-item input{ max-width: 100px}
+.field-name-field-student-pathway .field-name-field-com-pending .form-item input{ display: table-cell; }
+
 /*CONTRACT
 .field-name-field-student-contract tbody tr {background: #fff}
 .field-name-field-student-contract tbody .field-multiple-drag{display: none}
