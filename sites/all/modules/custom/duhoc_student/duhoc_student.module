@@ -26,11 +26,8 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
    $form['field_select_contract']['#access'] = false;
    $form['title']['#access'] = false;
    $current_url = arg(3);
-   if(isset($current_url)){
-     $form['current_url'] = array('#type' => 'hidden', '#value' => $current_url);
-     $m = $form_state['input']['current_url'];
-   }
-
+   $form['current_url'] = array('#type' => 'hidden', '#value' => $current_url);
+   $m = $form_state['input']['current_url'];
    if(arg(1) == 'add' && arg(2) == 'hocvien') {
      $form['field_student_basic']['#access'] = true;
      unset($form['field_student_contract']);
@@ -44,6 +41,10 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      }
    }
    if(arg(3) == 'pathway' || (isset($m) && $m == 'pathway')) {
+     $submit1 = drupal_render($form['actions']['submit']);
+     unset($form['actions']['delete']);
+     $form['field_student_pathway']['und']['add_more']['#suffix'] ='<div class="submit">'. $submit1.'</div></div>';
+     $form['field_student_pathway']['und']['add_more']['#prefix'] ='<div class="submit_pre">';
      $form['field_student_visa']['#access'] = false;
      $form['field_student_contract']['#access'] = false;
      $form['field_student_basic']['#access'] = false;

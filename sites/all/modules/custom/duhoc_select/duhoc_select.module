@@ -67,3 +67,11 @@ function duhoc_select_node_insert($node) {
     drupal_goto('/quanly/student/'.$node->nid.'/basic');
   }
 }
+
+function duhoc_select_list_area() {
+  $query = db_query("SELECT delta,field_area_user_value FROM {field_data_field_area_user}");
+  foreach($query as $rows) {
+    $res[$rows->delta] = $rows->field_area_user_value;
+  }
+  return $res;
+}
