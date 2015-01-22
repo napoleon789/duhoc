@@ -51,7 +51,6 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      if(!isset($form_state['build_info']['files'])){
        $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");
      }
-
    }
    if(arg(3) == 'contract' || (isset($m) && $m =='contract')) {
      $form['field_student_pathway']['#access'] = false;
@@ -113,7 +112,6 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
     }
   }
   if($form_id == 'country_node_form') {
-
     $form['title']['#access'] = false;
     if(!isset($form_state['build_info']['files'])){
       $form_state['build_info']['files'] = array("menu" => "modules/node/node.pages.inc");

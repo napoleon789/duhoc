@@ -24,8 +24,11 @@ function duhoc_chart_menu() {
 
 function duhoc_chart_area_agrument($area = null) {
 
-  $content = duhoc_chart_colum();
-  drupal_json_output(array('status' => TRUE, 'data' => $content));
+
+  $content = '["Month", "Now year", "Tagets"], ';
+  $content .= duhoc_chart_data();
+  $data = '["Month", "Now year", "Tagets"], ["January",      4,      8]';
+  print json_encode(array('status' => TRUE, 'data' => $data));
   exit;
 
 }
@@ -106,6 +109,7 @@ function drawChart() {
   return $output;
 }
 
+
 function duhoc_chart_data_revenue() {
   $data ='';
   for($i = 1 ; $i <= 12; $i ++) {
@@ -124,6 +128,8 @@ function duhoc_chart_data() {
     if(!isset($taget))
       $taget = 0;
     $data .= '["'.duhhoc_chart_convert_month($i).'",      '.duhoc_chart_sum_contract(8,$i,$user->uid).',      '.$taget.'], ' ;
+    if($i ==12)
+      $data .= '["'.duhhoc_chart_convert_month($i).'",      '.duhoc_chart_sum_contract(8,$i,$user->uid).',      '.$taget.'] ' ;
   }
   return $data;
 }
@@ -264,10 +270,7 @@ function duhoc_chart_form_select() {
     '#type' => 'select',
     '#options' => $arr,
   );
-  $form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Submit'),
-  );
+
   return $form;
 }
 function duhoc_chart_revenue_value($role = null,$month= null,$year = null) {

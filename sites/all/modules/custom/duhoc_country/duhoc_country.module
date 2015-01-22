@@ -15,3 +15,18 @@ function duhoc_student_menu() {
 
   return $items;
 }
+
+function duhoc_country_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'country_node_form') {
+    unset($form['actions']['delete']);
+    $submit = drupal_render($form['actions']['submit']);
+    $form['field_country']['und']['add_more']['#suffix'] =  $submit.'</div>';
+    $form['field_country']['und']['add_more']['#prefix'] ='<div class="btn-footer">';
+  }
+  if($form_id == 'course_node_form') {
+    unset($form['actions']['delete']);
+    $submit = drupal_render($form['actions']['submit']);
+    $form['field_course']['und']['add_more']['#suffix'] = $submit.'</div>';
+    $form['field_course']['und']['add_more']['#prefix'] ='<div class="btn-footer">';
+  }
+}
