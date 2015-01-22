@@ -90,6 +90,10 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      $form['field_select_contract']['#access'] = true;
    }
    if((isset($m) && $m == 'visa') || arg(3) == 'visa') {
+     $submit = drupal_render($form['actions']['submit']);
+     $form['actions']['delete']['#access'] = false;
+     $form['field_student_visa']['und']['add_more']['#suffix'] = $submit.'</div>';
+     $form['field_student_visa']['und']['add_more']['#prefix'] = '<div class="btn-footer">';
      $form['field_student_pathway']['#access'] = false;
 
      $form['field_student_contract']['#access'] = false;
