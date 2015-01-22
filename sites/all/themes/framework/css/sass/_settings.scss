@@ -8,21 +8,86 @@
   .sticky-table{
     position: static !important;
     border:1px solid $md-gray;
+
     .field-multiple-drag{
       display: none;
     }
+
     tr.even, tr.odd{
       background-color: transparent;
       border-bottom-color: $md-gray;
       td{
         input{
           border: none !important;
+          margin: 0;
+          padding: 4px 10px;
+        }
+        label{
+          display: none;
         }
         .form-submit{
           @include border-radius(0);
           background: none;
           border: none;
           color: $color-text;
+        }
+        .field-group-multiple-container{
+          .multiple-element{
+            width: 30%;
+            &.multiple-field-collect-full-name{
+              label{
+                position: relative;
+                &::after{
+                  content: "";
+                  display: block;
+                  height: 100%;
+                  position: absolute;
+                  top:0;
+                  left: 100%;
+                  background-color: $light-green;
+                  border-bottom: 1px solid $md-gray;
+                  margin-left: 1px;
+                  width: 96px;
+                }
+              }
+            }
+          }
+          .even{
+            background-color: transparent;
+          }
+          .multiple-inline-element{
+            border: none;
+          }
+        }
+        .form-item{
+          div{
+            padding: 0;
+            margin: 0;
+          }
+          .form-item.form-type-textfield{
+            border-right: 1px solid $md-gray;
+          }
+        }
+        .form-submit{
+          width: 100px;
+          min-width: 1px;
+        }
+        .ajax-progress{
+          display: none !important;
+        }
+      }
+    }
+    tr:first-child{
+      td{
+        label{
+          display: block;
+          border-bottom: 1px solid $md-gray;
+          font-size: 17px;
+          padding: 0 10px 1px;
+          background-color: $light-green;
+        }
+        input{
+
         }
       }
     }
