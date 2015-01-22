@@ -21,6 +21,8 @@
           border: none !important;
           margin: 0;
           padding: 4px 10px;
+          width: 100%;
+          text-align: left !important;
         }
         label{
           display: none;
@@ -71,6 +73,7 @@
         .form-submit{
           width: 100px;
           min-width: 1px;
+          text-align: center !important;
         }
         .ajax-progress{
           display: none !important;
@@ -85,12 +88,19 @@
           font-size: 17px;
           padding: 0 10px 1px;
           background-color: $light-green;
+          text-align: left !important;
         }
-        input{
 
-        }
       }
     }
+  }
+  .btn-footer{
+    .ajax-progress{
+      display: none !important;
+    }
+  }
+  #edit-actions{
+    display: none;
   }
 }
 
@@ -106,4 +116,39 @@
   .btn-orange{
     margin-right: 0;
   }
+}
+
+// setting course
+.page-quanly-setting-course{
+  .sticky-table{
+
+    td{
+      padding-right: 96px;
+      .required-fields{
+        width: 100% !important;
+        table-layout: fixed;
+        .form-wrapper{
+          border-right:1px solid $md-gray;
+        }
+        .field-name-field-com-amout{
+          label{
+            position: relative;
+            &::after{
+              content: "";
+              display: block;
+              height: 100%;
+              position: absolute;
+              top:0;
+              left: 100%;
+              background-color: $light-green;
+              border-bottom: 1px solid $md-gray;
+              margin-left: 1px;
+              width: 96px;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
