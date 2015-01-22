@@ -1412,10 +1412,13 @@ input, select {
   margin-right: 10px;
 }
 .page-quanly-student-contract .btn-footer {
-  margin-top: 15px;
   padding-left: 15px;
 }
-.page-quanly-student-contract .btn-footer input {
+
+.btn-footer {
+  margin-top: 15px;
+}
+.btn-footer input {
   min-width: 125px;
   margin-right: 15px;
 }
@@ -1626,6 +1629,13 @@ input, select {
 }
 .page-quanly-setting .sticky-table tr.even td input, .page-quanly-setting .sticky-table tr.odd td input {
   border: none !important;
+  margin: 0;
+  padding: 4px 10px;
+  width: 100%;
+  text-align: left !important;
+}
+.page-quanly-setting .sticky-table tr.even td label, .page-quanly-setting .sticky-table tr.odd td label {
+  display: none;
 }
 .page-quanly-setting .sticky-table tr.even td .form-submit, .page-quanly-setting .sticky-table tr.odd td .form-submit {
   -webkit-border-radius: 0;
@@ -1637,6 +1647,59 @@ input, select {
   border: none;
   color: #2f2f2f;
 }
+.page-quanly-setting .sticky-table tr.even td .field-group-multiple-container .multiple-element, .page-quanly-setting .sticky-table tr.odd td .field-group-multiple-container .multiple-element {
+  width: 30%;
+}
+.page-quanly-setting .sticky-table tr.even td .field-group-multiple-container .multiple-element.multiple-field-collect-full-name label, .page-quanly-setting .sticky-table tr.odd td .field-group-multiple-container .multiple-element.multiple-field-collect-full-name label {
+  position: relative;
+}
+.page-quanly-setting .sticky-table tr.even td .field-group-multiple-container .multiple-element.multiple-field-collect-full-name label::after, .page-quanly-setting .sticky-table tr.odd td .field-group-multiple-container .multiple-element.multiple-field-collect-full-name label::after {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #eef8f9;
+  border-bottom: 1px solid #838484;
+  margin-left: 1px;
+  width: 96px;
+}
+.page-quanly-setting .sticky-table tr.even td .field-group-multiple-container .even, .page-quanly-setting .sticky-table tr.odd td .field-group-multiple-container .even {
+  background-color: transparent;
+}
+.page-quanly-setting .sticky-table tr.even td .field-group-multiple-container .multiple-inline-element, .page-quanly-setting .sticky-table tr.odd td .field-group-multiple-container .multiple-inline-element {
+  border: none;
+}
+.page-quanly-setting .sticky-table tr.even td .form-item div, .page-quanly-setting .sticky-table tr.odd td .form-item div {
+  padding: 0;
+  margin: 0;
+}
+.page-quanly-setting .sticky-table tr.even td .form-item .form-item.form-type-textfield, .page-quanly-setting .sticky-table tr.odd td .form-item .form-item.form-type-textfield {
+  border-right: 1px solid #838484;
+}
+.page-quanly-setting .sticky-table tr.even td .form-submit, .page-quanly-setting .sticky-table tr.odd td .form-submit {
+  width: 100px;
+  min-width: 1px;
+  text-align: center !important;
+}
+.page-quanly-setting .sticky-table tr.even td .ajax-progress, .page-quanly-setting .sticky-table tr.odd td .ajax-progress {
+  display: none !important;
+}
+.page-quanly-setting .sticky-table tr:first-child td label {
+  display: block;
+  border-bottom: 1px solid #838484;
+  font-size: 17px;
+  padding: 0 10px 1px;
+  background-color: #eef8f9;
+  text-align: left !important;
+}
+.page-quanly-setting .btn-footer .ajax-progress {
+  display: none !important;
+}
+.page-quanly-setting #edit-actions {
+  display: none;
+}
 
 .page-quanly-setting-contract .view-content {
   margin: 0;
@@ -1646,6 +1709,32 @@ input, select {
 }
 .page-quanly-setting-contract .btn-orange {
   margin-right: 0;
+}
+
+.page-quanly-setting-course .sticky-table td {
+  padding-right: 96px;
+}
+.page-quanly-setting-course .sticky-table td .required-fields {
+  width: 100% !important;
+  table-layout: fixed;
+}
+.page-quanly-setting-course .sticky-table td .required-fields .form-wrapper {
+  border-right: 1px solid #838484;
+}
+.page-quanly-setting-course .sticky-table td .required-fields .field-name-field-com-amout label {
+  position: relative;
+}
+.page-quanly-setting-course .sticky-table td .required-fields .field-name-field-com-amout label::after {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #eef8f9;
+  border-bottom: 1px solid #838484;
+  margin-left: 1px;
+  width: 96px;
 }
 
 .page-quanly-user #my-module-table {
