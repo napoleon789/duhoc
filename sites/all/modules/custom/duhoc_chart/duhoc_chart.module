@@ -14,7 +14,6 @@ function duhoc_chart_menu() {
   $items['manage/%'] = array(
     'title' => '',
     'page callback' => 'duhoc_chart_area_agrument',
-    'page arguments' => array(1),
     'access arguments' => array('access content'),
     'type' => MENU_NORMAL_ITEM,
   );
@@ -22,13 +21,10 @@ function duhoc_chart_menu() {
   return $items;
 }
 
-function duhoc_chart_area_agrument($area = null) {
-
-
-  $content = '["Month", "Now year", "Tagets"], ';
-  $content .= duhoc_chart_data();
-  $data = '["Month", "Now year", "Tagets"], ["January",      4,      8]';
-  print json_encode(array('status' => TRUE, 'data' => $data));
+function duhoc_chart_area_agrument() {
+  $area = arg(1);
+  $content = duhoc_chart_data($area);
+  print json_encode(array('status' => TRUE, 'data' => $content));
   exit;
 
 }
@@ -120,35 +116,49 @@ function duhoc_chart_data_revenue() {
   }
   return $data;
 }
-function duhoc_chart_data() {
+function duhoc_chart_data($area = null) {
   global $user;
   $data ='';
-  for($i = 1 ; $i <= 12; $i ++) {
-    $taget = duhoc_chart_tagets($user->uid,$i);
-    if(!isset($taget))
-      $taget = 0;
-    $data .= '["'.duhhoc_chart_convert_month($i).'",      '.duhoc_chart_sum_contract(8,$i,$user->uid).',      '.$taget.'], ' ;
-    if($i ==12)
-      $data .= '["'.duhhoc_chart_convert_month($i).'",      '.duhoc_chart_sum_contract(8,$i,$user->uid).',      '.$taget.'] ' ;
+  if(isset($area)) {
+    for($i = 1 ; $i <= 12; $i ++) {
+      $taget = duhoc_chart_tagets($user->uid,$i);
+      if(!isset($taget))
+        $taget = 0;
+      $data .= '["'.duhhoc_chart_convert_month($i).'",      '.duhoc_chart_sum_contract(8,$i,$user->uid).',      '.$taget.'], ' ;
+      if($i ==12)
+        $data .= '["'.duhhoc_chart_convert_month($i).'",      '.duhoc_chart_sum_contract(8,$i,$user->uid).',      '.$taget.'] ' ;
+    }
+  }
+  else {
+    for($i = 1 ; $i <= 12; $i ++) {
+      $taget = duhoc_chart_tagets($user->uid,$i);
+      if(!isset($taget))
+        $taget = 0;
+      $data .= '["'.duhhoc_chart_convert_month($i).'",      '.duhoc_chart_sum_contract(null,$i,$user->uid).',      '.$taget.'], ' ;
+      if($i ==12)
+        $data .= '["'.duhhoc_chart_convert_month($i).'",      '.duhoc_chart_sum_contract(null,$i,$user->uid).',      '.$taget.'] ' ;
+    }
   }
   return $data;
 }
 
-
 function duhoc_chart_tagets($uid,$moth) {
-  $query = db_query("SELECT target.field_target_value as giatri FROM field_data_field_target as target INNER JOIN field_data_field_th_ng as mont ON
-target.delta = mont.delta WHERE FROM_UNIXTIME(mont.field_th_ng_value,'%c') = :month AND mont.entity_id = :uid",array(':month' => $moth,':uid' => $uid));
+  $query = db_query("SELECT target.field_target_value as giatri
+                    FROM field_data_field_target as target INNER JOIN field_data_field_th_ng as mont
+                    ON target.delta = mont.delta
+                    WHERE FROM_UNIXTIME(mont.field_th_ng_value,'%c') = :month AND mont.entity_id = :uid",array(':month' => $moth,':uid' => $uid));
   foreach ($query as $record) {
     $result =  $record ->giatri;
   }
-
 return $result;
 }
 
 function duhoc_chart_tagets_office($moth) {
   $uid = duhoc_chart_list_member();
-  $query = db_query("SELECT SUM(target.field_target_value) as giatri FROM field_data_field_target as target INNER JOIN field_data_field_th_ng as mont ON
-target.delta = mont.delta WHERE FROM_UNIXTIME(mont.field_th_ng_value,'%c') = :month AND mont.entity_id IN (:uid)",array(':month' => $moth,':uid' => $uid));
+  $query = db_query("SELECT SUM(target.field_target_value) as giatri
+                    FROM field_data_field_target as target INNER JOIN field_data_field_th_ng as mont
+                    ON target.delta = mont.delta
+                    WHERE FROM_UNIXTIME(mont.field_th_ng_value,'%c') = :month AND mont.entity_id IN (:uid)",array(':month' => $moth,':uid' => $uid));
   foreach ($query as $record) {
 
     $result =  $record ->giatri;
