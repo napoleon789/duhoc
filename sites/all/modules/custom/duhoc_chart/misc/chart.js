@@ -15,6 +15,10 @@ jQuery(document).ready(function() {
                         dataType: "json",
                         url: 'manage/'+id,
                         success: function(output) {
+                            var right = output.right;
+                            console.log(right);
+                            jQuery('.content_mont').html(right);
+
                             var chuan = '['+output.data+']';
                             var row = jQuery.parseJSON(chuan);
                             var data = new google.visualization.DataTable();

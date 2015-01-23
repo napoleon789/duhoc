@@ -23,8 +23,9 @@ function duhoc_chart_menu() {
 
 function duhoc_chart_area_agrument() {
   $area = arg(1);
+  $table = '<h2>Table Mothly Sales</h2>'.theme('table', array('header' => array("Month","Sales"),   'rows' => duhoc_chart_time_now($area) ));
   $content = duhoc_chart_data($area);
-  print json_encode(array('status' => TRUE, 'data' => $content));
+  print json_encode(array('status' => TRUE, 'data' => $content, 'right' =>$table));
   exit;
 
 }
@@ -112,44 +113,72 @@ function duhoc_chart_data_revenue() {
     $value = duhoc_chart_revenue_value(8,$i,null);
     if(empty($value))
       $value = 0;
-    $data .= '["'.duhhoc_chart_convert_month($i).'",      '.$value.'], ' ;
+    $data .= '["'.duhhoc_chart_convert_month($i).'", '.$value.'], ' ;
   }
   return $data;
 }
 function duhoc_chart_data($area = null) {
   global $user;
   $data ='';
-  if(isset($area)) {
+  if($area != null) {
     for($i = 1 ; $i <= 12; $i ++) {
-      $taget = duhoc_chart_tagets($user->uid,$i);
+      $taget = duhoc_chart_tagets($area,$i,null);
       if(!isset($taget))
         $taget = 0;
-      $data .= '["'.duhhoc_chart_convert_month($i).'",      '.duhoc_chart_sum_contract(8,$i,$user->uid).',      '.$taget.'], ' ;
+      $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract($area,$i,null).', '.$taget.'], ' ;
       if($i ==12)
-        $data .= '["'.duhhoc_chart_convert_month($i).'",      '.duhoc_chart_sum_contract(8,$i,$user->uid).',      '.$taget.'] ' ;
+        $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract($area,$i,null).', '.$taget.'] ' ;
     }
+
   }
   else {
     for($i = 1 ; $i <= 12; $i ++) {
-      $taget = duhoc_chart_tagets($user->uid,$i);
+      $taget = duhoc_chart_tagets($area,$i,null);
       if(!isset($taget))
         $taget = 0;
-      $data .= '["'.duhhoc_chart_convert_month($i).'",      '.duhoc_chart_sum_contract(null,$i,$user->uid).',      '.$taget.'], ' ;
+      $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract(null,$i,null).', '.$taget.'], ' ;
       if($i ==12)
-        $data .= '["'.duhhoc_chart_convert_month($i).'",      '.duhoc_chart_sum_contract(null,$i,$user->uid).',      '.$taget.'] ' ;
+        $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract(null,$i,null).', '.$taget.'] ' ;
     }
   }
   return $data;
 }
 
-function duhoc_chart_tagets($uid,$moth) {
+function duhoc_chart_tagets($area = null,$moth,$year) {
+  global $user;
+  if($area != null) {
+    $query = db_query("SELECT entity_id FROM {field_data_field_area} WHERE field_area_value = :area", array(':area' => $area));
+    if($query ->rowCount() >0 ) {
+      foreach($query as $result) {
+        $row[] = $result -> entity_id;
+      }
+      $str = implode (", ", $row);
+    }
+    else $str ='';
+  }
+  else {
+    if(isset($user -> roles[8])) {
+      $query_area = db_query("SELECT field_area_value FROM {field_data_field_area} WHERE entity_id = :uid",array(':uid'=>$user->uid))->fetchField();
+      $query = db_query("SELECT entity_id FROM field_data_field_area  WHERE field_area_value =:area", array(':area' => $query_area));
+      foreach($query as $result) {
+        $row[] = $result -> entity_id;
+      }
+      $str = implode (", ", $row);
+    }
+    else
+      $str = $user -> uid;
+  }
   $query = db_query("SELECT target.field_target_value as giatri
                     FROM field_data_field_target as target INNER JOIN field_data_field_th_ng as mont
                     ON target.delta = mont.delta
-                    WHERE FROM_UNIXTIME(mont.field_th_ng_value,'%c') = :month AND mont.entity_id = :uid",array(':month' => $moth,':uid' => $uid));
-  foreach ($query as $record) {
-    $result =  $record ->giatri;
+                    WHERE FROM_UNIXTIME(mont.field_th_ng_value,'%c') = :month AND mont.entity_id IN (:uid)",array(':month' => $moth,':uid' => $str));
+  $num = $query ->rowCount();
+  if($num >0) {
+    foreach ($query as $record) {
+      $result =  $record ->giatri;
+    }
   }
+else $result = 0;
 return $result;
 }
 
@@ -178,12 +207,12 @@ function duhoc_chart_time_now_office() {
   return $rows;
 }
 
-function duhoc_chart_time_now() {
+function duhoc_chart_time_now($area = null) {
   global $user;
   //$ymonth = date('m',time());
   $ymonth = '12';
 for($i = 1; $i <= $ymonth ;$i++) {
-  $sale = duhoc_chart_sum_contract(8,$i);
+  $sale = duhoc_chart_sum_contract($area,$i,null);
   $row['month'] = duhhoc_chart_convert_month($i);
   $row['sale'] = $sale;
   $rows[] = $row;
@@ -191,32 +220,39 @@ for($i = 1; $i <= $ymonth ;$i++) {
   return $rows;
 }
 
-function duhoc_chart_sum_contract($role=null,$month = null,$year = null) {
+function duhoc_chart_sum_contract($area=null,$month = null,$year = null) {
   global $user;
-  if(isset($role)) {
-    $query = db_query("SELECT uid FROM users_roles WHERE rid = :rid", array(':rid' => $role));
-    foreach($query as $result) {
-      $row[] = $result -> uid;
+  if($area != null) {
+    $query = db_query("SELECT entity_id FROM {field_data_field_area} WHERE field_area_value = :area", array(':area' => $area));
+    if($query ->rowCount() >0 ) {
+      foreach($query as $result) {
+        $row[] = $result -> entity_id;
+      }
+      $str = implode (", ", $row);
     }
-    $str = implode (", ", $row);
+    else $str ='';
+
   }
   else {
     if(isset($user -> roles[8])) {
-      $query = db_query("SELECT uid FROM users_roles WHERE rid = :rid", array(':rid' => 8));
+      $query_area = db_query("SELECT field_area_value FROM {field_data_field_area} WHERE entity_id = :uid",array(':uid'=>$user->uid))->fetchField();
+      $query = db_query("SELECT entity_id FROM field_data_field_area  WHERE field_area_value =:area", array(':area' => $query_area));
       foreach($query as $result) {
-        $row[] = $result -> uid;
+        $row[] = $result -> entity_id;
       }
       $str = implode (", ", $row);
     }
     else
       $str = $user -> uid;
   }
+
   $query = db_query("SELECT contract.field_student_contract_value FROM
   field_data_field_student_contract as contract
    INNER JOIN   field_data_field_create_date as creat ON contract.field_student_contract_value =  creat.entity_id
    INNER JOIN  node as n ON  contract.entity_id = n.nid
   WHERE n.uid IN (:uid) AND FROM_UNIXTIME(creat.field_create_date_value,'%c') = :month",array(':uid' => $str,':month' => $month))->rowCount();
   return $query;
+
 }
 
 function duhoc_chart_list_member() {
