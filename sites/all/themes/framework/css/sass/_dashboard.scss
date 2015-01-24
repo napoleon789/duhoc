@@ -1,3 +1,78 @@
 #page-title.title{
   margin-top: 0;
 }
+.block.block-duhoc-chart{
+  .content_mont, .content_home1{
+    h2{
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 15px;
+      color: #33363f;
+      margin-bottom: 20px;
+    }
+    .sticky-header{
+      display: none !important;
+    }
+    .sticky-table, .sticky-enabled{
+      thead{
+        display: none;
+      }
+      tbody{
+        tr{
+          border: none;
+          &.odd{
+            background-color: #eef8f9;
+          }
+          &.even{
+            background-color: transparent;
+          }
+          td{
+            color: #009ac3;
+            font-size: 13px;
+            padding: 5px 10px 5px 0;
+            text-align: right;
+            &:first-child{
+              color: #fdbd17;
+              padding-left: 10px;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .chart_sale, .chart_reve{
+    @include clearfix();
+    h2{
+      float: left;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #000101;
+    }
+    form{
+      float: right;
+      select{
+        width: 220px;
+        border:none;
+        background-color: $light-gray;
+        @include box-shadow(0 1px 1px rgba(0,0,0,0.28) inset);
+      }
+    }
+  }
+  #chart_div{
+    position: static !important;
+  }
+  .loadding{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 80px;
+    text-align: center;
+    img{
+      vertical-align: middle;
+    }
+  }
+}

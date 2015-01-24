@@ -1,7 +1,7 @@
 jQuery(document).ready(function() {
     jQuery(".chart_sale select").change(function() {
         var id = jQuery(this).val();
-        jQuery('#chart_div').text('loading...').css('color','red');
+        jQuery('#chart_div').html('<div class="loadding"><img src="sites/all/modules/custom/duhoc_chart/images/bx_loader.gif" /></div>');
         jQuery('.content_mont').html('');
         jQuery.ajax({
             url: 'https://www.google.com/jsapi?callback',
@@ -16,6 +16,7 @@ jQuery(document).ready(function() {
                         url: 'manage/'+id,
                         success: function(output) {
                             var right = output.right;
+//                            var right = output.right;
                             console.log(right);
                             jQuery('.content_mont').html(right);
 

@@ -867,6 +867,81 @@ input, select {
   margin-top: 0;
 }
 
+.block.block-duhoc-chart .content_mont h2, .block.block-duhoc-chart .content_home1 h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+  color: #33363f;
+  margin-bottom: 20px;
+}
+.block.block-duhoc-chart .content_mont .sticky-header, .block.block-duhoc-chart .content_home1 .sticky-header {
+  display: none !important;
+}
+.block.block-duhoc-chart .content_mont .sticky-table thead, .block.block-duhoc-chart .content_mont .sticky-enabled thead, .block.block-duhoc-chart .content_home1 .sticky-table thead, .block.block-duhoc-chart .content_home1 .sticky-enabled thead {
+  display: none;
+}
+.block.block-duhoc-chart .content_mont .sticky-table tbody tr, .block.block-duhoc-chart .content_mont .sticky-enabled tbody tr, .block.block-duhoc-chart .content_home1 .sticky-table tbody tr, .block.block-duhoc-chart .content_home1 .sticky-enabled tbody tr {
+  border: none;
+}
+.block.block-duhoc-chart .content_mont .sticky-table tbody tr.odd, .block.block-duhoc-chart .content_mont .sticky-enabled tbody tr.odd, .block.block-duhoc-chart .content_home1 .sticky-table tbody tr.odd, .block.block-duhoc-chart .content_home1 .sticky-enabled tbody tr.odd {
+  background-color: #eef8f9;
+}
+.block.block-duhoc-chart .content_mont .sticky-table tbody tr.even, .block.block-duhoc-chart .content_mont .sticky-enabled tbody tr.even, .block.block-duhoc-chart .content_home1 .sticky-table tbody tr.even, .block.block-duhoc-chart .content_home1 .sticky-enabled tbody tr.even {
+  background-color: transparent;
+}
+.block.block-duhoc-chart .content_mont .sticky-table tbody tr td, .block.block-duhoc-chart .content_mont .sticky-enabled tbody tr td, .block.block-duhoc-chart .content_home1 .sticky-table tbody tr td, .block.block-duhoc-chart .content_home1 .sticky-enabled tbody tr td {
+  color: #009ac3;
+  font-size: 13px;
+  padding: 5px 10px 5px 0;
+  text-align: right;
+}
+.block.block-duhoc-chart .content_mont .sticky-table tbody tr td:first-child, .block.block-duhoc-chart .content_mont .sticky-enabled tbody tr td:first-child, .block.block-duhoc-chart .content_home1 .sticky-table tbody tr td:first-child, .block.block-duhoc-chart .content_home1 .sticky-enabled tbody tr td:first-child {
+  color: #fdbd17;
+  padding-left: 10px;
+  text-align: left;
+}
+.block.block-duhoc-chart .chart_sale:before, .block.block-duhoc-chart .chart_sale:after, .block.block-duhoc-chart .chart_reve:before, .block.block-duhoc-chart .chart_reve:after {
+  content: " ";
+  display: table;
+}
+.block.block-duhoc-chart .chart_sale:after, .block.block-duhoc-chart .chart_reve:after {
+  clear: both;
+}
+.block.block-duhoc-chart .chart_sale h2, .block.block-duhoc-chart .chart_reve h2 {
+  float: left;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000101;
+}
+.block.block-duhoc-chart .chart_sale form, .block.block-duhoc-chart .chart_reve form {
+  float: right;
+}
+.block.block-duhoc-chart .chart_sale form select, .block.block-duhoc-chart .chart_reve form select {
+  width: 220px;
+  border: none;
+  background-color: #f4f3f3;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+}
+.block.block-duhoc-chart #chart_div {
+  position: static !important;
+}
+.block.block-duhoc-chart .loadding {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding-top: 80px;
+  text-align: center;
+}
+.block.block-duhoc-chart .loadding img {
+  vertical-align: middle;
+}
+
 .item-list .pager li div {
   display: inline-block;
   margin-left: 5px;
@@ -1566,6 +1641,7 @@ input, select {
 }
 .page-quanly-student-visa .sticky-table tr.even, .page-quanly-student-visa .sticky-table tr.odd {
   background-color: transparent;
+  border: 1px solid #838484;
 }
 .page-quanly-student-visa .sticky-table tbody tr:first-child td .form-wrapper legend, .page-quanly-student-visa .sticky-table tbody tr:first-child td .form-wrapper label {
   display: block;
@@ -1575,9 +1651,13 @@ input, select {
 }
 .page-quanly-student-visa .sticky-table tbody td .form-wrapper {
   width: 30%;
+  border-right: 1px solid #838484;
+  padding: 0 10px;
 }
 .page-quanly-student-visa .sticky-table tbody td .form-wrapper .form-wrapper {
   width: 100%;
+  border: none;
+  padding: 0;
 }
 .page-quanly-student-visa .sticky-table tbody td .form-wrapper div {
   display: block;
@@ -1587,6 +1667,7 @@ input, select {
 }
 .page-quanly-student-visa .sticky-table tbody td .form-wrapper input, .page-quanly-student-visa .sticky-table tbody td .form-wrapper select {
   width: 100% !important;
+  margin: 0;
 }
 .page-quanly-student-visa .sticky-table tbody td .form-wrapper legend, .page-quanly-student-visa .sticky-table tbody td .form-wrapper label {
   display: none;
@@ -1608,6 +1689,9 @@ input, select {
   font-size: 14px;
   margin-top: 5px;
   font-weight: normal;
+}
+.page-quanly-student-visa .btn-footer .ajax-progress {
+  display: none !important;
 }
 
 .page-quanly-setting .sticky-header {
