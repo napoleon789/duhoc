@@ -113,7 +113,18 @@
 }
 
 //personal page
-.page-quanly-student-basic{
+.page-quanly-student-basic, .page-node-add-hocvien{
+  h1.title{
+    background-color: #838484;
+    border-bottom: 3px solid #fcbc18;
+    margin: -7px -20px 18px !important;
+    padding: 0 20px;
+    color: white;
+    font-size: 18px;
+    font-family: "Roboto Condensed";
+    height: 50px;
+    line-height: 47px;
+  }
   fieldset{
     border: none;
     padding: 0;
