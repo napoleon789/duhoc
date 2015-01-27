@@ -1,5 +1,3 @@
-
-
   <div id="skip-link">
     <div id="container" class="clearfix">
         <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
@@ -70,15 +68,6 @@
 
   <section id="main" role="main" class="clearfix">
     <div id="container" class="clearfix">
-      <?php
-      $tree = menu_tree_page_data('primary-links'); //substitute your menu name for primary-links
-      foreach($tree as $key => $mi) {
-        if ($mi['link']['in_active_trail'] && $tree[$key]['below']) {
-          $menu = menu_tree_output($tree[$key]['below']);
-        }
-      }
-      print $menu;
-      ?>
         <?php print $messages; ?>
         <a id="main-content"></a>
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>

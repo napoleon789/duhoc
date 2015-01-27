@@ -30,3 +30,21 @@ function duhoc_country_form_alter(&$form, &$form_state, $form_id) {
     $form['field_course']['und']['add_more']['#prefix'] ='<div class="btn-footer">';
   }
 }
+
+function duhoc_country_node_update($node) {
+  $a = arg(2);
+  if($node -> type == 'country') {
+    if(arg(1) == 'setting' && !isset($a)) {
+      $path = current_path();
+      drupal_goto($path);
+      drupal_set_message();
+    }
+  }
+  if($node -> type == 'course') {
+    if(arg(1) == 'setting' && $a =='course') {
+      $path = current_path();
+      drupal_goto($path);
+      drupal_set_message();
+    }
+  }
+}

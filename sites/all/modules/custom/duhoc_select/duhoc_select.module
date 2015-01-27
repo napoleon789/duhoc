@@ -35,6 +35,10 @@ function duhoc_select_update_contract() {
   $i = arg(5);
   $node = node_load(arg(2));
   $node->field_select_contract['und'][$i]['value'] = arg(4);
+  echo '<pre>';
+  print_r ($node);
+  echo '</pre>';
+  die;
   node_save($node);
 }
 
@@ -74,4 +78,15 @@ function duhoc_select_list_area() {
     $res[$rows->delta] = $rows->field_area_user_value;
   }
   return $res;
+}
+function duhoc_select_list_country() {
+  $query = db_query("SELECT DISTINCT entity_id,field_collec_country_value FROM {field_data_field_collec_country}");
+  foreach($query as $rows) {
+    $res[$rows->entity_id] = $rows->field_collec_country_value;
+  }
+  return $res;
+}
+
+function field_data_field_st_country() {
+  return '123';
 }

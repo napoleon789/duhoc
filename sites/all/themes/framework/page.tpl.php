@@ -1,4 +1,4 @@
-<div id="container" class="clearfix">
+
 
   <div id="skip-link">
     <div id="container" class="clearfix">
@@ -67,7 +67,7 @@
             <?php endif; ?>
           </nav> <!-- /#navigation -->
         <?php endif; ?>
-        <?php if ($breadcrumb): print $breadcrumb; endif;?>
+
     </div>
   </header> <!-- /#header -->
 
@@ -109,4 +109,4 @@
     </div>
   </footer> <!-- /#footer -->
 
-</div> <!-- /#container -->
+

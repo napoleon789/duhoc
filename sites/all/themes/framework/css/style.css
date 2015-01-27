@@ -490,3 +490,5 @@ ul.secondary a.active {
 
 /* display block */
 .display-block { display: block; }
+.profile {display: none;}
+#edit-timezone {display: none;}

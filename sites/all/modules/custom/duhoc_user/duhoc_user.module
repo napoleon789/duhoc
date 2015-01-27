@@ -29,14 +29,101 @@ function duhoc_user_target($uid = '') {
 }
 
 function duhoc_user_form_alter(&$form, &$form_state, $form_id) {
-
   if(!isset($form_state['build_info']['files'])){
     $form_state['build_info']['files'] = array("menu" => "modules/user/user.pages.inc");
   }
-
-  if($form_id == 'user_profile_form' && arg(2) == 'target') {
-    $form['picture']['#access'] = false;
-    $form['account']['#access'] = false;
-    $form['signature_settings']['#access'] = false;
+  if($form_id == 'user_profile_form') {
+    if(arg(2) == 'target') {
+      $form['picture']['#access'] = false;
+      $form['account']['#access'] = false;
+      $form['signature_settings']['#access'] = false;
+    }
+    if(arg(2) == 'edit') {
+      unset($form['fgm_user_user_form_group_targets']);
+    }
   }
+}
+
+
+/**
+ * implement hook block_info
+ */
+
+function duhoc_user_block_info() {
+  $blocks['user_view'] = array(
+    'info' => t('Content user view'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * implement hook_block_view
+ */
+
+function duhoc_user_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'user_view':
+      $block['content'] = duhoc_user_view();
+      break;
+  }
+  return $block;
+}
+
+function duhoc_user_view($uid = null) {
+  global $user;
+  if($user ->uid >0) {
+  $uid = arg(1);
+  $a2 = arg(2);
+  for($i = 1; $i <=12; $i++) {
+    $data = duhoc_user_taget($uid,$i);
+    $row['month'] = $i;
+    $row['target'] = $data['target'];
+    if(empty($row['target']))
+      $row['target'] = 0;
+    $row['revenue'] = $data['revenue'];
+    if(empty($row['revenue']))
+      $row['revenue'] = 0;
+    $rows[]= $row;
+  }
+  $user = user_load($uid);
+  $uri = $user->picture->uri;
+  $output = '';
+  $output .= '<div class="info_image">'.theme('image_style', array('style_name' => 'user170X170', 'path' => $uri, 'getsize' => TRUE, 'attributes' => array('class' => 'thumb'))).'</div>';
+  $output .= '<div class="info_name"><span class="label">Name: </span>'.$user -> name.'</div>';
+  $output .= '<div class="info_area"><span class="label">Area: </span>'.duhoc_user_area($user ->field_area['und'][0]['value']).'</div>';
+  $output .= theme("table",array('header'=>array('Month','Taget','Revenue'),'rows' =>$rows ));
+  if(isset($a2))
+    return '';
+  else
+    return $output;
+  }
+  else
+    return '';
+}
+
+function duhoc_user_area($value) {
+  $query = db_query("SELECT field_area_user_value FROM {field_data_field_area_user} WHERE delta = :del",array(':del' => $value)) ->fetchField();
+  return $query;
+}
+
+function duhoc_user_taget($uid,$month) {
+  if(isset($uid)) {
+    $query = db_query("SELECT target.field_target_value as tget,  reve.field_revenue_value as rve
+                    FROM field_data_field_target as target
+                    INNER JOIN field_data_field_th_ng as mont  ON target.entity_id = mont.entity_id
+                    INNER JOIN field_data_field_revenue as reve ON mont.entity_id = reve.entity_id
+                    WHERE FROM_UNIXTIME(mont.field_th_ng_value,'%c') = ".$month."
+                    AND target.entity_id  = ".$uid."
+                    AND target.delta = reve.delta
+                    AND target.delta = mont.delta
+                    ");
+    foreach($query as $result) {
+      $row['target']  = $result -> tget;
+      $row['revenue']  = $result -> rve;
+    }
+
+    return $row;
+   }
 }

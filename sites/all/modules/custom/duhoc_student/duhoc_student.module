@@ -31,6 +31,8 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
    if(arg(1) == 'add' && arg(2) == 'hocvien') {
      $form['field_student_basic']['#access'] = true;
      unset($form['field_student_contract']);
+     unset($form['field_student_pathway']);
+     unset($form['field_student_visa']);
    }
    if(arg(3) == 'basic' ||(isset($m) && $m =='basic')) {
      $form['field_student_pathway']['#access'] = false;
@@ -53,6 +55,9 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      }
    }
    if(arg(3) == 'contract' || (isset($m) && $m =='contract')) {
+     $node1 = node_load(arg(2));
+     $node = field_collection_item_load(201);
+     dpm($node);
      $form['field_student_pathway']['#access'] = false;
      $form['field_student_visa']['#access'] = false;
      $form['field_student_basic']['#access'] = false;

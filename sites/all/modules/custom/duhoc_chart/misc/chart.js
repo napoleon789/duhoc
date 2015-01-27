@@ -64,6 +64,7 @@ jQuery(document).ready(function() {
                             var data = new google.visualization.DataTable();
                             data.addColumn('string', '');
                             data.addColumn('number', 'Now year');
+                            data.addColumn('number', 'Revenue');
                             data.addRows(row);
                             var options = {
                                 chartArea:{left:20,top:60,width:"86%"},
