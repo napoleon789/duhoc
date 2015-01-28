@@ -1,0 +1,163 @@
+.page-user-login, .page-user-password, .page-user{
+  .messages.status{
+    display: none;
+  }
+  .title{
+    display: none;
+  }
+  .tabs-wrapper{
+    border: none;
+    margin: 0;
+  }
+  label{
+    font-size: 15px;
+  }
+  input[type="text"], input[type="password"]{
+    background-color: $light-gray;
+    @include box-shadow(0 1px 1px rgba(0,0,0,0.28) inset);
+    border:none;
+    height: 30px;
+    width: 400px;
+  }
+}
+
+.page-user-password{
+  .form-submit{
+    min-width: 150px;
+  }
+}
+
+.page-user{
+  .title{
+    display: none;
+  }
+  .block-duhoc-user{
+    .info_image{
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 20px;
+    }
+    .info_area{
+      margin-bottom: 20px;
+    }
+    .sticky-header th, .sticky-table th{
+      border-bottom: none;
+    }
+    .sticky-header{
+      display: none !important;
+    }
+    .sticky-table{
+      border:1px solid $md-gray;
+      thead{
+        tr{
+          th,td{
+            background-color: $light-green;
+            font-size: 17px;
+            border-left:1px solid $md-gray;
+            padding: 0 10px 1px;
+            &:first-child{
+              border-left: none;
+            }
+          }
+        }
+      }
+      tbody{
+        tr, tr.odd, tr.even{
+          border:none;
+          background:none;
+          td{
+            border-top:1px solid $md-gray;
+            border-left:1px solid $md-gray;
+            padding: 4px 10px 2px;
+            &:first-child{
+              border-left: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.page-user-target{
+  input[type="text"]{
+    width: 100%;
+  }
+  .sticky-header{
+    display: none !important;
+  }
+  .sticky-header th, .sticky-table th{
+    border-bottom: none;
+  }
+  .sticky-table{
+    border:1px solid $md-gray;
+
+    thead{
+      tr{
+        th,td{
+          background-color: $light-green;
+          font-size: 17px;
+          border-left:1px solid $md-gray;
+          padding: 0 10px 1px;
+          &:first-child{
+            border-left: none;
+          }
+        }
+      }
+    }
+    tbody{
+      tr, tr.odd, tr.even{
+        border:none;
+        background:none;
+        td{
+          border-top:1px solid $md-gray;
+          border-left:1px solid $md-gray;
+          padding: 4px 10px 2px;
+          &:first-child{
+            border-left: none;
+          }
+          input{
+            margin: 0;
+            background: none;
+            @include box-shadow(none);
+            height: 25px;
+          }
+          fieldset{
+            border: none;
+            margin: 0;
+            padding: 0;
+            legend{
+              display: none;
+            }
+            .fieldset-wrapper{
+              div{
+                margin: 0;
+                padding: 0;
+                width: 100%;
+              }
+              .description{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .field-name-field-area{
+    label{
+      display: inline-block;
+      margin-right: 20px;
+    }
+    select{
+      background-color: $light-gray;
+      @include box-shadow(0 1px 1px rgba(0,0,0,0.28) inset);
+      height: 30px;
+      width: 300px;
+    }
+  }
+  .ajax-progress{
+    display: none !important;
+  }
+}
