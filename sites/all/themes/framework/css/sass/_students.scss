@@ -266,7 +266,7 @@
 
 
 // menu page quan ly
-.menu_student, .menu_seting{
+.menu_student, .menu_seting, .tabs.primary{
   margin: -7px -20px 18px;
   padding: 0 20px 0;
   background-color: $md-gray;
@@ -282,10 +282,16 @@
     a{
       color: $white;
       font-size: 18px;
+      float: none;
+      background: none;
     }
     &.active, &:hover{
       a{
         color: $md-yellow;
+        background: none;
+        &.active{
+          background: none;
+        }
       }
       &::after{
         content: "";

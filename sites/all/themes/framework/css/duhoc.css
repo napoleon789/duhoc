@@ -1176,13 +1176,13 @@ input, select {
   color: #2f2f2f;
 }
 
-.menu_student, .menu_seting {
+.menu_student, .menu_seting, .tabs.primary {
   margin: -7px -20px 18px;
   padding: 0 20px 0;
   background-color: #838484;
   border-bottom: 3px solid #fcbc18;
 }
-.menu_student li, .menu_seting li {
+.menu_student li, .menu_seting li, .tabs.primary li {
   list-style: none;
   margin: 0;
   padding: 9px 0 11px;
@@ -1195,14 +1195,20 @@ input, select {
   -o-transition: all ease 0.3s;
   transition: all ease 0.3s;
 }
-.menu_student li a, .menu_seting li a {
+.menu_student li a, .menu_seting li a, .tabs.primary li a {
   color: white;
   font-size: 18px;
+  float: none;
+  background: none;
 }
-.menu_student li.active a, .menu_student li:hover a, .menu_seting li.active a, .menu_seting li:hover a {
+.menu_student li.active a, .menu_student li:hover a, .menu_seting li.active a, .menu_seting li:hover a, .tabs.primary li.active a, .tabs.primary li:hover a {
   color: #fcbc18;
+  background: none;
 }
-.menu_student li.active::after, .menu_student li:hover::after, .menu_seting li.active::after, .menu_seting li:hover::after {
+.menu_student li.active a.active, .menu_student li:hover a.active, .menu_seting li.active a.active, .menu_seting li:hover a.active, .tabs.primary li.active a.active, .tabs.primary li:hover a.active {
+  background: none;
+}
+.menu_student li.active::after, .menu_student li:hover::after, .menu_seting li.active::after, .menu_seting li:hover::after, .tabs.primary li.active::after, .tabs.primary li:hover::after {
   content: "";
   display: block;
   position: absolute;
@@ -1725,7 +1731,7 @@ input, select {
 .page-quanly-setting .sticky-table tr.even td input, .page-quanly-setting .sticky-table tr.odd td input {
   border: none !important;
   margin: 0;
-  padding: 4px 10px;
+  padding: 4px 10px !important;
   width: 100%;
   text-align: left !important;
 }
@@ -1806,20 +1812,20 @@ input, select {
   margin-right: 0;
 }
 
-.page-quanly-setting-course .sticky-table td {
+.page-quanly-setting-course .sticky-table td, .page-quanly-setting .sticky-table td {
   padding-right: 96px;
 }
-.page-quanly-setting-course .sticky-table td .required-fields {
+.page-quanly-setting-course .sticky-table td .required-fields, .page-quanly-setting .sticky-table td .required-fields {
   width: 100% !important;
   table-layout: fixed;
 }
-.page-quanly-setting-course .sticky-table td .required-fields .form-wrapper {
+.page-quanly-setting-course .sticky-table td .required-fields .form-wrapper, .page-quanly-setting .sticky-table td .required-fields .form-wrapper {
   border-right: 1px solid #838484;
 }
-.page-quanly-setting-course .sticky-table td .required-fields .field-name-field-com-amout label {
+.page-quanly-setting-course .sticky-table td .required-fields .field-name-field-com-amout label, .page-quanly-setting-course .sticky-table td .required-fields .field-name-field-collect-full-name label, .page-quanly-setting .sticky-table td .required-fields .field-name-field-com-amout label, .page-quanly-setting .sticky-table td .required-fields .field-name-field-collect-full-name label {
   position: relative;
 }
-.page-quanly-setting-course .sticky-table td .required-fields .field-name-field-com-amout label::after {
+.page-quanly-setting-course .sticky-table td .required-fields .field-name-field-com-amout label::after, .page-quanly-setting-course .sticky-table td .required-fields .field-name-field-collect-full-name label::after, .page-quanly-setting .sticky-table td .required-fields .field-name-field-com-amout label::after, .page-quanly-setting .sticky-table td .required-fields .field-name-field-collect-full-name label::after {
   content: "";
   display: block;
   height: 100%;
@@ -1830,6 +1836,9 @@ input, select {
   border-bottom: 1px solid #838484;
   margin-left: 1px;
   width: 96px;
+}
+.page-quanly-setting-course .sticky-table td select, .page-quanly-setting .sticky-table td select {
+  width: 100%;
 }
 
 .page-quanly-user #my-module-table {
@@ -1897,4 +1906,152 @@ input, select {
 .page-quanly-user .add_user a:hover {
   background-color: #2f2f2f;
   color: white;
+}
+
+.page-user-login .messages.status, .page-user-password .messages.status, .page-user .messages.status {
+  display: none;
+}
+.page-user-login .title, .page-user-password .title, .page-user .title {
+  display: none;
+}
+.page-user-login .tabs-wrapper, .page-user-password .tabs-wrapper, .page-user .tabs-wrapper {
+  border: none;
+  margin: 0;
+}
+.page-user-login label, .page-user-password label, .page-user label {
+  font-size: 15px;
+}
+.page-user-login input[type="text"], .page-user-login input[type="password"], .page-user-password input[type="text"], .page-user-password input[type="password"], .page-user input[type="text"], .page-user input[type="password"] {
+  background-color: #f4f3f3;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  border: none;
+  height: 30px;
+  width: 400px;
+}
+
+.page-user-password .form-submit {
+  min-width: 150px;
+}
+
+.page-user .title {
+  display: none;
+}
+.page-user .block-duhoc-user .info_image {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+.page-user .block-duhoc-user .info_area {
+  margin-bottom: 20px;
+}
+.page-user .block-duhoc-user .sticky-header th, .page-user .block-duhoc-user .sticky-table th {
+  border-bottom: none;
+}
+.page-user .block-duhoc-user .sticky-header {
+  display: none !important;
+}
+.page-user .block-duhoc-user .sticky-table {
+  border: 1px solid #838484;
+}
+.page-user .block-duhoc-user .sticky-table thead tr th, .page-user .block-duhoc-user .sticky-table thead tr td {
+  background-color: #eef8f9;
+  font-size: 17px;
+  border-left: 1px solid #838484;
+  padding: 0 10px 1px;
+}
+.page-user .block-duhoc-user .sticky-table thead tr th:first-child, .page-user .block-duhoc-user .sticky-table thead tr td:first-child {
+  border-left: none;
+}
+.page-user .block-duhoc-user .sticky-table tbody tr, .page-user .block-duhoc-user .sticky-table tbody tr.odd, .page-user .block-duhoc-user .sticky-table tbody tr.even {
+  border: none;
+  background: none;
+}
+.page-user .block-duhoc-user .sticky-table tbody tr td, .page-user .block-duhoc-user .sticky-table tbody tr.odd td, .page-user .block-duhoc-user .sticky-table tbody tr.even td {
+  border-top: 1px solid #838484;
+  border-left: 1px solid #838484;
+  padding: 4px 10px 2px;
+}
+.page-user .block-duhoc-user .sticky-table tbody tr td:first-child, .page-user .block-duhoc-user .sticky-table tbody tr.odd td:first-child, .page-user .block-duhoc-user .sticky-table tbody tr.even td:first-child {
+  border-left: none;
+}
+
+.page-user-target input[type="text"] {
+  width: 100%;
+}
+.page-user-target .sticky-header {
+  display: none !important;
+}
+.page-user-target .sticky-header th, .page-user-target .sticky-table th {
+  border-bottom: none;
+}
+.page-user-target .sticky-table {
+  border: 1px solid #838484;
+}
+.page-user-target .sticky-table thead tr th, .page-user-target .sticky-table thead tr td {
+  background-color: #eef8f9;
+  font-size: 17px;
+  border-left: 1px solid #838484;
+  padding: 0 10px 1px;
+}
+.page-user-target .sticky-table thead tr th:first-child, .page-user-target .sticky-table thead tr td:first-child {
+  border-left: none;
+}
+.page-user-target .sticky-table tbody tr, .page-user-target .sticky-table tbody tr.odd, .page-user-target .sticky-table tbody tr.even {
+  border: none;
+  background: none;
+}
+.page-user-target .sticky-table tbody tr td, .page-user-target .sticky-table tbody tr.odd td, .page-user-target .sticky-table tbody tr.even td {
+  border-top: 1px solid #838484;
+  border-left: 1px solid #838484;
+  padding: 4px 10px 2px;
+}
+.page-user-target .sticky-table tbody tr td:first-child, .page-user-target .sticky-table tbody tr.odd td:first-child, .page-user-target .sticky-table tbody tr.even td:first-child {
+  border-left: none;
+}
+.page-user-target .sticky-table tbody tr td input, .page-user-target .sticky-table tbody tr.odd td input, .page-user-target .sticky-table tbody tr.even td input {
+  margin: 0;
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  height: 25px;
+}
+.page-user-target .sticky-table tbody tr td fieldset, .page-user-target .sticky-table tbody tr.odd td fieldset, .page-user-target .sticky-table tbody tr.even td fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.page-user-target .sticky-table tbody tr td fieldset legend, .page-user-target .sticky-table tbody tr.odd td fieldset legend, .page-user-target .sticky-table tbody tr.even td fieldset legend {
+  display: none;
+}
+.page-user-target .sticky-table tbody tr td fieldset .fieldset-wrapper div, .page-user-target .sticky-table tbody tr.odd td fieldset .fieldset-wrapper div, .page-user-target .sticky-table tbody tr.even td fieldset .fieldset-wrapper div {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.page-user-target .sticky-table tbody tr td fieldset .fieldset-wrapper .description, .page-user-target .sticky-table tbody tr.odd td fieldset .fieldset-wrapper .description, .page-user-target .sticky-table tbody tr.even td fieldset .fieldset-wrapper .description {
+  display: none;
+}
+.page-user-target .field-name-field-area label {
+  display: inline-block;
+  margin-right: 20px;
+}
+.page-user-target .field-name-field-area select {
+  background-color: #f4f3f3;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  height: 30px;
+  width: 300px;
+}
+.page-user-target .ajax-progress {
+  display: none !important;
 }
