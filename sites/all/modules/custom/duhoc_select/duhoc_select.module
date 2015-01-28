@@ -32,14 +32,15 @@ function duhoc_select_list_contract() {
 }
 
 function duhoc_select_update_contract() {
-  $i = arg(5);
-  $node = node_load(arg(2));
-  $node->field_select_contract['und'][$i]['value'] = arg(4);
-  echo '<pre>';
-  print_r ($node);
-  echo '</pre>';
-  die;
-  node_save($node);
+  $nid = arg(2);
+  $item = arg(5);
+  $contract = arg(4);
+  $raw_node = node_load($nid);
+  $node = entity_metadata_wrapper('node', $raw_node);
+  $raw_collection = $node->field_student_contract[0]->value();
+  $raw_collection->field_select_list_contract['und'][$item]['value'] = $contract;
+  $raw_collection->save();
+ //  node_save($node);
 }
 
 /*
@@ -85,8 +86,4 @@ function duhoc_select_list_country() {
     $res[$rows->entity_id] = $rows->field_collec_country_value;
   }
   return $res;
-}
-
-function field_data_field_st_country() {
-  return '123';
 }

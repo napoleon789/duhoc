@@ -55,21 +55,19 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      }
    }
    if(arg(3) == 'contract' || (isset($m) && $m =='contract')) {
-     $node1 = node_load(arg(2));
-     $node = field_collection_item_load(201);
-     dpm($node);
+
      $form['field_student_pathway']['#access'] = false;
      $form['field_student_visa']['#access'] = false;
      $form['field_student_basic']['#access'] = false;
      $nid = arg(2);
-     $query = db_query("SELECT cid FROM {contract_student} WHERE nid =:nid",array('nid' => $nid));
+     $query = db_query("SELECT * FROM {contract_student} WHERE nid =:nid",array('nid' => $nid));
      $number = $query -> rowCount();
      if($number >0 ) {
        $his = '';
       $record =   $query -> fetchAll();
       foreach($record as $row) {
-        $node = node_load($row ->cid);
-        $his .= '<div > <a href="/export/hocvien/'.$nid.'/'.$row -> cid.'">'.$node -> title.'</a></div>';
+        $node_contract = node_load($row->cid);
+        $his .= '<div > <a href="/export/hocvien/'.$nid.'/'.$row -> delta.'/'.$row -> cid.'">'.$node_contract -> title.'</a></div>';
       }
        $form['field_student_contract']['#prefix'] = $his;
      }
@@ -89,7 +87,7 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
        $form['field_student_contract']['und'][$i]['field_select_list_contract']['#attributes']= array('rel'=>$i,'id' => 'contract_change');
 
       $form['field_student_contract']['und'][$i]['field_button'] = array();
-       $form['field_student_contract']['und'][$i]['field_select_list_contract']['#suffix'] = '<span class="load"></span><div class="action_remove"><a href="/export/hocvien/'.arg(2).'"  class="btn-orange">print</a>'.$submit.$remove.'</div>';
+       $form['field_student_contract']['und'][$i]['field_select_list_contract']['#suffix'] = '<span class="load"></span><div class="action_remove">'.$submit.$remove.'<a id = "'.$i.'"href="/export/hocvien/'.arg(2).'/'.$i.'"  class="btn-orange">print</a></div>';
      }
     // $form['field_student_contract']['#suffix'] = '<a href="/export/hocvien/'.arg(2).'">print</a>';
      $form['field_select_contract']['#access'] = true;

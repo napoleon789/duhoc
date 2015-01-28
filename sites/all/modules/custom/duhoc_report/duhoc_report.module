@@ -46,3 +46,28 @@ function duhoc_report_export_to_excel($content) {
   exit;
 }
 
+/**
+ * implement hook block_info
+ */
+
+function duhoc_report_block_info() {
+  $blocks['menu_report'] = array(
+    'info' => t('Menu left report'),
+  );
+  return $blocks;
+}
+
+/**
+ * implement hook_block_view
+ */
+
+function duhoc_report_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'menu_report':
+      $block['content'] = duhoc_report_menu_left();
+      break;
+  }
+  return $block;
+}
+

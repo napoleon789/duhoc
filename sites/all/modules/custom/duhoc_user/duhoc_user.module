@@ -71,7 +71,7 @@ function duhoc_user_block_view($delta = '') {
   return $block;
 }
 
-function duhoc_user_view($uid = null) {
+function duhoc_user_view() {
   global $user;
   if($user ->uid >0) {
   $uid = arg(1);

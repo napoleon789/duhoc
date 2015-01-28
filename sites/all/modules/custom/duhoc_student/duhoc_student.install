@@ -14,6 +14,12 @@ function duhoc_student_schema() {
         'unsigned' => TRUE,
         'not null' => TRUE,
         'default' => 0),
+ 'delta' => array(
+        'description' => t('Item order'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0),
  'cid' => array(
         'description' => t('save contract ID'),
         'type' => 'int',
@@ -28,7 +34,6 @@ function duhoc_student_schema() {
         'default' => 0),
       ),
 
-
     'primary key' => array('tt'),
     );
 
@@ -38,7 +43,7 @@ function duhoc_student_schema() {
 
 //function duhoc_student_install() {
   // Create my tables.
-//  drupal_install_schema('duhoc_student');
+ //drupal_install_schema('duhoc_student');
 //}
 
 function duhoc_student_uninstall() {

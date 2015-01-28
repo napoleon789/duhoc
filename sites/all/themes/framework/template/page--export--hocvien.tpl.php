@@ -35,33 +35,30 @@
 <body>
 <pre>
 <?php
-  $name = $page['content']['system_main']['title'];
-  $node = node_load(arg(2));
-  $items_contract = field_get_items('node', $node, 'field_student_contract');
-  foreach ($items_contract as $item2) {
-    $fc2 = field_collection_field_get_entity($item2);
-    $address2 = $fc2->field_adress['und'][0]['value'];
-    $phone2 = $fc2 ->field_phone['und'][0]['value'];
-    $name2 = $fc2 ->field_signer_name['und'][0]['value'];
-  }
-  $items_basic = field_get_items('node', $node, 'field_student_basic');
-  foreach ($items_basic as $item1) {
-    $fc1 = field_collection_field_get_entity($item1);
-    $date = $fc1->field_student_birth['und'][0]['value'];
-    $date = date('d/m/Y',$date);
-    $address = $fc1->field_student_address['und'][0]['value'];
-    $phone = $fc1 ->field_student_phone['und'][0]['value'];
-  }
-  $m = arg(3);
-  if(isset($m))
-    $contractID = $m;
-  else
-  $contractID = $node ->field_select_contract['und'][0]['value'];
-  $nodect = node_load($contractID);
-  $old = array('hoten','date','diachi','dienthoai','hvaten_b','dchi_b','phone_b');
-  $new = array($name,$date,$address,$phone,$name2,$address2,$phone2);
-  $contract = $nodect->body['und'][0]['value'];
+  $nid = arg(2);
+  $item = arg(3);
+  $cid = arg(4);
+  $raw_node = node_load($nid);
+  $node = entity_metadata_wrapper('node', $raw_node);
+  $raw_collection = $node->field_student_contract[$item]->value();
+  //info PARTY B
+  $name_b = $raw_collection->field_signer_name['und'][$item]['value'];
+  $address_b = $raw_collection->field_adress['und'][$item]['value'];
+  $phone_b = $raw_collection->field_phone['und'][$item]['value'];
 
+  //info_student
+  $name_a = $raw_collection->field_student_full_name['und'][$item]['value'];
+  $address_a = $raw_collection->field_student_address['und'][$item]['value'];
+
+  //content to print
+  if(isset($cid))
+    $contractID  = $cid;
+   else
+    $contractID = $raw_collection ->field_select_list_contract['und'][$item]['value'];
+  $nodect = node_load($contractID);
+  $old = array('[name_b]','[address_b]','[phone_b]','[name_a]','[address_a]');
+  $new = array($name_b,$address_b,$phone_b,$name_a,$address_a);
+  $contract = $nodect->body['und'][0]['value'];
   $ndung = str_replace($old,$new,$contract);
 ?>
 </pre>
@@ -78,5 +75,5 @@
 
 <?php
 /*header("Content-type: application/vnd.ms-word");
-header("Content-Disposition: attachment;Filename=Contract.doc");
-*/?>
+header("Content-Disposition: attachment;Filename=Contract.doc");*/
+?>

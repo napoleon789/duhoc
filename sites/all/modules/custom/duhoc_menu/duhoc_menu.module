@@ -147,10 +147,10 @@ function duhoc_menu_menu() {
     'type' => MENU_LOCAL_TASK,
     'weight' => 4,
   );
-  $items['export/hocvien/%'] = array(
+  $items['export/hocvien/%/%'] = array(
     'title' => 'Visa',
     'page callback' => 'duhoc_menu_export_word',
-    'page arguments' => array(2),
+    'page arguments' => array(2,3),
     'access arguments' => array('access content'),
     'type' => MENU_LOCAL_TASK,
     'weight' => 4,
@@ -164,16 +164,20 @@ function duhoc_menu_menu() {
   return $items;
 }
 
-function duhoc_menu_export_word($id) {
+function duhoc_menu_export_word($id,$item) {
   global $user;
   $output = node_load($id);
-  $cid = $output -> field_select_contract['und'][0]['value'];
+  $node = entity_metadata_wrapper('node', $output);
+  $raw_collection = $node->field_student_contract[$item]->value();
+  $contractID = $raw_collection ->field_select_list_contract['und'][$item]['value'];
   $uid = $user -> uid;
-  $query = db_query("SELECT nid,cid FROM {contract_student} WHERE nid =:nid AND cid = :cid",array(':nid' =>$id,':cid' =>$cid)) -> rowCount();
+
+  $query = db_query("SELECT nid,cid FROM {contract_student} WHERE nid =:nid AND cid = :cid AND delta =:delta",array(':nid' =>$id,':cid' =>$contractID,':delta'=>$item)) -> rowCount();
   if($query == 0) {
     $record = array (
       'nid' => $id,
-      'cid' => $cid,
+      'delta' => $item,
+      'cid' => $contractID,
       'uid' => $uid,
     );
     drupal_write_record('contract_student',$record);
