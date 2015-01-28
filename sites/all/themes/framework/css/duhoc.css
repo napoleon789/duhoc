@@ -1043,23 +1043,34 @@ input, select {
   margin-bottom: 35px;
 }
 
-.page-quanly-student-basic fieldset {
+.page-quanly-student-basic h1.title, .page-node-add-hocvien h1.title {
+  background-color: #838484;
+  border-bottom: 3px solid #fcbc18;
+  margin: -7px -20px 18px !important;
+  padding: 0 20px;
+  color: white;
+  font-size: 18px;
+  font-family: "Roboto Condensed";
+  height: 50px;
+  line-height: 47px;
+}
+.page-quanly-student-basic fieldset, .page-node-add-hocvien fieldset {
   border: none;
   padding: 0;
 }
-.page-quanly-student-basic fieldset#edit-field-student-basic-und-0 > legend {
+.page-quanly-student-basic fieldset#edit-field-student-basic-und-0 > legend, .page-node-add-hocvien fieldset#edit-field-student-basic-und-0 > legend {
   display: none;
 }
-.page-quanly-student-basic fieldset .no_image {
+.page-quanly-student-basic fieldset .no_image, .page-node-add-hocvien fieldset .no_image {
   float: left;
   width: 170px;
   margin-left: 15px;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .form-managed-file > .image-widget-data:first-child {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .form-managed-file > .image-widget-data:first-child, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .form-managed-file > .image-widget-data:first-child {
   background-image: url("../images/bgr/add-file.png");
   background-repeat: no-repeat;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .form-managed-file > .image-widget-data:first-child input[type="file"] {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .form-managed-file > .image-widget-data:first-child input[type="file"], .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .form-managed-file > .image-widget-data:first-child input[type="file"] {
   font-size: 0;
   width: 170px;
   height: 170px;
@@ -1069,38 +1080,38 @@ input, select {
   opacity: 0;
   margin-bottom: 15px;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .form-item .description {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .form-item .description, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .form-item .description {
   font-size: 12px;
   font-style: italic;
   padding-top: 10px;
   line-height: normal;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information h3 {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information h3, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .personal_information h3 {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 15px;
   margin-bottom: 7px;
   margin-top: 0;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .personal_information .form-item {
   border: 1px solid #d5d3d3;
   margin: 0;
   width: 542px;
   border-bottom: none;
   display: block;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item:before, .page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item:after {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item:before, .page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item:after, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .personal_information .form-item:before, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .personal_information .form-item:after {
   content: " ";
   display: table;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item:after {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item:after, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .personal_information .form-item:after {
   clear: both;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item .form-item {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item .form-item, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .personal_information .form-item .form-item {
   border: none;
   width: auto;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item label {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item label, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .personal_information .form-item label {
   width: 192px;
   background-color: #838484;
   color: white;
@@ -1112,7 +1123,7 @@ input, select {
   height: 29px;
   line-height: 29px;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item input {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .form-item input, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .personal_information .form-item input {
   border: none;
   width: 348px !important;
   float: left;
@@ -1127,27 +1138,27 @@ input, select {
   box-shadow: none;
   background-color: transparent;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information #edit-field-student-basic-und-0-field-student-phone .form-item {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information #edit-field-student-basic-und-0-field-student-phone .form-item, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .personal_information #edit-field-student-basic-und-0-field-student-phone .form-item {
   border-bottom: 1px solid #d5d3d3;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset {
   padding: 0;
   margin: 0;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset legend {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset legend, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .personal_information .field-type-datestamp fieldset legend {
   display: none;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic fieldset legend {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic fieldset legend, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic fieldset legend {
   color: #2f2f2f;
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 5px;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .form-item, .page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .form-actions {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .form-item, .page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .form-actions, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .education_background .form-item, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .education_background .form-actions {
   margin: 0;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper label {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper label, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper label {
   background-color: #838484;
   color: white;
   font-weight: bold;
@@ -1155,10 +1166,10 @@ input, select {
   height: 25px;
   line-height: 25px;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .field-name-field-point label, .page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .field-name-field-point input {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .field-name-field-point label, .page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .field-name-field-point input, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .education_background .field-name-field-point label, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .education_background .field-name-field-point input {
   border-right: 1px solid #ccc;
 }
-.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper input, .page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper select {
+.page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper input, .page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper select, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper input, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper select {
   height: 25px;
   font-size: 13px;
   font-family: "Roboto Condensed";
