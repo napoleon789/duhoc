@@ -41,7 +41,7 @@
   $raw_node = node_load($nid);
   $node = entity_metadata_wrapper('node', $raw_node);
   $raw_collection = $node->field_student_contract[$item]->value();
-  //info PARTY B
+  //PARTY B INFO
   $name_b = $raw_collection->field_signer_name['und'][$item]['value'];
   $address_b = $raw_collection->field_adress['und'][$item]['value'];
   $phone_b = $raw_collection->field_phone['und'][$item]['value'];
