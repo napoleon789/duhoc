@@ -27,6 +27,7 @@ jQuery(document).ready(function() {
                             data.addRows(row);
                             var options = {
                                 chartArea:{left:20,top:60,width:"86%"},
+                                colors: ["#414853", "#febd16"],
                                 hAxis: {title: "", titleTextStyle: {color: "red"}}
                             };
                             var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
@@ -68,6 +69,7 @@ jQuery(document).ready(function() {
                             data.addRows(row);
                             var options = {
                                 chartArea:{left:20,top:60,width:"86%"},
+                                colors: ["#414853", "#febd16"],
                                 hAxis: {title: "", titleTextStyle: {color: "red"}}
                             };
                             var chart = new google.visualization.ColumnChart(document.getElementById('chart_div2'));

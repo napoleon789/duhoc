@@ -640,9 +640,9 @@ function field_group_multiple_process_field_submit(&$values, $field_name, $langc
 function field_group_multiple_process_field_default_submit(&$values, $field_name, $langcode, $field_info, $form_values){
 
   $values[$field_name] = array();
+  if(is_array($form_values)){
   foreach ($form_values as $delta => $value) {
     if (isset($value[$field_name])) {
-
       if (isset($value[$field_name][$langcode]['0'])) {
         $tmp = $value[$field_name][$langcode]['0'];
         $values[$field_name]['empty'][$delta] = field_group_multiple_field_item_is_empty($field_info, $tmp);
@@ -652,8 +652,7 @@ function field_group_multiple_process_field_default_submit(&$values, $field_name
         $values[$field_name]['empty'][$delta] = field_group_multiple_field_item_is_empty($field_info, $tmp);
         $values[$field_name]['values'][$langcode][$delta] = $tmp;
       }
-    
-    
+    }
     }
   }
 }
@@ -705,7 +704,6 @@ function _field_group_multiple_get_field_values($entity, $fields, $max_delta = 0
     $count = 0;
     for ($i=0; $i <= $max_delta; $i++) {
       $values[$i][$field_name] =  NULL;
-
       if (isset($form_values[$i][$field_name])) {
         $values[$i][$field_name] = $form_values[$i][$field_name];
       } else {

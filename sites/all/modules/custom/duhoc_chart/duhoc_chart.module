@@ -301,6 +301,7 @@ function duhoc_chart_list_member($area = null) {
   else {
     if(isset($user -> roles[8])) {
       if(isset($user -> roles[9])) {
+
         $query = db_query("SELECT entity_id FROM field_data_field_area  ");
         foreach($query as $result) {
           $row[] = $result -> entity_id;

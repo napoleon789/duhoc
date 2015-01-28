@@ -81,9 +81,17 @@ function duhoc_select_list_area() {
   return $res;
 }
 function duhoc_select_list_country() {
-  $query = db_query("SELECT DISTINCT entity_id,field_collec_country_value FROM {field_data_field_collec_country}");
+  $query = db_query("SELECT  entity_id,field_collec_country_value FROM {field_data_field_collec_country}");
   foreach($query as $rows) {
     $res[$rows->entity_id] = $rows->field_collec_country_value;
+  }
+  return $res;
+}
+
+function duhoc_select_list_course() {
+  $query = db_query("SELECT  entity_id,field_course_name_value FROM {field_data_field_course_name}");
+  foreach($query as $rows) {
+    $res[$rows->entity_id] = $rows->field_course_name_value;
   }
   return $res;
 }
