@@ -1,0 +1,32 @@
+.page-quanly-reports{
+  .view-content{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .block.block-menu.contextual-links-region{
+    float: left;
+    width: 190px;
+    @include box-shadow(0 2px 2px rgba(#7f7f7f,0.75));
+    background-color: #fff8e8;
+    padding: 0 12px 18px;
+    margin-top: 20px;
+    ul.menu{
+      margin: 0;
+      padding: 0;
+      li{
+        list-style-image: none;
+        list-style: none;
+        border-bottom: 1px dashed #949594;
+        padding: 10px 0 2px 0;
+      }
+    }
+    &+a{
+      display: none;
+    }
+  }
+  .view.view-new-views{
+    float: right;
+    width: 730px;
+    margin-top: 20px;
+  }
+}
