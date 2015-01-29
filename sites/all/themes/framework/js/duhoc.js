@@ -16,7 +16,6 @@ jQuery(document).ready(function($) {
         $('.load').text('loading...').css('color','red');
         var contract = $(this).val();
         var num = $(this).parents('#contract_change').attr('rel');
-        console.log(num);
         var pathname = window.location.pathname;
         var host = window.location.host;
             $.ajax({

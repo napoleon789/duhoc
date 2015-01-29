@@ -90,6 +90,7 @@ function drawChart() {
   var options = {
     chartArea:{left:20,top:60,right:0,width:"86%"},
      fontSize:10,
+     legend:{textStyle:{fontSize:10, fontName:"TimesNewRoman"}},
     colors: ["#414853", "#febd16"],
     hAxis: {title: "", titleTextStyle: {color: "red"}}
   };
@@ -380,8 +381,8 @@ function duhoc_chart_form_select() {
 }
 function duhoc_chart_revenue_value($area = null,$month= null,$year = null) {
   $str_ui =duhoc_chart_list_member($area);
-  $query = db_query("SELECT SUM(r_usa.field_com_received_usa_value) as giatri
-   FROM field_data_field_com_received_usa as r_usa
+  $query = db_query("SELECT SUM(r_usa.field_com_received_contract_curr_value) as giatri
+   FROM field_data_field_com_received_contract_curr as r_usa
    INNER JOIN field_data_field_collection_test as c_reci ON r_usa.entity_id = c_reci.field_collection_test_value
    INNER JOIN field_data_field_student_pathway as pathway ON c_reci.entity_id = pathway.field_student_pathway_value
    INNER JOIN node as n ON pathway.entity_id = n.nid
