@@ -9,7 +9,7 @@
     }
   }
 }
-.page-quanly-student, .page-quanly-setting-contract{
+.page-quanly-student, .page-quanly-setting-contract, .page-quanly-reports{
 
   // student list
   .view-content{
@@ -613,6 +613,13 @@
   }
   .btn-footer{
     padding-left: 15px;
+  }
+  #contract_change{
+    float: left;
+    margin-right: 10px;
+  }
+  .action_remove{
+    clear: both;
   }
 }
 .btn-footer{
