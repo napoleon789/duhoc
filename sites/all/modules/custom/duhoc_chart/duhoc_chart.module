@@ -79,16 +79,16 @@ google.setOnLoadCallback(drawChart);
 function drawChart() {
 
   var data = google.visualization.arrayToDataTable([
-    ["Month", "Now year", "Tagets"],
+    ["Month", "Current year", "Tagets"],
    '.duhoc_chart_data().'
   ]);
 
   var data2 = google.visualization.arrayToDataTable([
-    ["Month", "Now year","Revenue"],
+    ["Month", "Current year","Revenue"],
    '.duhoc_chart_data_revenue().'
   ]);
   var options = {
-    chartArea:{left:20,top:60,right:0,width:"87%"},
+    chartArea:{left:20,top:60,right:0,width:"86%"},
      fontSize:10,
     colors: ["#414853", "#febd16"],
     hAxis: {title: "", titleTextStyle: {color: "red"}}
@@ -124,8 +124,9 @@ function duhoc_chart_data_revenue($area = null) {
     $revenue = duhoc_chart_revenue($area,$i,null);
     if(empty($revenue))
       $revenue = 0;
+    if($i<12)
     $data .= '["'.duhhoc_chart_convert_month($i).'", '.$value.', '.$revenue.'],' ;
-    if($i ==12)
+    else
       $data .= '["'.duhhoc_chart_convert_month($i).'", '.$value.', '.$revenue.']' ;
   }
   return $data;
@@ -138,6 +139,7 @@ function duhoc_chart_data($area = null) {
       $taget = duhoc_chart_tagets($area,$i,null);
       if(!isset($taget))
         $taget = 0;
+      if($i != 12)
       $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract($area,$i,null).', '.$taget.'], ' ;
       if($i ==12)
         $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract($area,$i,null).', '.$taget.'] ' ;
@@ -148,6 +150,7 @@ function duhoc_chart_data($area = null) {
       $taget = duhoc_chart_tagets($area,$i,null);
       if(!isset($taget))
         $taget = 0;
+      if($i !=12)
       $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract(null,$i,null).', '.$taget.'], ' ;
       if($i ==12)
         $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract(null,$i,null).', '.$taget.'] ' ;
@@ -327,40 +330,40 @@ function duhoc_chart_list_member($area = null) {
 function duhhoc_chart_convert_month($month) {
   switch($month) {
     case '1':
-      return 'January';
+      return 'Jan';
     break;
     case '2':
-      return 'February';
+      return 'Feb';
     break;
     case '3':
-      return 'March';
+      return 'Mar';
     break;
     case '4':
-      return 'April';
+      return 'Apr';
     break;
     case '5':
       return 'May';
     break;
     case '6':
-      return 'June';
+      return 'Jun';
     break;
     case '7':
       return 'July';
     break;
     case '8':
-      return 'August';
+      return 'Aug';
     break;
     case '9':
-      return 'September';
+      return 'Sep';
     break;
     case '10':
-      return 'October';
+      return 'Oct';
     break;
     case '11':
-      return 'November';
+      return 'Nov';
     break ;
     case '12':
-      return 'December';
+      return 'Dec';
     break;
   }
 }

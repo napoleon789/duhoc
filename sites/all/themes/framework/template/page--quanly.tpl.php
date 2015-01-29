@@ -72,7 +72,6 @@
         <a id="main-content"></a>
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
         <?php print render($title_prefix); ?>
-
         <?php print render($title_suffix); ?>
         <?php $a = arg(2);?>
         <?php $b = arg(1);?>
@@ -85,7 +84,6 @@
             <li class="item  <?php if(arg(3) =='visa') echo 'active';?>"><a href="http://localhost/duhoc/quanly/student/<?php echo $a;?>/visa">Visa</a> </li>
           </ul>
        <?php endif; ?>
-
       <?php if($b =='setting'):?>
           <ul class="menu_seting">
             <li class="item <?php if($a == false) echo 'active';?>"><a href="http://localhost/duhoc/quanly/setting/">List Country</a> </li>

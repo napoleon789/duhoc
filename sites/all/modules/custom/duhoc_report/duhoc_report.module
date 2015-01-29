@@ -11,6 +11,7 @@ function duhoc_report_menu() {
     'access arguments' => array('access content'),
     'type' => MENU_NORMAL_ITEM,
   );
+
   return $items;
 }
 
@@ -51,8 +52,8 @@ function duhoc_report_export_to_excel($content) {
  */
 
 function duhoc_report_block_info() {
-  $blocks['menu_report'] = array(
-    'info' => t('Menu left report'),
+  $blocks['Commist'] = array(
+    'info' => t(''),
   );
   return $blocks;
 }
@@ -69,5 +70,15 @@ function duhoc_report_block_view($delta = '') {
       break;
   }
   return $block;
+}
+
+
+function duhoc_report_commission_received() {
+  global $user;
+  if(!isset($user->roles[8])) {
+    $query = db_query("SELECT ");
+  }
+
+  $query = db_query("SELECT SUM(com.field_com_received_contract_curr_value) FROM field_data_field_com_received_contract_curr as com INNER JOIN field_data_field_collection_test as path ON com.entity_id = path.field_collection_test_value WHERE path.entity_id =:eid",array(':eid' =>1))->fetchField();
 }
 

@@ -74,6 +74,6 @@
 </html>
 
 <?php
-/*header("Content-type: application/vnd.ms-word");
-header("Content-Disposition: attachment;Filename=Contract.doc");*/
+header("Content-type: application/vnd.ms-word");
+header("Content-Disposition: attachment;Filename=Contract.doc");
 ?>
