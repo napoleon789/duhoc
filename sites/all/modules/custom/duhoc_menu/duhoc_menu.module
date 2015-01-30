@@ -235,9 +235,7 @@ function duhoc_menu_list_student() {
 }
 
 function duhoc_menu_reports() {
-  global $base_url;
-  $output = '<a href="/admin/structure/views/nojs/add-item/new_views/default/field"> Add</a>';
-  $output .= views_embed_view('new_views','default');
+  $output = views_embed_view('new_views','default');
   return $output;
 }
 

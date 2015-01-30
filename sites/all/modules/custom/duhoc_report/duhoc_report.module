@@ -82,3 +82,9 @@ function duhoc_report_commission_received() {
   $query = db_query("SELECT SUM(com.field_com_received_contract_curr_value) FROM field_data_field_com_received_contract_curr as com INNER JOIN field_data_field_collection_test as path ON com.entity_id = path.field_collection_test_value WHERE path.entity_id =:eid",array(':eid' =>1))->fetchField();
 }
 
+function duhoc_report_form_views_exposed_form_alter(&$form, &$form_state) {
+
+
+}
+
+
