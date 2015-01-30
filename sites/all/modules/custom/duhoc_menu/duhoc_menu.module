@@ -199,7 +199,7 @@ function duhoc_menu_user() {
   $sql_query ->join('role', 'r', 'ur.rid = r.rid');
   $sql_query->fields('u', array('uid', 'name'));
   $sql_query->fields('r', array('name'));
-  $sql_query = $sql_query->extend('TableSort')->extend('PagerDefault')->limit(5);
+  $sql_query = $sql_query->extend('TableSort')->extend('PagerDefault')->limit(20);
   $result = $sql_query->orderByHeader($header)->execute();
 
   foreach($result as $res){
