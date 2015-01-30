@@ -9,7 +9,7 @@
     @include box-shadow(0 2px 2px rgba(#7f7f7f,0.75));
     background-color: #fff8e8;
     padding: 0 12px 18px;
-    margin-top: 20px;
+    margin-top: 64px;
     ul.menu{
       margin: 0;
       padding: 0;
@@ -18,15 +18,92 @@
         list-style: none;
         border-bottom: 1px dashed #949594;
         padding: 10px 0 2px 0;
+        &.active-trail{
+          a{
+            font-weight: bold;
+          }
+        }
       }
     }
     &+a{
       display: none;
     }
   }
+  .view-content .views-table thead tr th{
+    font-size: 15px ;
+  }
   .view.view-new-views{
     float: right;
-    width: 730px;
+    width: 740px;
     margin-top: 20px;
+  }
+  .views-exposed-form{
+    margin-bottom: 12px;
+    .views-exposed-widget{
+      padding: 0;
+    }
+    .views-exposed-widgets{
+      padding: 0;
+      label{
+        text-transform: inherit;
+        margin-right: 8px;
+        font-size: 15px;
+        font-weight: normal;
+      }
+      .container-inline-date{
+        label{
+          display: none;
+        }
+      }
+      #edit-field-field-due-date-value-min-wrapper, #edit-field-field-due-date-value-max-wrapper, #edit-field-com-received-date-value-min-wrapper, #edit-field-com-received-date-value-max-wrapper{
+        float: left;
+        width: 96px;
+        margin-right: 8px;
+        div{
+          margin: 0;
+          padding: 0;
+        }
+        input{
+          width: 100%;
+          background-color: $light-gray;
+          @include box-shadow(0 1px 1px rgba(0,0,0,0.28) inset);
+          border:none;
+          background-image: url("../images/icon/calendar.png");
+          background-position: center right;
+          background-repeat: no-repeat;
+          height: 25px;
+        }
+        .description{
+          display: none;
+        }
+      }
+      .views-submit-button{
+        position: static;
+        float: left;
+        .form-submit{
+          background-color: $md-yellow;
+          height: 26px;
+          font-weight: bold;
+          font-size: 11px;
+          line-height: 26px;
+          @include border-radius(26px);
+          @include transition(all ease 0.3s);
+          min-width: 104px;
+          padding: 0 5px;
+          display: inline-block;
+          text-align: center;
+          text-transform: uppercase;
+          border: none;
+          cursor: pointer;
+          background-image: none;
+          margin-left: 12px;
+          &:hover{
+            background-color: $color-text;
+            color: $white;
+          }
+        }
+      }
+    }
+
   }
 }
