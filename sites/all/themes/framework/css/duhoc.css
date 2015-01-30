@@ -2077,7 +2077,7 @@ input, select {
   box-shadow: 0 2px 2px rgba(127, 127, 127, 0.75);
   background-color: #fff8e8;
   padding: 0 12px 18px;
-  margin-top: 20px;
+  margin-top: 64px;
 }
 .page-quanly-reports .block.block-menu.contextual-links-region ul.menu {
   margin: 0;
@@ -2089,11 +2089,95 @@ input, select {
   border-bottom: 1px dashed #949594;
   padding: 10px 0 2px 0;
 }
+.page-quanly-reports .block.block-menu.contextual-links-region ul.menu li.active-trail a {
+  font-weight: bold;
+}
 .page-quanly-reports .block.block-menu.contextual-links-region + a {
   display: none;
 }
+.page-quanly-reports .view-content .views-table thead tr th {
+  font-size: 15px;
+}
 .page-quanly-reports .view.view-new-views {
   float: right;
-  width: 730px;
+  width: 740px;
   margin-top: 20px;
+}
+.page-quanly-reports .views-exposed-form {
+  margin-bottom: 12px;
+}
+.page-quanly-reports .views-exposed-form .views-exposed-widget {
+  padding: 0;
+}
+.page-quanly-reports .views-exposed-form .views-exposed-widgets {
+  padding: 0;
+}
+.page-quanly-reports .views-exposed-form .views-exposed-widgets label {
+  text-transform: inherit;
+  margin-right: 8px;
+  font-size: 15px;
+  font-weight: normal;
+}
+.page-quanly-reports .views-exposed-form .views-exposed-widgets .container-inline-date label {
+  display: none;
+}
+.page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-field-due-date-value-min-wrapper, .page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-field-due-date-value-max-wrapper, .page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-com-received-date-value-min-wrapper, .page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-com-received-date-value-max-wrapper {
+  float: left;
+  width: 96px;
+  margin-right: 8px;
+}
+.page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-field-due-date-value-min-wrapper div, .page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-field-due-date-value-max-wrapper div, .page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-com-received-date-value-min-wrapper div, .page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-com-received-date-value-max-wrapper div {
+  margin: 0;
+  padding: 0;
+}
+.page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-field-due-date-value-min-wrapper input, .page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-field-due-date-value-max-wrapper input, .page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-com-received-date-value-min-wrapper input, .page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-com-received-date-value-max-wrapper input {
+  width: 100%;
+  background-color: #f4f3f3;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  border: none;
+  background-image: url("../images/icon/calendar.png");
+  background-position: center right;
+  background-repeat: no-repeat;
+  height: 25px;
+}
+.page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-field-due-date-value-min-wrapper .description, .page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-field-due-date-value-max-wrapper .description, .page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-com-received-date-value-min-wrapper .description, .page-quanly-reports .views-exposed-form .views-exposed-widgets #edit-field-com-received-date-value-max-wrapper .description {
+  display: none;
+}
+.page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button {
+  position: static;
+  float: left;
+}
+.page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button .form-submit {
+  background-color: #fcbc18;
+  height: 26px;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 26px;
+  -webkit-border-radius: 26px;
+  -moz-border-radius: 26px;
+  -ms-border-radius: 26px;
+  -o-border-radius: 26px;
+  border-radius: 26px;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  min-width: 104px;
+  padding: 0 5px;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  background-image: none;
+  margin-left: 12px;
+}
+.page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button .form-submit:hover {
+  background-color: #2f2f2f;
+  color: white;
 }
