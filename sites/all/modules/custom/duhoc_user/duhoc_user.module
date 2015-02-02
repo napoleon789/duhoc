@@ -91,10 +91,10 @@ function duhoc_user_view() {
   $user = user_load($uid);
   $uri = $user->picture->uri;
   $output = '';
-  $output .= '<div class="info_image">'.theme('image_style', array('style_name' => 'user170X170', 'path' => $uri, 'getsize' => TRUE, 'attributes' => array('class' => 'thumb'))).'</div>';
+  $output .= '<div class="user_info"><div class="info_image">'.theme('image_style', array('style_name' => 'user170X170', 'path' => $uri, 'getsize' => TRUE, 'attributes' => array('class' => 'thumb'))).'</div>';
   $output .= '<div class="info_name"><span class="label">Name: </span>'.$user -> name.'</div>';
-  $output .= '<div class="info_area"><span class="label">Area: </span>'.duhoc_user_area($user ->field_area['und'][0]['value']).'</div>';
-  $output .= theme("table",array('header'=>array('Month','Taget','Revenue'),'rows' =>$rows ));
+  $output .= '<div class="info_area"><span class="label">Area: </span>'.duhoc_user_area($user ->field_area['und'][0]['value']).'</div></div>';
+  $output .= '<div class="info_targin">'.theme("table",array('header'=>array('Month','Taget','Revenue'),'rows' =>$rows )).'</div>';
   if(isset($a2))
     return '';
   else

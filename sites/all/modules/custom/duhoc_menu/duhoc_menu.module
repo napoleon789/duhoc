@@ -193,25 +193,8 @@ function duhoc_menu_admin() {
 //page user
 
 function duhoc_menu_user() {
-  $header = array("id","name","roles","action");
-  $sql_query = db_select('users', 'u');
-  $sql_query ->join('users_roles', 'ur', 'u.uid = ur.uid');
-  $sql_query ->join('role', 'r', 'ur.rid = r.rid');
-  $sql_query->fields('u', array('uid', 'name'));
-  $sql_query->fields('r', array('name'));
-  $sql_query = $sql_query->extend('TableSort')->extend('PagerDefault')->limit(20);
-  $result = $sql_query->orderByHeader($header)->execute();
-
-  foreach($result as $res){
-    $edit = '<a href="/user/'.$res->uid.'/edit"> Edit</a>';
-    $delete = '<a href="#"> Delete</a>';
-    $act = $edit . ' | '.$delete;
-    $rows[] = array($res->uid,$res->name,$res->r_name ,$act);
-  }
-
-  $output = theme('table', array('header' => $header, 'rows' => $rows, 'attributes' => array('id' => 'my-module-table')));
-  $output .= theme('pager');
-  $output .= '<div class="add_user"> <a href="../admin/people/create">Add user</a> </di>';
+  $output = views_embed_view('user','default');
+  $output .= '<div class="add_user"><a href="/admin/people/create">Add user</a></div>';
   return $output;
 }
 
@@ -235,9 +218,7 @@ function duhoc_menu_list_student() {
 }
 
 function duhoc_menu_reports() {
-  global $base_url;
-  $output = '<a href="/admin/structure/views/nojs/add-item/new_views/default/field"> Add</a>';
-  $output .= views_embed_view('new_views','default');
+  $output = views_embed_view('new_views','default');
   return $output;
 }
 
