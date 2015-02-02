@@ -25,8 +25,8 @@
 
 </style>
 <?php
-
 $output = '';
+$output .= duhoc_report_type();
 $output .= theme('table', array(
   'header' => $header,
   'rows' => $rows,
@@ -36,6 +36,7 @@ if (isset($_POST['submit'])) {
   duhoc_report_export_to_excel($output);
 }
 ?>
+
 <table <?php if ($classes) { print 'class="'. $classes . '" '; } ?><?php print $attributes; ?>>
   <?php if (!empty($title) || !empty($caption)) : ?>
     <caption><?php print $caption . $title; ?></caption>
@@ -66,5 +67,5 @@ if (isset($_POST['submit'])) {
 </table>
 
 <form action="" method="post">
-  <input type="submit" name="submit" value="Save excel">
+  <input type="submit" name="submit" value="Export">
 </form>

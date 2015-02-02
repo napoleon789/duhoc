@@ -88,7 +88,7 @@
           <ul class="menu_seting">
             <li class="item <?php if($a == false) echo 'active';?>"><a href="http://localhost/duhoc/quanly/setting/">List Country</a> </li>
             <li class="item <?php if($a =='contract') echo 'active';?>"><a href="http://localhost/duhoc/quanly/setting/contract">List Contract</a> </li>
-            <li class="item <?php if($a =='contract') echo 'active';?>"><a href="http://localhost/duhoc/quanly/setting/course">List Course</a> </li>
+            <li class="item <?php if($a =='course') echo 'active';?>"><a href="http://localhost/duhoc/quanly/setting/course">List Course</a> </li>
           </ul>
       <?php endif;?>
         <?php print render($page['help']); ?>

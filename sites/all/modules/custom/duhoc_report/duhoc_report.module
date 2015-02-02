@@ -78,13 +78,23 @@ function duhoc_report_commission_received() {
   if(!isset($user->roles[8])) {
     $query = db_query("SELECT ");
   }
-
   $query = db_query("SELECT SUM(com.field_com_received_contract_curr_value) FROM field_data_field_com_received_contract_curr as com INNER JOIN field_data_field_collection_test as path ON com.entity_id = path.field_collection_test_value WHERE path.entity_id =:eid",array(':eid' =>1))->fetchField();
 }
 
-function duhoc_report_form_views_exposed_form_alter(&$form, &$form_state) {
-
-
-}
-
+function duhoc_report_type() {
+  $type = arg(2);
+  $output = '';
+  if(!isset($type)) {
+    $output .= '<h2>Commission Due Report</h2>';
+  }
+  else {
+    if($type =='due')
+      $output .= '<h2>Commission Due Report</h2>';
+    if($type =='pending')
+      $output .= '<h2>Commission Pendding Report</h2>';
+    if($type == 'revenue')
+      $output .= '<h2>Monthly Revenue Reports</h2>';
+  }
+  return $output;
+ }
 
