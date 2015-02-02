@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
     $("#contract_change .form-select").change(function() {
         var num = $(this).parents('#contract_change').attr('rel');
         $('.load'+num).text('loading...').css('color','red');
-        var contract = $(this).val();dsd
+        var contract = $(this).val();
         var pathname = window.location.pathname;
         var host = window.location.host;
             $.ajax({
