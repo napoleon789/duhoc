@@ -429,6 +429,9 @@
         .required-fields.b_groupt{
           &.b_groupt_1, &.b_groupt_2{
             @include clearfix();
+            .field-name-field-id, .field-name-field-phone{
+              width: 330px;
+            }
           }
           .form-wrapper{
             float: left;
@@ -537,6 +540,9 @@
         }
         .required-fields.group-contract-info-1{
           @include clearfix();
+          .field-name-field-counsellor-name{
+            width: 320px;
+          }
           .form-wrapper{
             float: left;
           }
