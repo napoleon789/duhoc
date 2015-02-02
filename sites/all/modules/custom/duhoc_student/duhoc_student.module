@@ -82,12 +82,11 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      $num = duhoc_student_verify_number($nid);
 
      for($i =0 ; $i < $num; $i ++) {
-
        $remove = drupal_render($form['field_student_contract']['und'][$i]['remove_button']);
        $form['field_student_contract']['und'][$i]['field_select_list_contract']['#attributes']= array('rel'=>$i,'id' => 'contract_change');
 
       $form['field_student_contract']['und'][$i]['field_button'] = array();
-       $form['field_student_contract']['und'][$i]['field_select_list_contract']['#suffix'] = '<span class="load"></span><div class="action_remove">'.$submit.$remove.'<a id = "'.$i.'"href="/export/hocvien/'.arg(2).'/'.$i.'"  class="btn-orange">print</a></div>';
+       $form['field_student_contract']['und'][$i]['field_select_list_contract']['#suffix'] = '<span class="load'.$i.'"></span><div class="action_remove">'.$submit.$remove.'<a id = "'.$i.'"href="/export/hocvien/'.arg(2).'/'.$i.'"  class="btn-orange">print</a></div>';
      }
     // $form['field_student_contract']['#suffix'] = '<a href="/export/hocvien/'.arg(2).'">print</a>';
      $form['field_select_contract']['#access'] = true;
