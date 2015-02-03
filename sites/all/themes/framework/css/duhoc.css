@@ -1639,7 +1639,11 @@ input, select {
   font-weight: bold;
 }
 .page-quanly-student-pathway .field-name-field-student-pathway .field-type-field-collection.field-name-field-collection-test .sticky-table tbody tr td {
-  padding: 0;
+  padding: 8px 0 15px 0;
+  position: relative;
+}
+.page-quanly-student-pathway .field-name-field-student-pathway .field-type-field-collection.field-name-field-collection-test .sticky-table tbody tr td .receved_pathway {
+  width: 100% !important;
 }
 .page-quanly-student-pathway .field-name-field-student-pathway .field-type-field-collection.field-name-field-collection-test .sticky-table tbody tr td input[type="text"] {
   margin-right: 10px;
@@ -1650,6 +1654,21 @@ input, select {
 }
 .page-quanly-student-pathway .field-name-field-student-pathway .field-type-field-collection.field-name-field-collection-test .sticky-table tbody tr td .form-submit {
   margin-bottom: 25px;
+  position: absolute !important;
+  top: 6px;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  min-width: 1px;
+}
+.page-quanly-student-pathway .field-name-field-student-pathway .field-type-field-collection.field-name-field-collection-test .sticky-table tbody tr:first-child td {
+  padding-top: 0;
+}
+.page-quanly-student-pathway .field-name-field-student-pathway .field-type-field-collection.field-name-field-collection-test .sticky-table tbody tr:first-child td .form-submit {
+  top: 0;
+}
+.page-quanly-student-pathway .field-name-field-student-pathway .field-type-field-collection.field-name-field-collection-test .sticky-table + .clearfix .ajax-progress {
+  display: none !important;
 }
 .page-quanly-student-pathway .field-name-field-student-pathway .field-name-field-com-pending {
   padding-top: 15px;
@@ -1672,6 +1691,21 @@ input, select {
 .page-quanly-student-visa .tabledrag-toggle-weight-wrapper, .page-quanly-student-visa .field-multiple-drag, .page-quanly-student-visa .sticky-header {
   display: none;
 }
+.page-quanly-student-visa .sticky-table .field-name-field-visa-note label {
+  position: relative;
+}
+.page-quanly-student-visa .sticky-table .field-name-field-visa-note label::after {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #eef8f9;
+  border-bottom: 1px solid #838484;
+  margin-left: 1px;
+  width: 96px;
+}
 .page-quanly-student-visa .sticky-table th {
   border-bottom: none;
 }
@@ -1679,6 +1713,7 @@ input, select {
   display: inline-block;
   text-transform: uppercase;
   font-size: 17px;
+  padding-bottom: 2px;
 }
 .page-quanly-student-visa .sticky-table tr.even, .page-quanly-student-visa .sticky-table tr.odd {
   background-color: transparent;
@@ -1709,6 +1744,7 @@ input, select {
 .page-quanly-student-visa .sticky-table tbody td .form-wrapper input, .page-quanly-student-visa .sticky-table tbody td .form-wrapper select {
   width: 100% !important;
   margin: 0;
+  height: 29px;
 }
 .page-quanly-student-visa .sticky-table tbody td .form-wrapper legend, .page-quanly-student-visa .sticky-table tbody td .form-wrapper label {
   display: none;
@@ -1730,9 +1766,13 @@ input, select {
   font-size: 14px;
   margin-top: 5px;
   font-weight: normal;
+  padding-top: 2px;
 }
 .page-quanly-student-visa .btn-footer .ajax-progress {
   display: none !important;
+}
+.page-quanly-student-visa .btn-footer input {
+  margin-right: 15px !important;
 }
 
 .page-quanly-setting .sticky-header {
@@ -2075,25 +2115,97 @@ input, select {
   display: none !important;
 }
 
-.page-user-edit .form-type-password input {
-  width: 16em;
+.page-user-edit input[type="text"], .page-user-edit input[type="password"], .page-user-edit select {
+  width: 250px;
+}
+.page-user-edit select {
+  background-color: #f4f3f3;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+}
+.page-user-edit .form-type-password {
+  position: relative;
+}
+.page-user-edit .form-type-password.form-item-pass-pass2.confirm-parent {
+  margin-top: 10px;
 }
 .page-user-edit .password-suggestions {
   font-weight: bold;
   padding: 15px 10px !important;
+  margin-left: 150px !important;
 }
 .page-user-edit .password-suggestions ul {
   margin-top: 5px;
   font-weight: normal;
+}
+.page-user-edit .password-strength, .page-user-edit div.password-confirm {
+  position: absolute;
+  top: 0;
+  left: 415px;
+  margin: 0;
+}
+.page-user-edit div.password-confirm {
+  margin-top: 5px;
+}
+.page-user-edit .form-type-checkboxes.form-item-roles {
+  margin-top: -13px;
+  margin-bottom: 8px;
+}
+.page-user-edit .form-type-checkboxes.form-item-roles:before, .page-user-edit .form-type-checkboxes.form-item-roles:after {
+  content: " ";
+  display: table;
+}
+.page-user-edit .form-type-checkboxes.form-item-roles:after {
+  clear: both;
+}
+.page-user-edit .form-checkboxes {
+  float: left;
+}
+.page-user-edit .form-checkboxes input {
+  margin-right: 5px;
+}
+.page-user-edit #edit-picture {
+  clear: both;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.page-user-edit #edit-picture legend {
+  font-size: 17px;
+  width: 150px;
+  float: left;
+}
+.page-user-edit #edit-picture .fieldset-wrapper {
+  float: left;
+}
+.page-user-edit #edit-picture .fieldset-wrapper .form-item, .page-user-edit #edit-picture .fieldset-wrapper .form-actions {
+  margin: 0;
+}
+.page-user-edit #edit-picture .fieldset-wrapper .form-item-files-picture-upload label {
+  display: none;
+}
+.page-user-edit #edit-picture .fieldset-wrapper .form-item-picture-delete input {
+  vertical-align: middle;
+  margin-right: 5px;
 }
 .page-user-edit .description {
   display: none;
 }
 .page-user-edit label {
   font-size: 17px;
+  float: left;
+  width: 150px;
+  margin-top: 3px;
 }
 .page-user-edit label.option {
   font-size: 14px;
+  float: none;
+  width: auto;
+  vertical-align: middle;
+  margin-top: 0;
 }
 .page-user-edit .sticky-header {
   display: none !important;
@@ -2103,6 +2215,12 @@ input, select {
 }
 .page-user-edit .sticky-table td input {
   width: 100%;
+}
+.page-user-edit #edit-actions {
+  padding-top: 2px;
+}
+.page-user-edit .form-submit {
+  margin-left: 150px;
 }
 
 .page-quanly-reports .view-content {
