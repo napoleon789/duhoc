@@ -10,7 +10,7 @@ function duhoc_user_init() {
 
 function duhoc_user_menu() {
   $items['user/%/target'] = array(
-    'title' => 'Targets',
+    'title' => 'Edit targets',
     'page callback' => 'duhoc_user_target',
     'page arguments' => array(1),
     'access arguments' => array('access content'),
@@ -46,10 +46,10 @@ function duhoc_user_target($uid = '') {
   else
     $form = '<h2 style="text-align: center">Access Denied </h2>';
   return $form;
-
 }
 
 function duhoc_user_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
   if(!isset($form_state['build_info']['files'])){
     $form_state['build_info']['files'] = array("menu" => "modules/user/user.pages.inc");
   }
@@ -63,10 +63,12 @@ function duhoc_user_form_alter(&$form, &$form_state, $form_id) {
     }
     if(arg(2) == 'edit') {
       unset($form['fgm_user_user_form_group_targets']);
+      $form['field_area']['#access'] = false;
+      if($user -> roles[8])
+        $form['field_area']['#access'] = true;
     }
   }
 }
-
 
 /**
  * implement hook block_info
@@ -121,7 +123,7 @@ function duhoc_user_view() {
   else
     $output .= '<div class="user_info"><div class="info_image"><img src="http://localhost/duhoc/sites/default/files/no-image.png"> </div>';
   $output .= '<div class="info_name"><span class="label">Name: </span>'.$user1 -> name.'</div>';
-  $output .= '<div class="info_area"><span class="label">Area: </span>'.duhoc_user_area($user ->field_area['und'][0]['value']).'</div></div>';
+  $output .= '<div class="info_area"><span class="label">Area: </span>'.duhoc_user_area($user1 ->field_area['und'][0]['value']).'</div></div>';
   $output .= '<div class="info_targin">'.theme("table",array('header'=>array('Month','Target','Revenue'),'rows' =>$rows )).'</div>';
   if(isset($a2))
     return '';
