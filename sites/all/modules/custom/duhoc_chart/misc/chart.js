@@ -1,3 +1,4 @@
+//Chart for contract
 jQuery(document).ready(function() {
     jQuery(".chart_sale select").change(function() {
         var id = jQuery(this).val();
@@ -22,11 +23,12 @@ jQuery(document).ready(function() {
                             var row = jQuery.parseJSON(chuan);
                             var data = new google.visualization.DataTable();
                             data.addColumn('string', '');
-                            data.addColumn('number', 'Now year');
-                            data.addColumn('number', 'Taget');
+                            data.addColumn('number', 'Current year');
+                            data.addColumn('number', 'Target');
                             data.addRows(row);
                             var options = {
-                                chartArea:{left:20,top:60,width:"86%"},
+                                chartArea:{left:25,top:60,width:"84%"},
+                                fontSize:10,
                                 colors: ["#414853", "#febd16"],
                                 hAxis: {title: "", titleTextStyle: {color: "red"}}
                             };
@@ -40,7 +42,7 @@ jQuery(document).ready(function() {
             }
         });
     });
-    //Chart revenue
+    //Chart for revenue
     jQuery(".chart_reve select").change(function() {
         var id = jQuery(this).val();
         jQuery('#chart_div2').html('<div class="loadding"><img src="sites/all/modules/custom/duhoc_chart/images/bx_loader.gif" /></div>');
@@ -60,15 +62,15 @@ jQuery(document).ready(function() {
                             var right = output.right;
                             jQuery('.content_revenue').html(right);
                             var chuan = '['+output.data+']';
-                            console.log(chuan);
                             var row = jQuery.parseJSON(chuan);
                             var data = new google.visualization.DataTable();
                             data.addColumn('string', '');
-                            data.addColumn('number', 'Now year');
+                            data.addColumn('number', 'Current year');
                             data.addColumn('number', 'Revenue');
                             data.addRows(row);
                             var options = {
-                                chartArea:{left:20,top:60,width:"86%"},
+                                chartArea:{left:25,top:60,width:"84%"},
+                                fontSize:10,
                                 colors: ["#414853", "#febd16"],
                                 hAxis: {title: "", titleTextStyle: {color: "red"}}
                             };
