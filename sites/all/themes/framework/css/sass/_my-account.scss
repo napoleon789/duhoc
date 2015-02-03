@@ -33,9 +33,9 @@
   }
   .block-duhoc-user{
     .info_image{
-      float: left;
-      margin-right: 15px;
-      margin-bottom: 20px;
+//      float: left;
+//      margin-right: 15px;
+//      margin-bottom: 20px;
     }
     .info_area{
       margin-bottom: 20px;
@@ -161,4 +161,43 @@
     display: none !important;
   }
 
+}
+
+// edit user
+.page-user-edit{
+  .form-type-password{
+    input{
+      width: 16em;
+    }
+  }
+  .password-suggestions{
+    font-weight: bold;
+    padding: 15px 10px !important;
+    ul{
+      margin-top: 5px;
+      font-weight: normal;
+    }
+  }
+  .description{
+    display: none;
+  }
+  label{
+    font-size: 17px;
+    &.option{
+      font-size: 14px;
+    }
+  }
+  .sticky-header{
+    display: none !important;
+  }
+  .sticky-table{
+    tr.even, tr.odd{
+      background: none;
+    }
+    td{
+      input{
+        width: 100%;
+      }
+    }
+  }
 }
