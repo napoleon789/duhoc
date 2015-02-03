@@ -9,11 +9,11 @@ function duhoc_user_init() {
  */
 
 function duhoc_user_menu() {
-  $items['user/%user/target'] = array(
+  $items['user/%/target'] = array(
     'title' => 'Targets',
     'page callback' => 'duhoc_user_target',
     'page arguments' => array(1),
-    'access arguments' => array('Admin target user'),
+    'access arguments' => array('access content'),
     'type' => MENU_LOCAL_TASK,
   );
 
@@ -21,11 +21,32 @@ function duhoc_user_menu() {
 }
 
 function duhoc_user_target($uid = '') {
-  module_load_include('inc', 'user', 'user.pages');
-  $account = user_load($uid);
-  $form =  drupal_get_form('user_profile_form', $account);
-  // $form = '<div class="clear-form goldprice-sxht">' . $form . '</div>';
+  global $user;
+  $uid_login = $user->uid;
+  $area = db_query("SELECT field_area_value FROM {field_data_field_area} WHERE entity_id =:uid",array(':uid'=>$uid_login)) ->fetchField();
+  $list_uid = db_query("SELECT entity_id FROM {field_data_field_area} WHERE field_area_value = :area",array(':area' =>$area));
+  if($list_uid ->rowCount() >0 ) {
+    foreach($list_uid as $result) {
+      $row[] = $result -> entity_id;
+    }
+  }
+  $uid_view = arg(1);
+ if($user ->roles[8] ) {
+   if(in_array($uid_view,$row)) {
+     module_load_include('inc', 'user', 'user.pages');
+     $account = user_load($uid);
+     $form =  drupal_get_form('user_profile_form', $account);
+   }
+   if($uid_login->roles[9]) {
+     module_load_include('inc', 'user', 'user.pages');
+     $account = user_load($uid);
+     $form =  drupal_get_form('user_profile_form', $account);
+   }
+ }
+  else
+    $form = '<h2 style="text-align: center">Access Denied </h2>';
   return $form;
+
 }
 
 function duhoc_user_form_alter(&$form, &$form_state, $form_id) {
@@ -93,8 +114,12 @@ function duhoc_user_view() {
 
   $user1 = user_load($uid,true);
   $uri = $user1->picture->uri;
+
   $output = '';
-  $output .= '<div class="user_info"><div class="info_image">'.theme('image_style', array('style_name' => 'user170x170', 'path' => $uri, 'getsize' => TRUE, 'attributes' => array('class' => 'thumb'))).'</div>';
+  if(isset($uri))
+    $output .= '<div class="user_info"><div class="info_image">'.theme('image_style', array('style_name' => 'user170x170', 'path' => $uri, 'getsize' => TRUE, 'attributes' => array('class' => 'thumb'))).'</div>';
+  else
+    $output .= '<div class="user_info"><div class="info_image"><img src="http://localhost/duhoc/sites/default/files/no-image.png"> </div>';
   $output .= '<div class="info_name"><span class="label">Name: </span>'.$user1 -> name.'</div>';
   $output .= '<div class="info_area"><span class="label">Area: </span>'.duhoc_user_area($user ->field_area['und'][0]['value']).'</div></div>';
   $output .= '<div class="info_targin">'.theme("table",array('header'=>array('Month','Target','Revenue'),'rows' =>$rows )).'</div>';
@@ -132,11 +157,3 @@ function duhoc_user_taget($uid,$month) {
    }
 }
 
-function duhoc_user_permission() {
-  return array(
-    'admin area' => array(
-      'title' => t('Permission for area user'),
-      'description' => t('Permission for area user'),
-    )
-  );
-}
