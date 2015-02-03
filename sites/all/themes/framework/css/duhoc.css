@@ -1020,6 +1020,9 @@ input, select {
   right: 0;
   padding: 0;
 }
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button .load, .page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button .ajax-progress, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button .load, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button .ajax-progress, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button .load, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button .ajax-progress {
+  display: none !important;
+}
 .page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button input, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button input, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button input {
   margin: 0;
   background-color: #eaa921;
@@ -1961,11 +1964,6 @@ input, select {
 .page-user .title {
   display: none;
 }
-.page-user .block-duhoc-user .info_image {
-  float: left;
-  margin-right: 15px;
-  margin-bottom: 20px;
-}
 .page-user .block-duhoc-user .info_area {
   margin-bottom: 20px;
 }
@@ -2075,6 +2073,36 @@ input, select {
 }
 .page-user-target .ajax-progress {
   display: none !important;
+}
+
+.page-user-edit .form-type-password input {
+  width: 16em;
+}
+.page-user-edit .password-suggestions {
+  font-weight: bold;
+  padding: 15px 10px !important;
+}
+.page-user-edit .password-suggestions ul {
+  margin-top: 5px;
+  font-weight: normal;
+}
+.page-user-edit .description {
+  display: none;
+}
+.page-user-edit label {
+  font-size: 17px;
+}
+.page-user-edit label.option {
+  font-size: 14px;
+}
+.page-user-edit .sticky-header {
+  display: none !important;
+}
+.page-user-edit .sticky-table tr.even, .page-user-edit .sticky-table tr.odd {
+  background: none;
+}
+.page-user-edit .sticky-table td input {
+  width: 100%;
 }
 
 .page-quanly-reports .view-content {

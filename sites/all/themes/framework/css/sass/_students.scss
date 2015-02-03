@@ -84,6 +84,9 @@
         top:-2px;
         right: 0;
         padding: 0;
+        .load, .ajax-progress{
+          display: none !important;
+        }
         input{
           margin: 0;
           background-color: #eaa921;
