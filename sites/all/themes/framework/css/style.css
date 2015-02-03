@@ -519,12 +519,11 @@ ul.secondary a.active {
 .user_info {float: left;}
 .node-hocvien-form .field-name-field-student-visa  input,
 .node-hocvien-form .field-name-field-student-visa  select {border: none !important;margin: 0 !important;}
-#edit-field-student-visa-und-0-remove-button {margin-top: 26px !important;}
+#edit-field-student-visa-und-0-remove-button {margin-top: 32px !important;}
 .node-hocvien-form .field-name-field-student-visa  td {border-right: 1px solid #838484;}
 .page-quanly-student-visa .sticky-table tbody tr:first-child td .form-wrapper legend, .page-quanly-student-visa .sticky-table tbody tr:first-child td .form-wrapper label {background: #eef8f9;line-height: 28px;}
 .page-quanly-student-visa .sticky-table tbody td .form-wrapper {padding: 0 !important;}
 .node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper .fieldset-wrapper .date-padding .form-item input {margin: 0 !important;}
 .page-quanly-student-visa .sticky-table tbody tr:first-child td .form-wrapper legend, .page-quanly-student-visa .sticky-table tbody tr:first-child td .form-wrapper label {width: 100%;border-bottom: 1px solid #838484;text-indent: 6px;}
 .node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper .fieldset-wrapper .date-padding {padding: 0 !important;}
-.receved_pathway {float: left;width: 93%;}
 .field-name-field-collection-test .sticky-table .form-submit{color: rgb(187, 8, 8);text-align: left;background: transparent;}

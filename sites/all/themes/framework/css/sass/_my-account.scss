@@ -165,17 +165,74 @@
 
 // edit user
 .page-user-edit{
+  input[type="text"], input[type="password"], select{
+    width: 250px;
+  }
+  select{
+    background-color: $light-gray;
+    @include box-shadow(0 1px 1px rgba(0,0,0,0.28) inset);
+  }
   .form-type-password{
-    input{
-      width: 16em;
+    position: relative;
+    &.form-item-pass-pass2.confirm-parent{
+      margin-top: 10px;
     }
   }
   .password-suggestions{
     font-weight: bold;
     padding: 15px 10px !important;
+    margin-left: 150px !important;
     ul{
       margin-top: 5px;
       font-weight: normal;
+    }
+  }
+  .password-strength, div.password-confirm{
+    position: absolute;
+    top:0;
+    left: 415px;
+    margin: 0;
+  }
+  div.password-confirm{
+    margin-top: 5px;
+  }
+  .form-type-checkboxes.form-item-roles{
+    margin-top: -13px;
+    @include clearfix();
+    margin-bottom: 8px;
+  }
+  .form-checkboxes{
+    float: left;
+    input{
+      margin-right: 5px;
+    }
+  }
+  #edit-picture{
+    clear: both;
+    border: none;
+    padding: 0;
+    margin: 0;
+    legend{
+      font-size: 17px;
+      width: 150px;
+      float: left;
+    }
+    .fieldset-wrapper{
+      float: left;
+      .form-item, .form-actions{
+        margin: 0;
+      }
+      .form-item-files-picture-upload{
+        label{
+          display: none;
+        }
+      }
+      .form-item-picture-delete{
+        input{
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+      }
     }
   }
   .description{
@@ -183,8 +240,15 @@
   }
   label{
     font-size: 17px;
+    float: left;
+    width: 150px;
+    margin-top: 3px;
     &.option{
       font-size: 14px;
+      float: none;
+      width: auto;
+      vertical-align: middle;
+      margin-top: 0;
     }
   }
   .sticky-header{
@@ -199,5 +263,11 @@
         width: 100%;
       }
     }
+  }
+  #edit-actions{
+    padding-top: 2px;
+  }
+  .form-submit{
+    margin-left: 150px;
   }
 }
