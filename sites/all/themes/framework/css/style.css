@@ -500,21 +500,7 @@ ul.secondary a.active {
     margin-bottom: 15px;
     margin-top: 13px;
 }
-.page-quanly-user th
-{
-    text-align: center;
-    background-color: #eef8f9;
-    font-size: 17px;
-    border-left: 1px solid #C7CDCD;
-    padding: 0 10px 1px;
-    border-bottom: none;
-}
-.page-quanly-user td {
-    text-align: center;
-    border-top: 1px solid #C7CDCD;
-    border-left: 1px solid #C7CDCD;
-    padding: 4px 10px 2px;
-}
+
 .info_targin {float: right;width: 80%;}
 .user_info {float: left;}
 .node-hocvien-form .field-name-field-student-visa  input,

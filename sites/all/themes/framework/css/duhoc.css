@@ -949,53 +949,53 @@ input, select {
   vertical-align: middle;
 }
 
-.page-quanly-student .view-content, .page-quanly-setting-contract .view-content, .page-quanly-reports .view-content {
+.page-quanly-student .view-content, .page-quanly-setting-contract .view-content, .page-quanly-reports .view-content, .page-quanly-user .view-content {
   margin: 0 15px;
 }
-.page-quanly-student .view-content .views-table, .page-quanly-setting-contract .view-content .views-table, .page-quanly-reports .view-content .views-table {
+.page-quanly-student .view-content .views-table, .page-quanly-setting-contract .view-content .views-table, .page-quanly-reports .view-content .views-table, .page-quanly-user .view-content .views-table {
   border: 1px solid #838484;
 }
-.page-quanly-student .view-content .views-table thead tr th, .page-quanly-student .view-content .views-table thead tr td, .page-quanly-setting-contract .view-content .views-table thead tr th, .page-quanly-setting-contract .view-content .views-table thead tr td, .page-quanly-reports .view-content .views-table thead tr th, .page-quanly-reports .view-content .views-table thead tr td {
+.page-quanly-student .view-content .views-table thead tr th, .page-quanly-student .view-content .views-table thead tr td, .page-quanly-setting-contract .view-content .views-table thead tr th, .page-quanly-setting-contract .view-content .views-table thead tr td, .page-quanly-reports .view-content .views-table thead tr th, .page-quanly-reports .view-content .views-table thead tr td, .page-quanly-user .view-content .views-table thead tr th, .page-quanly-user .view-content .views-table thead tr td {
   background-color: #eef8f9;
   font-size: 17px;
   border-left: 1px solid #838484;
   padding: 0 10px 1px;
 }
-.page-quanly-student .view-content .views-table thead tr th:first-child, .page-quanly-student .view-content .views-table thead tr td:first-child, .page-quanly-setting-contract .view-content .views-table thead tr th:first-child, .page-quanly-setting-contract .view-content .views-table thead tr td:first-child, .page-quanly-reports .view-content .views-table thead tr th:first-child, .page-quanly-reports .view-content .views-table thead tr td:first-child {
+.page-quanly-student .view-content .views-table thead tr th:first-child, .page-quanly-student .view-content .views-table thead tr td:first-child, .page-quanly-setting-contract .view-content .views-table thead tr th:first-child, .page-quanly-setting-contract .view-content .views-table thead tr td:first-child, .page-quanly-reports .view-content .views-table thead tr th:first-child, .page-quanly-reports .view-content .views-table thead tr td:first-child, .page-quanly-user .view-content .views-table thead tr th:first-child, .page-quanly-user .view-content .views-table thead tr td:first-child {
   border-left: none;
 }
-.page-quanly-student .view-content .views-table tbody tr, .page-quanly-student .view-content .views-table tbody tr.odd, .page-quanly-student .view-content .views-table tbody tr.even, .page-quanly-setting-contract .view-content .views-table tbody tr, .page-quanly-setting-contract .view-content .views-table tbody tr.odd, .page-quanly-setting-contract .view-content .views-table tbody tr.even, .page-quanly-reports .view-content .views-table tbody tr, .page-quanly-reports .view-content .views-table tbody tr.odd, .page-quanly-reports .view-content .views-table tbody tr.even {
+.page-quanly-student .view-content .views-table tbody tr, .page-quanly-student .view-content .views-table tbody tr.odd, .page-quanly-student .view-content .views-table tbody tr.even, .page-quanly-setting-contract .view-content .views-table tbody tr, .page-quanly-setting-contract .view-content .views-table tbody tr.odd, .page-quanly-setting-contract .view-content .views-table tbody tr.even, .page-quanly-reports .view-content .views-table tbody tr, .page-quanly-reports .view-content .views-table tbody tr.odd, .page-quanly-reports .view-content .views-table tbody tr.even, .page-quanly-user .view-content .views-table tbody tr, .page-quanly-user .view-content .views-table tbody tr.odd, .page-quanly-user .view-content .views-table tbody tr.even {
   border: none;
   background: none;
 }
-.page-quanly-student .view-content .views-table tbody tr td, .page-quanly-student .view-content .views-table tbody tr.odd td, .page-quanly-student .view-content .views-table tbody tr.even td, .page-quanly-setting-contract .view-content .views-table tbody tr td, .page-quanly-setting-contract .view-content .views-table tbody tr.odd td, .page-quanly-setting-contract .view-content .views-table tbody tr.even td, .page-quanly-reports .view-content .views-table tbody tr td, .page-quanly-reports .view-content .views-table tbody tr.odd td, .page-quanly-reports .view-content .views-table tbody tr.even td {
+.page-quanly-student .view-content .views-table tbody tr td, .page-quanly-student .view-content .views-table tbody tr.odd td, .page-quanly-student .view-content .views-table tbody tr.even td, .page-quanly-setting-contract .view-content .views-table tbody tr td, .page-quanly-setting-contract .view-content .views-table tbody tr.odd td, .page-quanly-setting-contract .view-content .views-table tbody tr.even td, .page-quanly-reports .view-content .views-table tbody tr td, .page-quanly-reports .view-content .views-table tbody tr.odd td, .page-quanly-reports .view-content .views-table tbody tr.even td, .page-quanly-user .view-content .views-table tbody tr td, .page-quanly-user .view-content .views-table tbody tr.odd td, .page-quanly-user .view-content .views-table tbody tr.even td {
   border-top: 1px solid #838484;
   border-left: 1px solid #838484;
   padding: 4px 10px 2px;
 }
-.page-quanly-student .view-content .views-table tbody tr td:first-child, .page-quanly-student .view-content .views-table tbody tr.odd td:first-child, .page-quanly-student .view-content .views-table tbody tr.even td:first-child, .page-quanly-setting-contract .view-content .views-table tbody tr td:first-child, .page-quanly-setting-contract .view-content .views-table tbody tr.odd td:first-child, .page-quanly-setting-contract .view-content .views-table tbody tr.even td:first-child, .page-quanly-reports .view-content .views-table tbody tr td:first-child, .page-quanly-reports .view-content .views-table tbody tr.odd td:first-child, .page-quanly-reports .view-content .views-table tbody tr.even td:first-child {
+.page-quanly-student .view-content .views-table tbody tr td:first-child, .page-quanly-student .view-content .views-table tbody tr.odd td:first-child, .page-quanly-student .view-content .views-table tbody tr.even td:first-child, .page-quanly-setting-contract .view-content .views-table tbody tr td:first-child, .page-quanly-setting-contract .view-content .views-table tbody tr.odd td:first-child, .page-quanly-setting-contract .view-content .views-table tbody tr.even td:first-child, .page-quanly-reports .view-content .views-table tbody tr td:first-child, .page-quanly-reports .view-content .views-table tbody tr.odd td:first-child, .page-quanly-reports .view-content .views-table tbody tr.even td:first-child, .page-quanly-user .view-content .views-table tbody tr td:first-child, .page-quanly-user .view-content .views-table tbody tr.odd td:first-child, .page-quanly-user .view-content .views-table tbody tr.even td:first-child {
   border-left: none;
 }
-.page-quanly-student .views-exposed-form, .page-quanly-setting-contract .views-exposed-form, .page-quanly-reports .views-exposed-form {
+.page-quanly-student .views-exposed-form, .page-quanly-setting-contract .views-exposed-form, .page-quanly-reports .views-exposed-form, .page-quanly-user .views-exposed-form {
   position: relative;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets, .page-quanly-reports .views-exposed-form .views-exposed-widgets {
+.page-quanly-student .views-exposed-form .views-exposed-widgets, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets, .page-quanly-reports .views-exposed-form .views-exposed-widgets, .page-quanly-user .views-exposed-form .views-exposed-widgets {
   margin-bottom: 9px;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-title, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-title, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-title {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-title, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-title, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-title, .page-quanly-user .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-title {
   float: none;
   padding: 0;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets label, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets label, .page-quanly-reports .views-exposed-form .views-exposed-widgets label {
+.page-quanly-student .views-exposed-form .views-exposed-widgets label, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets label, .page-quanly-reports .views-exposed-form .views-exposed-widgets label, .page-quanly-user .views-exposed-form .views-exposed-widgets label {
   float: left;
   font-size: 17px;
   text-transform: uppercase;
   padding-top: 2px;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-widget, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-widget {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-widget, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-widget, .page-quanly-user .views-exposed-form .views-exposed-widgets .views-widget {
   float: right;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title, .page-quanly-user .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title {
   background-color: #f4f3f3;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
@@ -1006,7 +1006,7 @@ input, select {
   padding-right: 46px;
   height: 29px;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title input, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title input, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title input {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title input, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title input, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title input, .page-quanly-user .views-exposed-form .views-exposed-widgets .views-widget .form-item.form-type-textfield.form-item-title input {
   border: none;
   background: transparent;
   padding: 0 0 0 15px;
@@ -1014,16 +1014,16 @@ input, select {
   font-size: 12px;
   color: #525352;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button, .page-quanly-user .views-exposed-form .views-exposed-widgets .views-submit-button {
   position: absolute;
   top: -2px;
   right: 0;
   padding: 0;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button .load, .page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button .ajax-progress, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button .load, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button .ajax-progress, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button .load, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button .ajax-progress {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button .load, .page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button .ajax-progress, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button .load, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button .ajax-progress, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button .load, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button .ajax-progress, .page-quanly-user .views-exposed-form .views-exposed-widgets .views-submit-button .load, .page-quanly-user .views-exposed-form .views-exposed-widgets .views-submit-button .ajax-progress {
   display: none !important;
 }
-.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button input, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button input, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button input {
+.page-quanly-student .views-exposed-form .views-exposed-widgets .views-submit-button input, .page-quanly-setting-contract .views-exposed-form .views-exposed-widgets .views-submit-button input, .page-quanly-reports .views-exposed-form .views-exposed-widgets .views-submit-button input, .page-quanly-user .views-exposed-form .views-exposed-widgets .views-submit-button input {
   margin: 0;
   background-color: #eaa921;
   border: none;
@@ -1041,7 +1041,7 @@ input, select {
   -o-border-radius: 0;
   border-radius: 0;
 }
-.page-quanly-student .btn-orange, .page-quanly-setting-contract .btn-orange, .page-quanly-reports .btn-orange {
+.page-quanly-student .btn-orange, .page-quanly-setting-contract .btn-orange, .page-quanly-reports .btn-orange, .page-quanly-user .btn-orange {
   float: right;
   margin-right: 15px;
   margin-bottom: 35px;
