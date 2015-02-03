@@ -588,8 +588,13 @@
       }
 
       #contract_change{
+        width:305px;
         label{
           margin-right: 10px;
+        }
+        &+.load{
+          padding-top: 4px;
+          display: block;
         }
       }
       .action_remove{

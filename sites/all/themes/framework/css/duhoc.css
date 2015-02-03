@@ -1486,8 +1486,15 @@ input, select {
 .page-quanly-student-contract .sticky-table tbody .required-fields.group-contract-info .required-fields.group-contract-info-2 .form-wrapper .fieldset-wrapper div .description {
   display: none;
 }
+.page-quanly-student-contract .sticky-table tbody #contract_change {
+  width: 305px;
+}
 .page-quanly-student-contract .sticky-table tbody #contract_change label {
   margin-right: 10px;
+}
+.page-quanly-student-contract .sticky-table tbody #contract_change + .load {
+  padding-top: 4px;
+  display: block;
 }
 .page-quanly-student-contract .sticky-table tbody .action_remove {
   margin-left: -22px;
