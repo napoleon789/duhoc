@@ -9,11 +9,11 @@ function duhoc_user_init() {
  */
 
 function duhoc_user_menu() {
-  $items['user/%/target'] = array(
+  $items['user/%user/target'] = array(
     'title' => 'Targets',
     'page callback' => 'duhoc_user_target',
     'page arguments' => array(1),
-    'access arguments' => array('access content'),
+    'access arguments' => array('Admin target user'),
     'type' => MENU_LOCAL_TASK,
   );
 
@@ -29,7 +29,6 @@ function duhoc_user_target($uid = '') {
 }
 
 function duhoc_user_form_alter(&$form, &$form_state, $form_id) {
-
   if(!isset($form_state['build_info']['files'])){
     $form_state['build_info']['files'] = array("menu" => "modules/user/user.pages.inc");
   }
@@ -38,9 +37,11 @@ function duhoc_user_form_alter(&$form, &$form_state, $form_id) {
       $form['picture']['#access'] = false;
       $form['account']['#access'] = false;
       $form['signature_settings']['#access'] = false;
+      $form['fgm_user_user_form_group_targets']['#access'] = true;
+      $form['field_area']['#access'] = false;
     }
     if(arg(2) == 'edit') {
-     // unset($form['fgm_user_user_form_group_targets']);
+      unset($form['fgm_user_user_form_group_targets']);
     }
   }
 }
@@ -73,6 +74,7 @@ function duhoc_user_block_view($delta = '') {
 }
 
 function duhoc_user_view() {
+
   global $user;
   if($user ->uid >0) {
   $uid = arg(1);
@@ -88,11 +90,12 @@ function duhoc_user_view() {
       $row['revenue'] = 0;
     $rows[]= $row;
   }
-  $user = user_load($uid,true);
-  $uri = $user->picture->uri;
+
+  $user1 = user_load($uid,true);
+  $uri = $user1->picture->uri;
   $output = '';
   $output .= '<div class="user_info"><div class="info_image">'.theme('image_style', array('style_name' => 'user170x170', 'path' => $uri, 'getsize' => TRUE, 'attributes' => array('class' => 'thumb'))).'</div>';
-  $output .= '<div class="info_name"><span class="label">Name: </span>'.$user -> name.'</div>';
+  $output .= '<div class="info_name"><span class="label">Name: </span>'.$user1 -> name.'</div>';
   $output .= '<div class="info_area"><span class="label">Area: </span>'.duhoc_user_area($user ->field_area['und'][0]['value']).'</div></div>';
   $output .= '<div class="info_targin">'.theme("table",array('header'=>array('Month','Target','Revenue'),'rows' =>$rows )).'</div>';
   if(isset($a2))
@@ -127,4 +130,13 @@ function duhoc_user_taget($uid,$month) {
 
     return $row;
    }
+}
+
+function duhoc_user_permission() {
+  return array(
+    'admin area' => array(
+      'title' => t('Permission for area user'),
+      'description' => t('Permission for area user'),
+    )
+  );
 }

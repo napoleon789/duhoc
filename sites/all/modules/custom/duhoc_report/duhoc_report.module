@@ -72,7 +72,6 @@ function duhoc_report_block_view($delta = '') {
   return $block;
 }
 
-
 function duhoc_report_commission_received() {
   global $user;
   if(!isset($user->roles[8])) {

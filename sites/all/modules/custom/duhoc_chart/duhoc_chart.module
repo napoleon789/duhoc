@@ -88,7 +88,7 @@ function drawChart() {
    '.duhoc_chart_data_revenue().'
   ]);
   var options = {
-    chartArea:{left:20,top:60,right:0,width:"86%"},
+    chartArea:{left:25,top:60,right:10,width:"84%"},
      fontSize:10,
      legend:{textStyle:{fontSize:10, fontName:"TimesNewRoman"}},
     colors: ["#414853", "#febd16"],

@@ -527,4 +527,4 @@ ul.secondary a.active {
 .page-quanly-student-visa .sticky-table tbody tr:first-child td .form-wrapper legend, .page-quanly-student-visa .sticky-table tbody tr:first-child td .form-wrapper label {width: 100%;border-bottom: 1px solid #838484;text-indent: 6px;}
 .node-hocvien-form .field-name-field-student-visa .field-name-field-visa-date-submit .form-wrapper .fieldset-wrapper .date-padding {padding: 0 !important;}
 .receved_pathway {float: left;width: 93%;}
-#field-collection-test-values .form-submit{color: rgb(187, 8, 8);text-align: left;background: transparent;}
+.field-name-field-collection-test .sticky-table .form-submit{color: rgb(187, 8, 8);text-align: left;background: transparent;}
