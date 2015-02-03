@@ -22,8 +22,8 @@ jQuery(document).ready(function() {
                             var row = jQuery.parseJSON(chuan);
                             var data = new google.visualization.DataTable();
                             data.addColumn('string', '');
-                            data.addColumn('number', 'Now year');
-                            data.addColumn('number', 'Taget');
+                            data.addColumn('number', 'Current year');
+                            data.addColumn('number', 'Target');
                             data.addRows(row);
                             var options = {
                                 chartArea:{left:20,top:60,width:"86%"},
@@ -60,11 +60,10 @@ jQuery(document).ready(function() {
                             var right = output.right;
                             jQuery('.content_revenue').html(right);
                             var chuan = '['+output.data+']';
-                            console.log(chuan);
                             var row = jQuery.parseJSON(chuan);
                             var data = new google.visualization.DataTable();
                             data.addColumn('string', '');
-                            data.addColumn('number', 'Now year');
+                            data.addColumn('number', 'Current year');
                             data.addColumn('number', 'Revenue');
                             data.addRows(row);
                             var options = {

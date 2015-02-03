@@ -39,7 +39,7 @@ function duhoc_report_form_alter(&$form, &$form_state, $form_id) {
 
 function duhoc_report_export_to_excel($content) {
   header("Content-Type:   application/vnd.ms-excel; charset=utf-8");
-  header("Content-Disposition: attachment; filename=Report.xls");  //File name extension was wrong
+  header("Content-Disposition: attachment; filename=Report_".arg(2).".xls");  //File name extension was wrong
   header("Expires: 0");
   header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
   header("Cache-Control: private",false);

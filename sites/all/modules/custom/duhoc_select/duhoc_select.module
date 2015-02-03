@@ -95,3 +95,18 @@ function duhoc_select_list_course() {
   }
   return $res;
 }
+
+function duhoc_select_list_school() {
+  $query = db_query("SELECT  entity_id,field_school_value FROM {field_data_field_school}");
+  foreach($query as $rows) {
+    $res[$rows->entity_id] = $rows->field_school_value;
+  }
+  return $res;
+}
+function duhoc_select_list_og() {
+  $query = db_query("SELECT  entity_id,field_organisation_value FROM {field_data_field_organisation}");
+  foreach($query as $rows) {
+    $res[$rows->entity_id] = $rows->field_organisation_value;
+  }
+  return $res;
+}
