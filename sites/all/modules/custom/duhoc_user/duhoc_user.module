@@ -78,7 +78,6 @@ function duhoc_user_block_info() {
   $blocks['user_view'] = array(
     'info' => t('Content user view'),
   );
-
   return $blocks;
 }
 
