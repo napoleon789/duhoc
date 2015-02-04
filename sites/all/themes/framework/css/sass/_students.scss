@@ -245,8 +245,8 @@
           color:$white;
           font-weight: bold;
           font-size: 15px;
-          height: 25px;
-          line-height: 25px;
+          height: 30px;
+          line-height: 30px;
         }
         .field-name-field-point{
           label,input{
@@ -255,7 +255,7 @@
         }
         .fieldset-wrapper{
           input, & select{
-            height: 25px;
+            height: 30px;
             font-size: 13px;
             font-family: "Roboto Condensed";
             color: $color-text;
@@ -635,12 +635,18 @@
   .action_remove{
     clear: both;
   }
+  .ajax-progress{
+    display: none !important;
+  }
 }
 .btn-footer{
   margin-top: 15px;
   input{
     min-width: 125px;
     margin-right: 15px;
+  }
+  .ajax-progress{
+    display: none !important;
   }
 }
 
@@ -751,6 +757,9 @@
     .field-type-field-collection.field-name-field-collection-test{
       .sticky-table{
         margin-bottom: 15px;
+        .ajax-progress{
+          display: none !important;
+        }
         th{
           label{
             border-bottom: none;
@@ -812,6 +821,9 @@
     }
     .submit{
       float: left;
+    }
+    .ajax-progress{
+      display: none !important;
     }
   }
 }
@@ -912,6 +924,9 @@
         }
 
       }
+    }
+    .ajax-progress{
+      display: none !important;
     }
   }
   .btn-footer{
