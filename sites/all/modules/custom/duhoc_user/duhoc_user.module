@@ -96,7 +96,6 @@ function duhoc_user_block_view($delta = '') {
 }
 
 function duhoc_user_view() {
-
   global $user;
   if($user ->uid >0) {
   $uid = arg(1);
@@ -153,8 +152,6 @@ function duhoc_user_taget($uid,$month) {
       $row['target']  = $result -> tget;
       $row['revenue']  = $result -> rve;
     }
-
     return $row;
    }
 }
-
