@@ -31,13 +31,13 @@ function duhoc_user_target($uid = '') {
     }
   }
   $uid_view = arg(1);
- if($user ->roles[8] ) {
+ if($user ->roles[8]) {
    if(in_array($uid_view,$row)) {
      module_load_include('inc', 'user', 'user.pages');
      $account = user_load($uid);
      $form =  drupal_get_form('user_profile_form', $account);
    }
-   if($uid_login->roles[9]) {
+   if($user->roles[9]) {
      module_load_include('inc', 'user', 'user.pages');
      $account = user_load($uid);
      $form =  drupal_get_form('user_profile_form', $account);
@@ -54,14 +54,18 @@ function duhoc_user_form_alter(&$form, &$form_state, $form_id) {
     $form_state['build_info']['files'] = array("menu" => "modules/user/user.pages.inc");
   }
   if($form_id == 'user_profile_form') {
-    if(arg(2) == 'target') {
+    $current_url = arg(2);
+    $form['current_url'] = array('#type' => 'hidden', '#value' => $current_url);
+    if(isset($form_state['input']['current_url']))
+      $m = $form_state['input']['current_url'];
+    if(arg(2) == 'target' || (isset($m)&&$m == 'target')) {
       $form['picture']['#access'] = false;
       $form['account']['#access'] = false;
       $form['signature_settings']['#access'] = false;
       $form['fgm_user_user_form_group_targets']['#access'] = true;
       $form['field_area']['#access'] = false;
     }
-    if(arg(2) == 'edit') {
+    if(arg(2) == 'edit' ||(isset($m)&&$m == 'edit')) {
       unset($form['fgm_user_user_form_group_targets']);
       $form['field_area']['#access'] = false;
       if($user -> roles[8])
@@ -114,6 +118,7 @@ function duhoc_user_view() {
   }
 
   $user1 = user_load($uid,true);
+    if(isset($user1->picture->uri))
   $uri = $user1->picture->uri;
 
   $output = '';
@@ -154,10 +159,41 @@ function duhoc_user_taget($uid,$month) {
       $row['target']  = 0;
       $row['revenue']  = 0;
     }
-    foreach($query as $result) {
-      $row['target']  = $result -> tget;
-      $row['revenue']  = $result -> rve;
+    else {
+      foreach($query as $result) {
+        $row['target']  = $result -> tget;
+        $row['revenue']  = $result -> rve;
+      }
     }
+
     return $row;
    }
+}
+//list danh sach uid de truyen vao views - Phan quyen cho user
+function duhoc_user_list() {
+  global $user;
+  $uid_login = $user->uid;
+  if(isset($user->roles[8])) {
+    if(isset($user ->roles[9])) {
+      $query = db_query("SELECT uid FROM {users} WHERE uid >0");
+      foreach($query as $result){
+        $row[] = $result -> uid;
+      }
+      $list_uid = implode('+',$row);
+    }
+   else {
+     $area = db_query("SELECT field_area_value FROM {field_data_field_area} WHERE entity_id =:uid",array(':uid'=>$uid_login)) ->fetchField();
+     $query = db_query("SELECT entity_id FROM {field_data_field_area} WHERE field_area_value = :area",array(':area' =>$area));
+     if($query ->rowCount() >0 ) {
+       foreach($query as $result) {
+         $row[] = $result -> entity_id;
+       }
+     }
+     $list_uid = implode('+',$row);
+   }
+  }
+  else
+    $list_uid = $uid_login;
+
+return $list_uid;
 }
