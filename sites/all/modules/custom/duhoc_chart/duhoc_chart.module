@@ -104,12 +104,13 @@ function drawChart() {
   ';
   drupal_add_js($js, array('scope' => 'footer', 'type' => 'inline'));
   $header = array('Month','Sales');
-  $output = '<div class="chart_sale"><h2>Monthly Sales</h2>'.drupal_render(drupal_get_form('duhoc_chart_form_select')).'</div>';
+  $form = drupal_get_form('duhoc_chart_form_select');
+  $output = '<div class="chart_sale"><h2>Monthly Sales</h2>'.drupal_render($form).'</div>';
   $output .= '<div class="content_home"> <div id="chart_div" style="width:740px;height:500px;float:left"></div>';
   $output  .= '<div class="content_mont" style ="width:200px;float:right;"><h2>Table Mothly Sales</h2>'.theme('table', array('header' => $header,   'rows' => duhoc_chart_time_now() )).'</div>';
   $output .= '</div>';
   $output .= '<div class="clearfix"></div>';
-  $output .= '<div class="chart_reve"><h2>Monthly Revenue</h2>'.drupal_render(drupal_get_form('duhoc_chart_form_select')).'</div>';
+  $output .= '<div class="chart_reve"><h2>Monthly Revenue</h2>'.drupal_render($form).'</div>';
   $output .= '<div class="content_home1"> <div id="chart_div2" style="width:740px;height:500px;float:left"></div>';
   $output  .= '<div class="content_revenue" style ="width:200px;float:right;"><h2>Table Mothly Revenue</h2>'.theme('table', array('header' => array('Month','Revenue'),   'rows' => duhoc_chart_time_now_revenue() )).'</div>';
   $output .= '</div>';
@@ -172,7 +173,6 @@ function duhoc_chart_tagets($area = null,$moth,$year) {
     $num = $query ->rowCount();
     if($num >0) {
       foreach ($query as $record) {
-
         $result =  $record ->giatri;
       }
     }
@@ -376,7 +376,6 @@ function duhoc_chart_form_select() {
     '#type' => 'select',
     '#options' => $arr,
   );
-
   return $form;
 }
 function duhoc_chart_revenue_value($area = null,$month= null,$year = null) {

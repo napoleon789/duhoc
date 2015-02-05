@@ -23,11 +23,11 @@ function duhoc_student_admin($id='') {
  */
 function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
  if($form_id =='hocvien_node_form') {
-   $form['field_select_contract']['#access'] = false;
    $form['title']['#access'] = false;
    $current_url = arg(3);
    $form['current_url'] = array('#type' => 'hidden', '#value' => $current_url);
-   $m = $form_state['input']['current_url'];
+   if(isset($form_state['input']['current_url']))
+    $m = $form_state['input']['current_url'];
    if(arg(1) == 'add' && arg(2) == 'hocvien') {
      $form['field_student_basic']['#access'] = true;
      unset($form['field_student_contract']);
@@ -55,7 +55,6 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      }
    }
    if(arg(3) == 'contract' || (isset($m) && $m =='contract')) {
-
      $form['field_student_pathway']['#access'] = false;
      $form['field_student_visa']['#access'] = false;
      $form['field_student_basic']['#access'] = false;
@@ -84,12 +83,9 @@ function duhoc_student_form_alter(&$form, &$form_state, $form_id) {
      for($i =0 ; $i < $num; $i ++) {
        $remove = drupal_render($form['field_student_contract']['und'][$i]['remove_button']);
        $form['field_student_contract']['und'][$i]['field_select_list_contract']['#attributes']= array('rel'=>$i,'id' => 'contract_change');
-
-      $form['field_student_contract']['und'][$i]['field_button'] = array();
+       $form['field_student_contract']['und'][$i]['field_button'] = array();
        $form['field_student_contract']['und'][$i]['field_select_list_contract']['#suffix'] = '<span class="load'.$i.'"></span><div class="action_remove">'.$submit.$remove.'<a id = "'.$i.'"href="/export/hocvien/'.arg(2).'/'.$i.'"  class="btn-orange">print</a></div>';
      }
-    // $form['field_student_contract']['#suffix'] = '<a href="/export/hocvien/'.arg(2).'">print</a>';
-     $form['field_select_contract']['#access'] = true;
    }
    if((isset($m) && $m == 'visa') || arg(3) == 'visa') {
      $submit = drupal_render($form['actions']['submit']);

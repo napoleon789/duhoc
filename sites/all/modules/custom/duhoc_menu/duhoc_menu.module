@@ -119,7 +119,7 @@ function duhoc_menu_menu() {
     'page callback' => 'duhoc_student_admin',
     'page arguments' => array(2),
     'access arguments' => array('access content'),
-    'type' => MENU_LOCAL_TASK,
+    'type' => MENU_NORMAL_ITEM,
     'weight' => 1,
   );
 
@@ -128,7 +128,7 @@ function duhoc_menu_menu() {
     'page callback' => 'duhoc_student_admin',
     'page arguments' => array(2),
     'access arguments' => array('access content'),
-    'type' => MENU_LOCAL_TASK,
+    'type' => MENU_NORMAL_ITEM,
     'weight' => 2,
   );
   $items['quanly/student/%/pathway'] = array(
@@ -136,7 +136,7 @@ function duhoc_menu_menu() {
     'page callback' => 'duhoc_student_admin',
     'page arguments' => array(2),
     'access arguments' => array('access content'),
-    'type' => MENU_LOCAL_TASK,
+    'type' => MENU_NORMAL_ITEM,
     'weight' => 3,
   );
   $items['quanly/student/%/visa'] = array(
@@ -144,7 +144,7 @@ function duhoc_menu_menu() {
     'page callback' => 'duhoc_student_admin',
     'page arguments' => array(2),
     'access arguments' => array('access content'),
-    'type' => MENU_LOCAL_TASK,
+    'type' => MENU_NORMAL_ITEM,
     'weight' => 4,
   );
   $items['export/hocvien/%/%'] = array(

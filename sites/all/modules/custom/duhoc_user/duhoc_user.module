@@ -100,6 +100,7 @@ function duhoc_user_view() {
   if($user ->uid >0) {
   $uid = arg(1);
   $a2 = arg(2);
+  $row = array();
   for($i = 1; $i <=12; $i++) {
     $data = duhoc_user_taget($uid,$i);
     $row['month'] = $i;
@@ -139,6 +140,7 @@ function duhoc_user_area($value) {
 
 function duhoc_user_taget($uid,$month) {
   if(isset($uid)) {
+    $row = array();
     $query = db_query("SELECT target.field_target_value as tget,  reve.field_revenue_value as rve
                     FROM field_data_field_target as target
                     INNER JOIN field_data_field_th_ng as mont  ON target.entity_id = mont.entity_id
@@ -148,6 +150,10 @@ function duhoc_user_taget($uid,$month) {
                     AND target.delta = reve.delta
                     AND target.delta = mont.delta
                     ");
+    if($query->rowCount() ==0) {
+      $row['target']  = 0;
+      $row['revenue']  = 0;
+    }
     foreach($query as $result) {
       $row['target']  = $result -> tget;
       $row['revenue']  = $result -> rve;
