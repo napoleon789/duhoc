@@ -391,6 +391,7 @@ html.js fieldset.collapsible .fieldset-legend {
 
 .node-hocvien-form .field-name-field-student-basic .marketing_resource .fieldset-wrapper .form-wrapper.field-name-field-marketing-channels .form-item select {
   width: 140px;
+  padding-right: 0;
 }
 
 .node-hocvien-form .field-name-field-student-basic .marketing_resource .field-name-field-ila-study {
@@ -1163,14 +1164,14 @@ input, select {
   color: white;
   font-weight: bold;
   font-size: 15px;
-  height: 25px;
-  line-height: 25px;
+  height: 30px;
+  line-height: 30px;
 }
 .page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .field-name-field-point label, .page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .field-name-field-point input, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .education_background .field-name-field-point label, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .education_background .field-name-field-point input {
   border-right: 1px solid #ccc;
 }
 .page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper input, .page-quanly-student-basic .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper select, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper input, .page-node-add-hocvien .node-hocvien-form .field-name-field-student-basic .education_background .fieldset-wrapper select {
-  height: 25px;
+  height: 30px;
   font-size: 13px;
   font-family: "Roboto Condensed";
   color: #2f2f2f;
@@ -1526,6 +1527,9 @@ input, select {
 .page-quanly-student-contract .action_remove {
   clear: both;
 }
+.page-quanly-student-contract .ajax-progress {
+  display: none !important;
+}
 
 .btn-footer {
   margin-top: 15px;
@@ -1533,6 +1537,9 @@ input, select {
 .btn-footer input {
   min-width: 125px;
   margin-right: 15px;
+}
+.btn-footer .ajax-progress {
+  display: none !important;
 }
 
 .page-quanly-student-pathway .tabledrag-toggle-weight-wrapper, .page-quanly-student-pathway .field-multiple-drag, .page-quanly-student-pathway .sticky-header {
@@ -1627,6 +1634,9 @@ input, select {
 .page-quanly-student-pathway .field-name-field-student-pathway .field-type-field-collection.field-name-field-collection-test .sticky-table {
   margin-bottom: 15px;
 }
+.page-quanly-student-pathway .field-name-field-student-pathway .field-type-field-collection.field-name-field-collection-test .sticky-table .ajax-progress {
+  display: none !important;
+}
 .page-quanly-student-pathway .field-name-field-student-pathway .field-type-field-collection.field-name-field-collection-test .sticky-table th label {
   border-bottom: none;
   font-size: 14px;
@@ -1682,6 +1692,9 @@ input, select {
 }
 .page-quanly-student-pathway .submit_pre .submit {
   float: left;
+}
+.page-quanly-student-pathway .submit_pre .ajax-progress {
+  display: none !important;
 }
 
 .page-quanly-student-visa .tabledrag-toggle-weight-wrapper, .page-quanly-student-visa .field-multiple-drag, .page-quanly-student-visa .sticky-header {
@@ -1763,6 +1776,9 @@ input, select {
   margin-top: 5px;
   font-weight: normal;
   padding-top: 2px;
+}
+.page-quanly-student-visa .sticky-table .ajax-progress {
+  display: none !important;
 }
 .page-quanly-student-visa .btn-footer .ajax-progress {
   display: none !important;
