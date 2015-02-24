@@ -939,6 +939,28 @@ input, select {
 .block.block-duhoc-chart .loadding img {
   vertical-align: middle;
 }
+.block.block-duhoc-chart .container-inline-date > .form-item {
+  margin-right: 0;
+}
+.block.block-duhoc-chart .container-inline-date .date-padding {
+  padding-right: 0;
+}
+.block.block-duhoc-chart .container-inline-date .form-item select {
+  margin-right: 0;
+  width: 200px;
+}
+.block.block-duhoc-chart.contextual-links-region .form-type-select.form-item-selected, .block.block-duhoc-chart.contextual-links-region .container-inline-date {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+.block.block-duhoc-chart.contextual-links-region .form-type-select.form-item-selected {
+  margin-right: 15px;
+  padding-top: 10px;
+}
+.block.block-duhoc-chart.contextual-links-region .form-type-select.form-item-selected select {
+  width: 200px;
+}
 
 .item-list .pager li div {
   display: inline-block;

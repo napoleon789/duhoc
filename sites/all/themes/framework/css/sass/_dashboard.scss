@@ -75,4 +75,32 @@
       vertical-align: middle;
     }
   }
+  .container-inline-date{
+    &> .form-item{
+      margin-right: 0;
+    }
+    .date-padding{
+      padding-right:0;
+    }
+    .form-item{
+      select{
+        margin-right: 0;
+        width: 200px;
+      }
+    }
+  }
+  &.contextual-links-region{
+    .form-type-select.form-item-selected, .container-inline-date{
+      display: inline-block;
+      vertical-align: top;
+      margin: 0;
+    }
+    .form-type-select.form-item-selected{
+      margin-right: 15px;
+      padding-top: 10px;
+      select{
+        width: 200px;
+      }
+    }
+  }
 }
