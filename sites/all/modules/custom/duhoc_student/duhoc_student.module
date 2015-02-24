@@ -174,11 +174,6 @@ function duhoc_student_node_update($node) {
    }
 }
 
-//Save status contract
-
-function duhoc_student_save_contract($nid,$cid) {
-
-}
 
 function duhoc_student_verify_number($nid) {
   $number = db_query("SELECT delta FROM {field_data_field_student_contract} WHERE entity_id =:nid",array(':nid' => $nid))->rowCount();

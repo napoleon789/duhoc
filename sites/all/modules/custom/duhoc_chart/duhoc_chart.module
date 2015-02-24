@@ -1,7 +1,7 @@
 <?php
 
 /**
- * implement hook_init
+ * Implement hook_init
  */
 function duhoc_chart_init() {
   drupal_add_js(drupal_get_path('module','duhoc_chart').'/misc/jsapi');
@@ -11,13 +11,13 @@ function duhoc_chart_init() {
  * Implement hook_menu
  */
 function duhoc_chart_menu() {
-  $items['sales/%'] = array(
+  $items['sales/%/%'] = array(
     'title' => '',
     'page callback' => 'duhoc_chart_area_agrument',
     'access arguments' => array('access content'),
     'type' => MENU_NORMAL_ITEM,
   );
-  $items['revenue/%'] = array(
+  $items['revenue/%/%'] = array(
     'title' => '',
     'page callback' => 'duhoc_chart_revenue_agrument',
     'access arguments' => array('access content'),
@@ -27,22 +27,24 @@ function duhoc_chart_menu() {
 }
 function duhoc_chart_revenue_agrument() {
   $area = arg(1);
-  $table = '<h2>Table Mothly Sales</h2>'.theme('table', array('header' => array("Month","Sales"),   'rows' => duhoc_chart_time_now_revenue($area) ));
-  $content = duhoc_chart_data_revenue($area);
+  $year = arg(2);
+  $table = '<h2>Table Mothly Sales</h2>'.theme('table', array('header' => array("Month","Sales"),   'rows' => duhoc_chart_time_now_revenue($area,$year) ));
+  $content = duhoc_chart_data_revenue($area,$year);
   print json_encode(array('status' => TRUE, 'data' => $content, 'right' =>$table));
   exit;
 }
 
 function duhoc_chart_area_agrument() {
   $area = arg(1);
-  $table = '<h2>Table Mothly Sales</h2>'.theme('table', array('header' => array("Month","Sales"),   'rows' => duhoc_chart_time_now($area) ));
-  $content = duhoc_chart_data($area);
+  $year = arg(2);
+  $table = '<h2>Table Mothly Sales</h2>'.theme('table', array('header' => array("Month","Sales"),   'rows' => duhoc_chart_time_now($area,$year) ));
+  $content = duhoc_chart_data($area,$year);
   print json_encode(array('status' => TRUE, 'data' => $content, 'right' =>$table));
   exit;
 }
 
 /**
- * implement hook block_info
+ * Implement hook_block_info
  */
 
 function duhoc_chart_block_info() {
@@ -56,7 +58,7 @@ function duhoc_chart_block_info() {
 }
 
 /**
- * implement hook_block_view
+ * Implement hook_block_view
  */
 
 function duhoc_chart_block_view($delta = '') {
@@ -79,19 +81,20 @@ google.setOnLoadCallback(drawChart);
 function drawChart() {
 
   var data = google.visualization.arrayToDataTable([
-    ["Month", "Current year", "Tagets"],
+    ["Month","Last year", "Current year", "Targets"],
    '.duhoc_chart_data().'
   ]);
 
+
   var data2 = google.visualization.arrayToDataTable([
-    ["Month", "Current year","Revenue"],
+    ["Month","Last year", "Current year","Targets"],
    '.duhoc_chart_data_revenue().'
   ]);
   var options = {
     chartArea:{left:25,top:60,right:10,width:"84%"},
      fontSize:10,
      legend:{textStyle:{fontSize:10, fontName:"TimesNewRoman"}},
-    colors: ["#414853", "#febd16"],
+    colors: ["#009ac3", "#F00012", "#1222C0"],
     hAxis: {title: "", titleTextStyle: {color: "red"}}
   };
 
@@ -102,72 +105,93 @@ function drawChart() {
   chart2.draw(data2, options);
 }
   ';
+  global $user;
   drupal_add_js($js, array('scope' => 'footer', 'type' => 'inline'));
   $header = array('Month','Sales');
   $form = drupal_get_form('duhoc_chart_form_select');
-  $output = '<div class="chart_sale"><h2>Monthly Sales</h2>'.drupal_render($form).'</div>';
+  $output = '<div class="chart_sale"><h2>Monthly Sales</h2>';
+  $output .= drupal_render($form);
+  $output .= '</div>';
   $output .= '<div class="content_home"> <div id="chart_div" style="width:740px;height:500px;float:left"></div>';
   $output  .= '<div class="content_mont" style ="width:200px;float:right;"><h2>Table Mothly Sales</h2>'.theme('table', array('header' => $header,   'rows' => duhoc_chart_time_now() )).'</div>';
   $output .= '</div>';
   $output .= '<div class="clearfix"></div>';
-  $output .= '<div class="chart_reve"><h2>Monthly Revenue</h2>'.drupal_render($form).'</div>';
+  $form1 = drupal_get_form('duhoc_chart_form_select');
+  $output .= '<div class="chart_reve"><h2>Monthly Revenue</h2>';
+  $output .= drupal_render($form1);
+  $output .= '</div>';
   $output .= '<div class="content_home1"> <div id="chart_div2" style="width:740px;height:500px;float:left"></div>';
   $output  .= '<div class="content_revenue" style ="width:200px;float:right;"><h2>Table Mothly Revenue</h2>'.theme('table', array('header' => array('Month','Revenue'),   'rows' => duhoc_chart_time_now_revenue() )).'</div>';
   $output .= '</div>';
   return $output;
 }
 
-function duhoc_chart_data_revenue($area = null) {
+function duhoc_chart_data_revenue($area = null,$year = null) {
+  if($year == null)
+    $year = date('Y',time());
+  else
+    $year = $year;
   $data ='';
   for($i = 1 ; $i <= 12; $i ++) {
-    $value = duhoc_chart_revenue_value($area,$i,null);
+    $value = duhoc_chart_revenue_value($area,$i,$year);
     if(empty($value))
       $value = 0;
-    $revenue = duhoc_chart_revenue($area,$i,null);
+    $value1 = duhoc_chart_revenue_value($area,$i,$year-1);
+    if(empty($value1))
+      $value1 = 0;
+    $revenue = duhoc_chart_revenue($area,$i,$year);
     if(empty($revenue))
       $revenue = 0;
     if($i<12)
-    $data .= '["'.duhhoc_chart_convert_month($i).'", '.$value.', '.$revenue.'],' ;
+    $data .= '["'.duhhoc_chart_convert_month($i).'", '.$value1.', '.$value.', '.$revenue.'],' ;
     else
-      $data .= '["'.duhhoc_chart_convert_month($i).'", '.$value.', '.$revenue.']' ;
+      $data .= '["'.duhhoc_chart_convert_month($i).'", '.$value1.', '.$value.', '.$revenue.']' ;
   }
   return $data;
 }
-function duhoc_chart_data($area = null) {
-  global $user;
+function duhoc_chart_data($area = null,$year = null) {
+  if($year == null)
+    $year = date('Y',time());
+  else
+    $year = $year;
   $data ='';
   if($area != null) {
     for($i = 1 ; $i <= 12; $i ++) {
-      $taget = duhoc_chart_tagets($area,$i,null);
-      if(!isset($taget))
-        $taget = 0;
+      $target = duhoc_chart_tagets($area,$i,$year);
+      if(!isset($target))
+        $target = 0;
       if($i != 12)
-      $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract($area,$i,null).', '.$taget.'], ' ;
+      $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract($area,$i,$year-1).', '.duhoc_chart_sum_contract($area,$i,$year).', '.$target.'], ' ;
       if($i ==12)
-        $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract($area,$i,null).', '.$taget.'] ' ;
+        $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract($area,$i,$year-1).', '.duhoc_chart_sum_contract($area,$i,$year).', '.$target.'] ' ;
     }
   }
   else {
     for($i = 1 ; $i <= 12; $i ++) {
-      $taget = duhoc_chart_tagets($area,$i,null);
-      if(!isset($taget))
-        $taget = 0;
+      $target = duhoc_chart_tagets($area,$i,$year);
+      if(!isset($target))
+        $target = 0;
       if($i !=12)
-      $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract(null,$i,null).', '.$taget.'], ' ;
+      $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract(null,$i,$year-1).', '.duhoc_chart_sum_contract(null,$i,$year).', '.$target.'], ' ;
       if($i ==12)
-        $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract(null,$i,null).', '.$taget.'] ' ;
+        $data .= '["'.duhhoc_chart_convert_month($i).'", '.duhoc_chart_sum_contract(null,$i,$year-1).', '.duhoc_chart_sum_contract(null,$i,$year).', '.$target.'] ' ;
     }
   }
   return $data;
 }
 
-function duhoc_chart_tagets($area = null,$moth,$year) {
-  $str =duhoc_chart_list_member($area);
+function duhoc_chart_tagets($area = null,$moth,$year = null) {
+  if($year == null)
+    $year = date('Y',time());
+  else
+    $year = $year;
+  $str = duhoc_chart_list_member($area);
   if(!empty($str)) {
     $query = db_query("SELECT SUM(target.field_target_value) as giatri
                     FROM field_data_field_target as target INNER JOIN field_data_field_th_ng as mont
-                    ON target.delta = mont.delta
-                    WHERE FROM_UNIXTIME(mont.field_th_ng_value,'%c') = ".$moth."
+                    ON target.delta = mont.delta WHERE
+                    FROM_UNIXTIME(mont.field_th_ng_value,'%c') = ".$moth."
+                    AND FROM_UNIXTIME(mont.field_th_ng_value,'%Y') = ".$year."
                     AND target.entity_id IN (".$str.")
                     AND target.entity_id = mont.entity_id");
     $num = $query ->rowCount();
@@ -183,13 +207,18 @@ function duhoc_chart_tagets($area = null,$moth,$year) {
 return $result;
 }
 
-function duhoc_chart_revenue($area = null,$moth,$year) {
+function duhoc_chart_revenue($area = null,$moth,$year=null) {
+  if($year == null)
+    $year = date('Y',time());
+  else
+    $year = $year;
   $str =duhoc_chart_list_member($area);
   if(!empty($str)) {
     $query = db_query("SELECT SUM(reve.field_revenue_value) as giatri
                     FROM field_data_field_revenue as reve INNER JOIN field_data_field_th_ng as mont
                     ON reve.delta = mont.delta
                     WHERE FROM_UNIXTIME(mont.field_th_ng_value,'%c') = ".$moth."
+                    AND FROM_UNIXTIME(mont.field_th_ng_value,'%Y') = ".$year."
                     AND reve.entity_id IN (".$str.")
                     AND reve.entity_id = mont.entity_id");
     $num = $query ->rowCount();
@@ -206,12 +235,14 @@ function duhoc_chart_revenue($area = null,$moth,$year) {
 }
 
 //create data for theme table revenue
-function duhoc_chart_time_now_revenue($area = null) {
-  global $user;
-  //$ymonth = date('m',time());
+function duhoc_chart_time_now_revenue($area = null,$year = null) {
+  if($year == null)
+    $year = date('Y',time());
+  else
+    $year = $year;
   $ymonth = '12';
   for($i = 1; $i <= $ymonth ;$i++) {
-    $sale = duhoc_chart_revenue_value($area,$i,$user ->uid);
+    $sale = duhoc_chart_revenue_value($area,$i,$year);
     $row['month'] = duhhoc_chart_convert_month($i);
     $row['sale'] = $sale;
     $rows[] = $row;
@@ -219,12 +250,14 @@ function duhoc_chart_time_now_revenue($area = null) {
   return $rows;
 }
 
-function duhoc_chart_time_now($area = null) {
-  global $user;
-  //$ymonth = date('m',time());
+function duhoc_chart_time_now($area = null,$year = null) {
+  if($year == null)
+    $year = date('Y',time());
+  else
+    $year = $year;
   $ymonth = '12';
 for($i = 1; $i <= $ymonth ;$i++) {
-  $sale = duhoc_chart_sum_contract($area,$i,null);
+  $sale = duhoc_chart_sum_contract($area,$i,$year);
   $row['month'] = duhhoc_chart_convert_month($i);
   $row['sale'] = $sale;
   $rows[] = $row;
@@ -272,9 +305,8 @@ function duhoc_chart_sum_contract($area=null,$month = null,$year = null) {
   field_data_field_student_contract as contract
    INNER JOIN   field_data_field_create_date as creat ON contract.field_student_contract_value =  creat.entity_id
    INNER JOIN  node as n ON  contract.entity_id = n.nid
-  WHERE n.uid IN (:uid) AND FROM_UNIXTIME(creat.field_create_date_value,'%c') = :month",array(':uid' => $str,':month' => $month))->rowCount();
+   WHERE n.uid IN (:uid) AND FROM_UNIXTIME(creat.field_create_date_value,'%c') = :monthly AND FROM_UNIXTIME(creat.field_create_date_value,'%Y') = :ynow ",array(':uid' => $str,':monthly' => $month,':ynow' =>$year))->rowCount();
   return $query;
-
 }
 
 function duhoc_chart_list_member($area = null) {
@@ -300,12 +332,10 @@ function duhoc_chart_list_member($area = null) {
       }
       else $str ='';
     }
-
   }
   else {
     if(isset($user -> roles[8])) {
       if(isset($user -> roles[9])) {
-
         $query = db_query("SELECT entity_id FROM field_data_field_area  ");
         foreach($query as $result) {
           $row[] = $result -> entity_id;
@@ -370,25 +400,48 @@ function duhhoc_chart_convert_month($month) {
 }
 
 function duhoc_chart_form_select() {
-  $arr = array_merge(array('all'=>'ALL'),duhoc_select_list_area() );
+  global $user;
+  $arr = array_merge(array('all'=>'-- Area --'),duhoc_select_list_area() );
   $form = array();
-  $form['selected'] = array(
-    '#type' => 'select',
-    '#options' => $arr,
+  if(isset($user ->roles[9]))
+  {
+    $form['selected'] = array(
+      '#type' => 'select',
+      '#options' => $arr,
+      '#attributes' => array(
+        'class' =>array('select_area'),
+      ),
+    );
+  }
+  $form['date'] = array(
+    '#type' => 'date_select',
+    '#t#title' => 'Date',
+    '#default_value' => 'now',
+    '#date_format' => 'Y',
+    '#date_label_position' => 'within',
+    '#date_timezone' => 'Europe/Rome',
+    '#date_increment' => 15,
+    '#date_year_range' => '-5:0',
   );
   return $form;
 }
+
+//Get data to show table revenue
+
 function duhoc_chart_revenue_value($area = null,$month= null,$year = null) {
-  $str_ui =duhoc_chart_list_member($area);
+  $str_ui = duhoc_chart_list_member($area);
   $query = db_query("SELECT SUM(r_usa.field_com_received_contract_curr_value) as giatri
    FROM field_data_field_com_received_contract_curr as r_usa
    INNER JOIN field_data_field_collection_test as c_reci ON r_usa.entity_id = c_reci.field_collection_test_value
    INNER JOIN field_data_field_student_pathway as pathway ON c_reci.entity_id = pathway.field_student_pathway_value
    INNER JOIN node as n ON pathway.entity_id = n.nid
    INNER JOIN field_data_field_com_received_date as dates ON dates.entity_id = c_reci.field_collection_test_value
-   WHERE n.uid IN (:uid) AND FROM_UNIXTIME(dates.field_com_received_date_value,'%c') = :ngay",array(':uid' => $str_ui,':ngay' =>$month));
-  foreach($query as $result) {
-    $row = $result -> giatri;
-  }
+   WHERE n.uid IN (:uid) AND FROM_UNIXTIME(dates.field_com_received_date_value,'%c') = :ngay AND FROM_UNIXTIME(dates.field_com_received_date_value,'%Y') = :ynow",array(':uid' => $str_ui,':ngay' =>$month,':ynow'=>$year));
+    foreach($query as $result) {
+      if(!isset($result->giatri))
+        $row = 0;
+      else
+        $row = $result -> giatri;
+    }
   return $row;
 }

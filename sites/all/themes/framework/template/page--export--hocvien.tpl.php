@@ -17,10 +17,9 @@
       margin: 0cm;
       margin-bottom: 0001pt;
       mso-pagination:widow-orphan;
-      font-size: 12.0 pt;
+      font-size: 12.0pt;
       text-align: right;
     }
-
 
     @page Section1{
       size: 29.7cm 21cm;

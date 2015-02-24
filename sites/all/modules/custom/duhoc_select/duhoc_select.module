@@ -49,11 +49,14 @@ function duhoc_select_update_contract() {
 function duhoc_select_form_alter(&$form, &$form_state, $form_id) {
   $form['field_select_contract']['#suffix'] ='<div class="load"></div>';
 }
-
+function duhoc_select_node_view($node) {
+  dpm($node);
+}
 /*
  * implement hook_node_presave
  */
 function duhoc_select_node_presave($node) {
+  global $base_url;
   if($node -> type == 'hocvien') {
     $items = field_get_items('node', $node, 'field_student_basic');
     foreach ($items as $item) {
@@ -63,11 +66,16 @@ function duhoc_select_node_presave($node) {
     }
     $node -> title = $name;
   }
+  if($node ->type =='contract') {
+    $nd = $node->body['und'][0]['value'];
+    $node->body['und'][0]['value'] = str_replace('src="/','src="'.$base_url.'/',$nd);
+  }
 }
 /*
  * implement hook_node_insert
  */
 function duhoc_select_node_insert($node) {
+  dpm($node);
   if($node -> type =='hocvien') {
     drupal_goto('/quanly/student/'.$node->nid.'/basic');
   }
@@ -110,3 +118,4 @@ function duhoc_select_list_og() {
   }
   return $res;
 }
+
