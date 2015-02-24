@@ -116,6 +116,7 @@ function drawChart() {
   $output  .= '<div class="content_mont" style ="width:200px;float:right;"><h2>Table Mothly Sales</h2>'.theme('table', array('header' => $header,   'rows' => duhoc_chart_time_now() )).'</div>';
   $output .= '</div>';
   $output .= '<div class="clearfix"></div>';
+
   $form1 = drupal_get_form('duhoc_chart_form_select');
   $output .= '<div class="chart_reve"><h2>Monthly Revenue</h2>';
   $output .= drupal_render($form1);

@@ -138,6 +138,8 @@ jQuery(document).ready(function() {
     jQuery(".chart_reve #edit-date-year--2").change(function() {
         var year = jQuery(this).val();
         var id = jQuery(".chart_reve .select_area").val();
+        if(id == undefined)
+            id = '';
         jQuery('#chart_div2').html('<div class="loadding"><img src="sites/all/modules/custom/duhoc_chart/images/bx_loader.gif" /></div>');
         jQuery('.content_revenue').html('');
         jQuery.ajax({
