@@ -2375,3 +2375,175 @@ input, select {
   background-color: #2f2f2f;
   color: white;
 }
+
+.page-dynamic .view-filters {
+  padding-top: 15px;
+  margin-bottom: 30px;
+}
+.page-dynamic .view-filters #edit-dynamic-field-wrapper {
+  float: left;
+  width: 53%;
+  padding-right: 15px;
+}
+.page-dynamic .view-filters #edit-dynamic-field-wrapper label[for="edit-dynamic-field"] {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.page-dynamic .view-filters #edit-dynamic-field-wrapper .views-widget {
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 1px solid #838484;
+}
+.page-dynamic .view-filters #edit-dynamic-field-wrapper .draggable a.tabledrag-handle {
+  display: none;
+}
+.page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-header th, .page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table th {
+  border-bottom: none;
+}
+.page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table {
+  border-right: 1px solid #838484;
+  border-bottom: 1px solid #838484;
+}
+.page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table thead tr th, .page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table thead tr td {
+  background-color: #eef8f9;
+  font-size: 17px;
+  border-left: 1px solid #838484;
+  padding: 0 10px 1px;
+}
+.page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table thead tr th:first-child, .page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table thead tr td:first-child {
+  border-left: none;
+}
+.page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table tbody tr, .page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table tbody tr.odd, .page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table tbody tr.even {
+  border: none;
+  background: none;
+}
+.page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table tbody tr td, .page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table tbody tr.odd td, .page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table tbody tr.even td {
+  border-top: 1px solid #838484;
+  border-left: 1px solid #838484;
+  padding: 4px 10px 2px;
+}
+.page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table tbody tr td:first-child, .page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table tbody tr.odd td:first-child, .page-dynamic .view-filters #edit-dynamic-field-wrapper .sticky-table tbody tr.even td:first-child {
+  border-left: none;
+}
+.page-dynamic .view-filters .right_e {
+  float: right;
+  width: 47%;
+  padding-left: 15px;
+  padding-top: 18px;
+}
+.page-dynamic .view-filters .right_e .selec_date {
+  float: none;
+  width: auto;
+}
+.page-dynamic .view-filters .right_e .selec_date label {
+  margin-right: 7px;
+}
+.page-dynamic .view-filters .right_e .selec_date label, .page-dynamic .view-filters .right_e .selec_date select {
+  display: inline-block;
+  vertical-align: middle;
+}
+.page-dynamic .view-filters .right_e .selec_date select {
+  background-color: #f4f3f3;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  border: none;
+  height: 25px;
+  width: 200px !important;
+}
+.page-dynamic .view-filters .right_e input[type="text"] {
+  background-color: #f4f3f3;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+  border: none;
+  height: 25px;
+  width: 100%;
+}
+.page-dynamic .view-filters .right_e .views-exposed-widget {
+  float: none !important;
+  padding-right: 0 !important;
+}
+.page-dynamic .view-filters .right_e #edit-field-com-received-date-value-wrapper:before, .page-dynamic .view-filters .right_e #edit-field-com-received-date-value-wrapper:after {
+  content: " ";
+  display: table;
+}
+.page-dynamic .view-filters .right_e #edit-field-com-received-date-value-wrapper:after {
+  clear: both;
+}
+.page-dynamic .view-filters .right_e #edit-field-com-received-date-value-wrapper label {
+  font-weight: bold;
+  font-size: 14px;
+}
+.page-dynamic .view-filters .right_e #edit-field-com-received-date-value-wrapper #edit-field-com-received-date-value-min-wrapper {
+  width: 50%;
+  margin: 0;
+  padding-right: 10px;
+}
+.page-dynamic .view-filters .right_e #edit-field-com-received-date-value-wrapper #edit-field-com-received-date-value-min-wrapper div {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  float: none;
+  display: block;
+}
+.page-dynamic .view-filters .right_e #edit-field-com-received-date-value-wrapper #edit-field-com-received-date-value-min-wrapper div.description {
+  display: none;
+}
+.page-dynamic .view-filters .right_e #edit-field-com-received-date-value-wrapper #edit-field-com-received-date-value-min-wrapper input {
+  width: 100%;
+}
+.page-dynamic .view-filters .right_e #edit-field-com-received-date-value-wrapper #edit-field-com-received-date-value-max-wrapper {
+  width: 50%;
+  margin: 0;
+  padding-left: 10px;
+}
+.page-dynamic .view-filters .right_e #edit-field-com-received-date-value-wrapper #edit-field-com-received-date-value-max-wrapper div {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  float: none;
+  display: block;
+}
+.page-dynamic .view-filters .right_e #edit-field-com-received-date-value-wrapper #edit-field-com-received-date-value-max-wrapper div.description {
+  display: none;
+}
+.page-dynamic .view-filters .right_e #edit-field-com-received-date-value-wrapper #edit-field-com-received-date-value-max-wrapper input {
+  width: 100%;
+}
+.page-dynamic .view-filters .right_e fieldset {
+  border: none;
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.page-dynamic .view-filters .right_e fieldset legend {
+  display: none;
+}
+.page-dynamic .view-filters .right_e fieldset .more_form .form-item {
+  width: 50%;
+}
+.page-dynamic .view-filters .right_e fieldset .more_form .form-item:first-child {
+  padding-right: 10px;
+}
+.page-dynamic .view-filters .right_e fieldset .more_form .form-item:last-child {
+  padding-left: 10px;
+}
+.page-dynamic .view-filters .right_e .add_them {
+  display: inline-block;
+  margin-right: 15px;
+}
+.page-dynamic .view-content div strong {
+  font-size: 20px;
+  font-weight: bold;
+}
+.page-dynamic .view-content div + br {
+  display: none;
+}
+.page-dynamic .view-content .views-table.cols-4 {
+  margin-top: 5px;
+}

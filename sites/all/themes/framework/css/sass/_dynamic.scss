@@ -1,0 +1,176 @@
+.page-dynamic{
+  .view-filters{
+    padding-top: 15px;
+    margin-bottom: 30px;
+    #edit-dynamic-field-wrapper{
+      float: left;
+      width: 53%;
+      padding-right: 15px;
+      label[for="edit-dynamic-field"]{
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .views-widget{
+        overflow-x: hidden;
+        overflow-y: auto;
+        border: 1px solid $md-gray;
+      }
+      .draggable a.tabledrag-handle{
+        display: none;
+      }
+      .sticky-header th, .sticky-table th{
+        border-bottom: none;
+      }
+      .sticky-table{
+        border-right:1px solid $md-gray;
+        border-bottom:1px solid $md-gray;
+
+        thead{
+          tr{
+            th,td{
+              background-color: $light-green;
+              font-size: 17px;
+              border-left:1px solid $md-gray;
+              padding: 0 10px 1px;
+              &:first-child{
+                border-left: none;
+              }
+            }
+          }
+        }
+        tbody{
+          tr, tr.odd, tr.even{
+            border:none;
+            background:none;
+            td{
+              border-top:1px solid $md-gray;
+              border-left:1px solid $md-gray;
+              padding: 4px 10px 2px;
+              &:first-child{
+                border-left: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .right_e{
+      float: right;
+      width: 47%;
+      padding-left: 15px;
+      padding-top: 18px;
+      .selec_date{
+        float: none;
+        width: auto;
+        label{
+          margin-right: 7px;
+        }
+        label, select{
+          display: inline-block;
+          vertical-align: middle;
+        }
+        select{
+          background-color: $light-gray;
+          @include box-shadow(0 1px 1px rgba(0,0,0,0.28) inset);
+          border:none;
+          height: 25px;
+          width: 200px !important;
+        }
+      }
+      input[type="text"]{
+        background-color: $light-gray;
+        @include box-shadow(0 1px 1px rgba(0,0,0,0.28) inset);
+        border:none;
+        height: 25px;
+        width: 100%;
+      }
+      .views-exposed-widget{
+        float: none !important;
+        padding-right: 0 !important;
+      }
+      #edit-field-com-received-date-value-wrapper{
+        @include clearfix();
+        label{
+          font-weight: bold;
+          font-size: 14px;
+        }
+        #edit-field-com-received-date-value-min-wrapper{
+          width: 50%;
+          margin: 0;
+          padding-right: 10px;
+          div{
+            margin: 0;
+            padding: 0;
+            width: auto;
+            float: none;
+            display: block;
+            &.description{
+              display: none;
+            }
+          }
+          input{
+            width: 100%;
+          }
+        }
+        #edit-field-com-received-date-value-max-wrapper{
+          width: 50%;
+          margin: 0;
+          padding-left: 10px;
+          div{
+            margin: 0;
+            padding: 0;
+            width: auto;
+            float: none;
+            display: block;
+            &.description{
+              display: none;
+            }
+          }
+          input{
+            width: 100%;
+          }
+        }
+      }
+
+      fieldset{
+        border: none;
+        padding: 0;
+        margin-top: 5px;
+        margin-bottom: 0;
+        legend{
+          display: none;
+        }
+        .more_form{
+          .form-item{
+            width: 50%;
+            &:first-child{
+              padding-right: 10px;
+            }
+            &:last-child{
+              padding-left: 10px;
+            }
+          }
+        }
+      }
+      .add_them{
+        display: inline-block;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .view-content{
+    div{
+      strong{
+        font-size: 20px;
+        font-weight: bold;
+      }
+      &+br{
+        display: none;
+      }
+    }
+    .views-table.cols-4{
+      margin-top: 5px;
+    }
+  }
+}
