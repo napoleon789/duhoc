@@ -31,6 +31,7 @@
     <?php $m = 0;?>
     <?php foreach ($widgets as $id => $widget): ?>
       <?php if($m==1):?>
+        <div class="right_e">
         <div class="selec_date"><label style="font-size: 14px;font-weight: bold">Select Date: </label><select style="height: 30px">
             <option value="0">- Select Date -</option>
             <option value="1">Com received Date</option>
@@ -93,7 +94,7 @@
 
       </div>
     <?php endif; ?>
-
+        </div>
   </div>
 
 </div>
