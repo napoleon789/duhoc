@@ -85,7 +85,6 @@ function drawChart() {
    '.duhoc_chart_data().'
   ]);
 
-
   var data2 = google.visualization.arrayToDataTable([
     ["Month","Last year", "Current year","Targets"],
    '.duhoc_chart_data_revenue().'

@@ -144,6 +144,8 @@ function duhoc_user_area($value) {
 }
 
 function duhoc_user_taget($uid,$month) {
+
+  $ynow = date('Y',time());
   if(isset($uid)) {
     $row = array();
     $query = db_query("SELECT target.field_target_value as tget,  reve.field_revenue_value as rve
@@ -151,6 +153,7 @@ function duhoc_user_taget($uid,$month) {
                     INNER JOIN field_data_field_th_ng as mont  ON target.entity_id = mont.entity_id
                     INNER JOIN field_data_field_revenue as reve ON mont.entity_id = reve.entity_id
                     WHERE FROM_UNIXTIME(mont.field_th_ng_value,'%c') = ".$month."
+                    AND FROM_UNIXTIME(mont.field_th_ng_value,'%Y') = ".$ynow."
                     AND target.entity_id  = ".$uid."
                     AND target.delta = reve.delta
                     AND target.delta = mont.delta

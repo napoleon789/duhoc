@@ -342,6 +342,11 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
               '#value' => $def_sort,
               '#default_value' => $def_sort,
             );
+            $form['value'][$key]['label'] = array(
+              '#type' => 'textfield',
+              '#default_value' => $def_title,
+              '#size' => 20,
+            );
             $displayed_field_names[] = $exposed_field_names[$oldid];
             ++$key;
           }
@@ -397,6 +402,12 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
               '#type' => 'weight',
               '#delta' => $delta,
               '#default_value' => $def_sort,
+            );
+            $form['value'][$key]['label'] = array(
+              '#type' => 'textfield',
+              '#default_value' => $def_title,
+              '#size' => 20,
+
             );
             $displayed_field_names[] = $field_title;
             ++$key;

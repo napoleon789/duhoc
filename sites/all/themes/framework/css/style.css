@@ -517,3 +517,57 @@ ul.secondary a.active {
 .page-user-target #edit-cancel--2 {display: none;}
 #edit-selected {display: none;}
 .admin-menu #edit-selected {display: block;}
+.view-view-dynamic .tabledrag-hide {display: table-cell !important;}
+#edit-field-create-date-value-min-wrapper,#edit-field-create-date-value-max-wrapper,
+#edit-field-com-received-date-value-min-wrapper,#edit-field-com-received-date-value-max-wrapper,
+#edit-field-field-due-date-value-min-wrapper,#edit-field-field-due-date-value-max-wrapper,
+#edit-field-field-paid-date-value-min-wrapper,#edit-field-field-paid-date-value-max-wrapper {float: left;}
+.view-filters .description {display: none;}
+.views-widget label {font-weight: normal;font-size: 10px;color: #333333;}
+.view-id-view_dynamic #edit-field-field-paid-date-value-wrapper,
+.view-id-view_dynamic #edit-field-field-due-date-value-wrapper,
+.view-id-view_dynamic #edit-field-create-date-value-wrapper {
+    display: none;
+}
+.ngay_thang input
+{
+    width: 100%;
+    background-color: #f4f3f3;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+    -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+    -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28) inset;
+    border: none;
+    background-image: url("../images/icon/calendar.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+    height: 25px;
+}
+.selec_date {
+    margin-top: 29px;
+    float: left;
+    width: 50%;
+}
+#edit-dynamic-field-wrapper .views-widget {float: left;
+    height: 350px;
+    overflow: scroll;
+
+}
+
+.view-view-dynamic  tr{background: none;}
+.view-view-dynamic .view-content table{border: 1px solid #838484;}
+.view-view-dynamic .view-content th{background-color: #eef8f9;
+    font-size: 17px;
+    border-left: 1px solid #838484;
+    padding: 0 10px 1px;}
+
+.view-view-dynamic .view-content td
+{
+    border-top: 1px solid #838484;
+    border-left: 1px solid #838484;
+    padding: 4px 10px 2px;
+}
+.more_form {display: none;}
+#admin_vanri0 {display: block;}
+.more_form .form-item {float: left;}

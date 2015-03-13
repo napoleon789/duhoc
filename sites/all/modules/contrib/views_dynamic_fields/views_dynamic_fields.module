@@ -66,20 +66,18 @@ function theme_views_dynamic_fields_sort_filter_fields($variables) {
 
   // Weight for sortable tables.
   // @see http://drupal.org/node/935910
-  $header = array('Select', 'Field', 'Weight');
+  $header = array('Select', 'Field', 'Number(N)','Label');
   $rows = array();
-
   foreach (element_children($form) as $key) {
-
     // This is important.
     // We need to start with an empty element for the drag handle.
     $row = array();
-
     // Add class to group weight fields for drag and drop.
     $form[$key]['sort']['#attributes']['class'] = array('sort');
     $row[] = drupal_render($form[$key]['check']);
     $row[] = drupal_render($form[$key]['title']);
     $row[] = drupal_render($form[$key]['sort']);
+    $row[] = drupal_render($form[$key]['label']);
 
     // Note the difference between $row and $rows.
     $rows[] = array(

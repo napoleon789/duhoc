@@ -110,3 +110,4 @@ function framework_process_block(&$variables, $hook) {
 function framework_preprocess_search_block_form(&$vars) {
   $vars['search_form'] = str_replace('type="text"', 'type="search"', $vars['search_form']);
 }
+

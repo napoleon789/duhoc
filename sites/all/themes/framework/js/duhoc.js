@@ -1,4 +1,23 @@
 jQuery(document).ready(function($) {
+    $(".selec_date select").change( function() {
+        $(".ngay_thang input").val('');
+        $(".ngay_thang").hide();
+       var date_select = $(this).val();
+        if(date_select == 1 || date_select == 0) {
+           $("#edit-field-com-received-date-value-wrapper").show();
+        }
+        if(date_select == 2) {
+            $("#edit-field-field-paid-date-value-wrapper").show();
+        }
+        if(date_select == 3) {
+            $("#edit-field-field-due-date-value-wrapper").show();
+        }
+        if(date_select == 4) {
+            $("#edit-field-create-date-value-wrapper").show();
+        }
+    });
+
+
     var panel = $("#edit-field-student-basic-und-0-field-marketing-channels-und").val();
     if(panel ==0){
         $("#edit-field-student-basic-und-0-field-detail-chanel-und").show();
@@ -26,3 +45,12 @@ jQuery(document).ready(function($) {
             }});
     });
 });
+var num = 0;
+function clickME() {
+    num++;
+    for(var i = 0; i<=num;i++) {
+        var giatri =jQuery("#admin_vanri"+i);
+        giatri.show();
+    }
+
+}

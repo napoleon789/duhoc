@@ -12,6 +12,13 @@ function duhoc_report_menu() {
     'type' => MENU_NORMAL_ITEM,
   );
 
+  $items['snippet/addmore'] = array(
+    'title' => t('Example form'),
+    'type' => MENU_CALLBACK,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('simple_form'),
+    'access callback' => TRUE,
+  );
   return $items;
 }
 
@@ -29,12 +36,49 @@ function duhoc_report_add_operator() {
 
 
 function duhoc_report_views_pre_execute(&$view) {
-
 }
 
 function duhoc_report_form_alter(&$form, &$form_state, $form_id) {
 
+  if ($form['#id'] =='views-exposed-form-view-dynamic-page-1'){
+     $form['submit']['#prefix'] = '<div class="add_them"><input type="button" onclick="clickME()" value="Add more" id="edit-toantua"></div>';
+      $form['name-report'] = array(
+        '#type' => 'textfield',
+        '#zise' => -2,
+        '#title' => t('Report Name: '),
+        '#weight' => -1
+      );
+    $form['file'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Operator'),
+      '#prefix' => '<div id="admin_vanri">',
+      '#suffix' => '</div>',
+      '#weight' => 0
+    );
+    for($i = 0;$i<=5;$i++) {
+      $form['file']['tieude_'.$i] = array(
+        '#type' => 'textfield',
+        '#size' => 22,
+        '#title' => t('Label: '),
+        '#prefix' => '<div class="more_form" id="admin_vanri'.$i.'">',
+      );
+      $form['file']['toantu_'.$i] = array(
+        '#type' => 'textfield',
+        '#size' => 25,
+        '#title' => t('Operator: '),
+        '#suffix' => '</div>',
+      );
+    }
 
+  }
+}
+
+function myform_selectors_cancel_submit($form,&$form_state) {
+  $form_state['rebuild']= false;
+}
+
+function admin_callback($form,&$form_state) {
+  return '123';
 }
 
 function duhoc_report_export_to_excel($content) {

@@ -7,6 +7,7 @@ stylesheets[all][] = css/duhoc.css
 
 
 scripts[] = js/duhoc.js
+scripts[] = js/csspopup.js
 
 
 regions[header]         = Header
